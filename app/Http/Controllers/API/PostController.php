@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PostResource;
 use App\Services\PostService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PostController extends Controller
 {
@@ -13,56 +15,33 @@ class PostController extends Controller
         //
     }
 
-    public function index()
+    public function latestPosts(Request $request)
     {
-        //
+        $locale = $request->input('lang', 'uz');
+
+        App::setLocale($locale);
+
+        $posts = $this->postService->getLatestPosts();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Latest posts retrieved successfully (' . $locale . ')',
+            'data' => PostResource::collection($posts)
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function allPosts(Request $request)
     {
-        //
-    }
+        $locale = $request->input('lang', 'uz');
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        App::setLocale($locale);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $posts = $this->postService->getAllPosts();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return response()->json([
+            'success' => true,
+            'message' => 'All posts retrieved successfully (' . $locale . ')',
+            'data' => PostResource::collection($posts)
+        ]);
     }
 }

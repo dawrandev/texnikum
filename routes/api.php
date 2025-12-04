@@ -12,4 +12,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/showLoginForm', [\App\Http\Controllers\AuthController::class, 'showLoginForm']);
 
     Route::get('/categories', [CategoryController::class, 'index']);
+
+    Route::get('/posts/latest', [\App\Http\Controllers\API\PostController::class, 'latestPosts']);
+    Route::get('/posts/all', [\App\Http\Controllers\API\PostController::class, 'allPosts']);
 });

@@ -17,4 +17,9 @@ class Language extends Model
     {
         return $this->hasMany(CategoryTranslation::class);
     }
+
+    public function postTranslations()
+    {
+        return $this->hasMany(PostTranslation::class);
+    }
 }

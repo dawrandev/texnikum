@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('post_translations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->string('slug')->unique();
-            $table->string('image')->nullable();
-            $table->timestamp('published_at')->nullable();
-            $table->unsignedBigInteger('views_count')->default(0);
+            $table->foreignId('post_id')->constrained()->onDelete('cascade');
+            $table->string('lang_code', 5);
+            $table->string('title');
+            $table->text('content');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('post_translations');
     }
 };

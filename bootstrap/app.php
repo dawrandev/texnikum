@@ -21,6 +21,10 @@ return Application::configure(basePath: dirname(__DIR__))
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\SetLocale::class,
         ]);
+
+        $middleware->group('api', [
+            \App\Http\Middleware\SetApiLocale::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

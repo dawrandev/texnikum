@@ -10,4 +10,14 @@ class PostService
     {
         // 
     }
+
+    public function getLatestPosts()
+    {
+        return $this->postRepository->getLatestPosts();
+    }
+
+    public function getAllPosts()
+    {
+        return $this->postRepository->getAllPosts();
+    }
 }
