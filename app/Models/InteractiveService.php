@@ -8,6 +8,6 @@ class InteractiveService extends Model
 {
     protected $fillable = [
         'title',
-        'link',
+        'url',
     ];
 }

@@ -17,34 +17,34 @@ class InteractiveServiceSeeder extends Seeder
         $services = [
             [
                 'title' => 'Подача заявлений на выход из академического отпуска',
-                'link'  => '#',
+                'url'  => '#',
             ],
             [
                 'title' => 'Вакансии рабочих мест в Университета',
-                'link'  => '#',
+                'url'  => '#',
             ],
             [
                 'title' => 'Получение данных об успеваемости студентов',
-                'link'  => '#',
+                'url'  => '#',
             ],
             [
                 'title' => 'Подача заявлений на проживание в студенческом общежитии',
-                'link'  => '#',
+                'url'  => '#',
             ],
             [
                 'title' => 'Получение справки об обучении',
-                'link'  => '#',
+                'url'  => '#',
             ],
             [
                 'title' => 'Система подачи заявлений по совместной образовательной программе',
-                'link'  => '#',
+                'url'  => '#',
             ],
         ];
 
         foreach ($services as $service) {
             InteractiveService::updateOrCreate(
                 ['title' => $service['title']],
-                ['link' => $service['link']]
+                ['url' => $service['url']]
             );
         }
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('interactive_services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('link');
+            $table->string('url');
             $table->timestamps();
         });
     }
