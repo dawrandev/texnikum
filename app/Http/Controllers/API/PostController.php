@@ -10,38 +10,54 @@ use Illuminate\Support\Facades\App;
 
 class PostController extends Controller
 {
-    public function __construct(protected PostService $postService)
+    public function __construct(protected PostService $postService) {}
+
+    public function latestPosts()
     {
-        //
+        return $this->jsonResponse(
+            'Latest posts retrieved successfully',
+            $this->postService->getLatestPosts()
+        );
     }
 
-    public function latestPosts(Request $request)
+    public function allPosts()
     {
-        $locale = $request->input('lang', 'uz');
-
-        App::setLocale($locale);
-
-        $posts = $this->postService->getLatestPosts();
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Latest posts retrieved successfully (' . $locale . ')',
-            'data' => PostResource::collection($posts)
-        ]);
+        return $this->jsonResponse(
+            'All posts retrieved successfully',
+            $this->postService->getAllPosts()
+        );
     }
 
-    public function allPosts(Request $request)
+    public function categoryPosts($id)
     {
-        $locale = $request->input('lang', 'uz');
+        return $this->jsonResponse(
+            'Category posts retrieved successfully',
+            $this->postService->getPostsByCategory($id)
+        );
+    }
 
-        App::setLocale($locale);
+    public function latestEventPosts()
+    {
+        return $this->jsonResponse(
+            'Latest event posts retrieved successfully',
+            $this->postService->getLatestEventPosts()
+        );
+    }
 
-        $posts = $this->postService->getAllPosts();
+    public function allEventPosts()
+    {
+        return $this->jsonResponse(
+            'All event posts retrieved successfully',
+            $this->postService->getAllEventPosts()
+        );
+    }
 
+    private function jsonResponse($message, $data)
+    {
         return response()->json([
             'success' => true,
-            'message' => 'All posts retrieved successfully (' . $locale . ')',
-            'data' => PostResource::collection($posts)
+            'message' => $message,
+            'data'     => PostResource::collection($data)
         ]);
     }
 }

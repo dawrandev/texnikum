@@ -22,6 +22,10 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\SetLocale::class,
         ]);
 
+        $middleware->alias([
+            'set-api-locale' => \App\Http\Middleware\SetApiLocale::class,
+        ]);
+
         $middleware->group('api', [
             \App\Http\Middleware\SetApiLocale::class,
         ]);

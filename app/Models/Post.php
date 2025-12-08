@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\HasTranslations;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\App;
 
 class Post extends Model
 {
+    use HasTranslations;
     protected $fillable =
     [
         'category_id',
@@ -26,21 +28,13 @@ class Post extends Model
         return $this->hasMany(PostTranslation::class);
     }
 
-    public function getTitleAttribute(): ?string
+    protected function title(): Attribute
     {
-        $locale = App::getLocale();
-
-        $translation = $this->translations->firstWhere('lang_code', $locale);
-
-        return $translation ? $translation->title : null;
+        return $this->getTranslatedAttribute('title');
     }
 
-    public function getContentAttribute(): ?string // ?string qilib o'zgartiring
+    protected function content(): Attribute
     {
-        $locale = App::getLocale();
-
-        $translation = $this->translations->firstWhere('lang_code', $locale);
-
-        return $translation ? $translation->content : null;
+        return $this->getTranslatedAttribute('content');
     }
 }

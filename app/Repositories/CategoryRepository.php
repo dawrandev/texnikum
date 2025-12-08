@@ -8,4 +8,9 @@ class CategoryRepository
     {
         return \App\Models\Category::with('translations')->get();
     }
+
+    public function findById($id)
+    {
+        return \App\Models\Category::with('translations')->find($id);
+    }
 }

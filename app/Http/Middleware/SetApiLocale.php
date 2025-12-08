@@ -19,7 +19,11 @@ class SetApiLocale
         $supportedLocales = array_keys(config('app.locales'));
         $defaultLocale = config('app.fallback_locale', 'uz');
 
-        $locale = $request->getPreferredLanguage($supportedLocales);
+        $locale = $request->header('Accept-Language');
+
+        if (!$locale) {
+            $locale = $request->getPreferredLanguage($supportedLocales);
+        }
 
         if (!$locale || !in_array($locale, $supportedLocales)) {
             $locale = $defaultLocale;

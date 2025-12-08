@@ -4,18 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryTranslation extends Model
+class StatsTranslation extends Model
 {
-    protected $fillable =
-    [
-        'category_id',
+    protected $fillable = [
+        'stats_id',
         'lang_code',
-        'name',
+        'title'
     ];
 
-    public function category()
+    public function stats()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Stats::class);
     }
 
     public function language()

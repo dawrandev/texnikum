@@ -18,6 +18,11 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             CategorySeeder::class,
             PostSeeder::class,
+            EventSeeder::class,
+            InteractiveServiceSeeder::class,
+            VideoSeeder::class,
+            StatsTableSeeder::class,
+            PartnerSeeder::class,
         ]);
     }
 }

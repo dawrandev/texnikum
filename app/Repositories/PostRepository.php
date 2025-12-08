@@ -2,20 +2,30 @@
 
 namespace App\Repositories;
 
+use App\Models\Category;
+use App\Models\Post;
+
 class PostRepository
 {
-    public function getLatestPosts()
+    public function getCategoryIdBySlug(string $slug): ?int
     {
-        return \App\Models\Post::with(['category', 'translations'])
-            ->orderBy('created_at', 'desc')
-            ->take(6)
-            ->get();
+        return Category::where('slug', $slug)->value('id');
     }
 
-    public function getAllPosts()
+    public function getPosts(array $filters = [], $limit = null)
     {
-        return \App\Models\Post::with(['category', 'translations'])
-            ->orderBy('created_at', 'desc')
-            ->get();
+        $query = Post::with(['category', 'translations']);
+
+        if (isset($filters['category_id'])) {
+            $query->where('category_id', $filters['category_id']);
+        }
+
+        $query->orderBy('created_at', 'desc');
+
+        if ($limit) {
+            $query->limit($limit);
+        }
+
+        return $query->get();
     }
 }

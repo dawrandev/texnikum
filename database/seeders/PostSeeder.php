@@ -8,12 +8,9 @@ use Illuminate\Support\Str;
 
 class PostSeeder extends Seeder
 {
-    /**
-     * Yangi DB strukturasiga (posts va post_translations) moslab postlarni yaratadi.
-     */
+
     public function run(): void
     {
-        // Tilni 'uz' deb belgilaymiz, chunki barcha berilgan matnlar O'zbek tilida
         $defaultLangCode = 'uz';
 
         $postsData = [
@@ -111,17 +108,12 @@ Konferensiya ikki yo‘nalishda olib borilib, Yalpi majlisda Janubiy Orolbo‘yi
             ]
         ];
 
-        // -----------------------------------------------------------
-        // Posts jadvaliga ma'lumotlarni yozish
-        // -----------------------------------------------------------
         foreach ($postsData as $data) {
-            // Tarjima ma'lumotlarini asosiy arraydan ajratib olamiz
             $translationData = [
                 'title' => $data['title'],
                 'content' => $data['content'],
             ];
 
-            // Faqat posts jadvaliga tegishli ustunlarni ajratamiz
             $postData = [
                 'category_id' => $data['category_id'],
                 'slug' => $data['slug'],
@@ -132,10 +124,8 @@ Konferensiya ikki yo‘nalishda olib borilib, Yalpi majlisda Janubiy Orolbo‘yi
                 'updated_at' => now(),
             ];
 
-            // Postni yaratish
             $postId = DB::table('posts')->insertGetId($postData);
 
-            // Postning tarjimasini yaratish
             DB::table('post_translations')->insert([
                 'post_id' => $postId,
                 'lang_code' => $defaultLangCode, // 'uz'

@@ -4,18 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryTranslation extends Model
+class VideoTranslation extends Model
 {
-    protected $fillable =
-    [
-        'category_id',
+    protected $fillable = [
+        'video_id',
         'lang_code',
-        'name',
+        'title',
     ];
 
-    public function category()
+    public function video()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Video::class);
     }
 
     public function language()

@@ -11,23 +11,29 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            'yangiliklar' => [
-                1 => 'News',
-                2 => 'Jańalıqlar',
-                3 => 'Новости',
-                4 => 'Yangiliklar',
+            'news' => [
+                'en' => 'News',
+                'kk' => 'Jańalıqlar',
+                'ru' => 'Новости',
+                'uz' => 'Yangiliklar',
             ],
-            'ekofaol-talabalar' => [
-                1 => 'Eco Active Students',
-                2 => 'Ekobelsendi talabalar',
-                3 => 'Экоактивные студенты',
-                4 => 'Ekofaol talabalar',
+            'eco-active-students' => [
+                'en' => 'Eco Active Students',
+                'kk' => 'Ekobelsendi talabalar',
+                'ru' => 'Экоактивные студенты',
+                'uz' => 'Ekofaol talabalar',
             ],
-            'korrupciyaga-qarshi-kurashish' => [
-                1 => 'Anti-Corruption',
-                2 => 'Korruptsiyaga qarsı kuresiw',
-                3 => 'Борьба с коррупцией',
-                4 => 'Korrupsiyaga qarshi kurashish',
+            'anti-corruption' => [
+                'en' => 'Anti-Corruption',
+                'kk' => 'Korruptsiyaga qarsı kuresiw',
+                'ru' => 'Борьба с коррупцией',
+                'uz' => 'Korrupsiyaga qarshi kurashish',
+            ],
+            'events' => [
+                'en' => 'Events',
+                'kk' => 'Ilajlar',
+                'ru' => 'Мероприятия',
+                'uz' => 'Tadbirlar',
             ],
         ];
 
@@ -37,11 +43,11 @@ class CategorySeeder extends Seeder
                 'slug' => $slug,
             ]);
 
-            foreach ($translations as $languageId => $name) {
-
+            foreach ($translations as $langCode => $name) {
                 CategoryTranslation::firstOrCreate([
                     'category_id' => $category->id,
-                    'language_id' => $languageId,
+                    'lang_code'   => $langCode,
+                ], [
                     'name'        => $name,
                 ]);
             }
