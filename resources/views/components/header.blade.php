@@ -9,19 +9,6 @@
         </ul>
     </div>
     <ul class="navbar-nav navbar-right">
-        <li class="dropdown">
-            <div class="dropdown d-inline mr-2">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-language"></i> {{ strtoupper(app()->getLocale()) }}
-                </button>
-                <div class="dropdown-menu">
-                    @foreach (getLanguages() as $lang => $label)
-                    <a class="dropdown-item" href="{{ route('setLocale', $lang) }}">{{ $label }}</a>
-                    @endforeach
-                </div>
-            </div>
-        </li>
 
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{{ asset('assets/img/user.png') }}"

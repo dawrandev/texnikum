@@ -1,15 +1,15 @@
 @extends('layouts.main')
 
-@section('title', __('Create Category'))
+@section('title', __('Создать категорию'))
 
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h1>{{ __('Create Category') }}</h1>
+        <h1>{{ __('Создать категорию') }}</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a></div>
-            <div class="breadcrumb-item"><a href="{{ route('categories.index') }}">{{ __('Categories') }}</a></div>
-            <div class="breadcrumb-item">{{ __('Create') }}</div>
+            <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">{{ __('Главная') }}</a></div>
+            <div class="breadcrumb-item"><a href="{{ route('categories.index') }}">{{ __('Категории') }}</a></div>
+            <div class="breadcrumb-item">{{ __('Создание') }}</div>
         </div>
     </div>
 
@@ -18,23 +18,32 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>{{ __('Category Information') }}</h4>
+                        <h4>{{ __('Информация о категории') }}</h4>
                     </div>
+
                     <form action="{{ route('categories.store') }}" method="POST">
                         @csrf
                         <div class="card-body">
+
                             <div class="form-group">
                                 <label for="slug">{{ __('Slug') }} <span class="text-danger">*</span></label>
-                                <input type="text" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ old('slug') }}" required>
+                                <input type="text"
+                                    name="slug"
+                                    id="slug"
+                                    class="form-control @error('slug') is-invalid @enderror"
+                                    value="{{ old('slug') }}"
+                                    required>
                                 @error('slug')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                                <small class="form-text text-muted">{{ __('URL-friendly identifier (e.g., yangiliklar)') }}</small>
+                                <small class="form-text text-muted">
+                                    {{ __('URL-идентификатор (например: yangiliklar)') }}
+                                </small>
                             </div>
 
                             <hr>
 
-                            <h6 class="mb-3">{{ __('Translations') }}</h6>
+                            <h6 class="mb-3">{{ __('Переводы') }}</h6>
 
                             @php
                             $languages = \App\Models\Language::all();
@@ -59,30 +68,38 @@
                                 <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}"
                                     id="lang-{{ $language->code }}"
                                     role="tabpanel">
+
                                     <div class="form-group">
                                         <label for="name_{{ $language->id }}">
-                                            {{ __('Name') }} <span class="text-danger">*</span>
+                                            {{ __('Название') }} <span class="text-danger">*</span>
                                         </label>
+
                                         <input type="text"
                                             name="translations[{{ $language->id }}][name]"
                                             id="name_{{ $language->id }}"
                                             class="form-control @error('translations.'.$language->id.'.name') is-invalid @enderror"
                                             value="{{ old('translations.'.$language->id.'.name') }}"
                                             required>
+
                                         @error('translations.'.$language->id.'.name')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                    <input type="hidden" name="translations[{{ $language->id }}][language_id]" value="{{ $language->id }}">
+
+                                    <input type="hidden"
+                                        name="translations[{{ $language->id }}][lang_code]"
+                                        value="{{ $language->code }}">
                                 </div>
                                 @endforeach
                             </div>
                         </div>
+
                         <div class="card-footer text-right">
-                            <a href="{{ route('categories.index') }}" class="btn btn-secondary">{{ __('Cancel') }}</a>
-                            <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                            <a href="{{ route('categories.index') }}" class="btn btn-secondary">{{ __('Отмена') }}</a>
+                            <button type="submit" class="btn btn-primary">{{ __('Сохранить') }}</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

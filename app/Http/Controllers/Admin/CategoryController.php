@@ -3,64 +3,127 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CategoryStoreRequest;
 use App\Services\CategoryService;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class CategoryController extends Controller
 {
-    public function __construct(protected CategoryService $categoryService)
+    public function __construct(
+        protected CategoryService $categoryService
+    ) {}
+
+    /**
+     * Display a listing of categories
+     */
+    public function index(): View
     {
-        // 
-    }
-    public function index()
-    {
-        $categories = $this->categoryService->getAllCategories();
+        $categories = $this->categoryService->getAllWithTranslations();
 
         return view('pages.categories.index', compact('categories'));
     }
 
-    public function create()
+    /**
+     * Show the form for creating a new category
+     */
+    public function create(): View
     {
         return view('pages.categories.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created category
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request): RedirectResponse
     {
-        //
+        try {
+            $this->categoryService->create($request->validated());
+
+            alert_success('Категория успешно создана!');
+
+            return redirect()->route('categories.index');
+        } catch (\Exception $e) {
+            alert_error('Ошибка при создании категории: ' . $e->getMessage());
+
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified category (JSON for modal)
      */
-    public function show(string $id)
+    public function show(int $id): JsonResponse
     {
-        //
+        try {
+            $category = $this->categoryService->getById($id);
+
+            return response()->json([
+                'success' => true,
+                'data' => $category
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Категория не найдена'
+            ], 404);
+        }
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show modal for viewing category
      */
-    public function edit(string $id)
+    public function showModal(int $id): View
     {
-        //
+        $category = $this->categoryService->findByIdWithRelations($id);
+
+        return view('admin.categories.show', compact('category'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Show modal for editing category
      */
-    public function update(Request $request, string $id)
+    public function editModal(int $id): View
     {
-        //
+        $category = $this->categoryService->findByIdWithRelations($id);
+
+        return view('pages.categories.edit', compact('category'));
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Update the specified category
      */
-    public function destroy(string $id)
+    public function update(CategoryStoreRequest $request, int $id): RedirectResponse
     {
-        //
+        try {
+            $this->categoryService->update($id, $request->validated());
+
+            alert_success('Категория успешно обновлена!');
+
+            return redirect()->route('categories.index');
+        } catch (\Exception $e) {
+            alert_error('Ошибка при обновлении категории: ' . $e->getMessage());
+
+            return redirect()->back()->withInput();
+        }
+    }
+
+    /**
+     * Remove the specified category
+     */
+    public function destroy(int $id): RedirectResponse
+    {
+        try {
+            $this->categoryService->delete($id);
+
+            alert_success('Категория успешно удалена!');
+
+            return redirect()->route('categories.index');
+        } catch (\Exception $e) {
+            alert_error('Ошибка при удалении категории: ' . $e->getMessage());
+
+            return redirect()->back();
+        }
     }
 }

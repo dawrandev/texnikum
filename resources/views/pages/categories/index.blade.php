@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', __('Categories'))
+@section('title', 'Категории')
 
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h1>{{ __('Categories') }}</h1>
+        <h1>Категории</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a></div>
-            <div class="breadcrumb-item">{{ __('Categories') }}</div>
+            <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Панель управления</a></div>
+            <div class="breadcrumb-item">Категории</div>
         </div>
     </div>
 
@@ -17,10 +17,10 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>{{ __('All Categories') }}</h4>
+                        <h4>Все категории</h4>
                         <div class="card-header-action">
                             <a href="{{ route('categories.create') }}" class="btn btn-primary">
-                                <i class="fas fa-plus"></i> {{ __('Add New') }}
+                                <i class="fas fa-plus"></i> Добавить
                             </a>
                         </div>
                     </div>
@@ -30,9 +30,9 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>{{ __('Name') }}</th>
-                                        <th>{{ __('Slug') }}</th>
-                                        <th>{{ __('Action') }}</th>
+                                        <th>Название</th>
+                                        <th>Slug</th>
+                                        <th>Действия</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,29 +43,25 @@
                                             @if($category->translations->isNotEmpty())
                                             {{ $category->translations->first()->name }}
                                             @else
-                                            <span class="text-muted">{{ __('No translation') }}</span>
+                                            <span class="text-muted">Нет перевода</span>
                                             @endif
                                         </td>
                                         <td><code>{{ $category->slug }}</code></td>
                                         <td>
-                                            <a href="{{ route('categories.show', $category->id) }}" class="btn btn-info btn-sm" title="{{ __('View') }}">
+                                            <button class="btn btn-info btn-sm" onclick="showCategory({{ $category->id }})" title="Просмотр">
                                                 <i class="fas fa-eye"></i>
-                                            </a>
-                                            <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary btn-sm" title="{{ __('Edit') }}">
+                                            </button>
+                                            <button class="btn btn-primary btn-sm" onclick="editCategory({{ $category->id }})" title="Редактировать">
                                                 <i class="fas fa-edit"></i>
-                                            </a>
-                                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-inline" onsubmit="return confirm('{{ __('Are you sure?') }}')">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm" title="{{ __('Delete') }}">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </form>
+                                            </button>
+                                            <button class="btn btn-danger btn-sm" onclick="deleteItem({{ $category->id }}, 'categories')" title="Удалить">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
                                         </td>
                                     </tr>
                                     @empty
                                     <tr>
-                                        <td colspan="6" class="text-center text-muted">{{ __('No categories found') }}</td>
+                                        <td colspan="4" class="text-center text-muted">Категории не найдены</td>
                                     </tr>
                                     @endforelse
                                 </tbody>
@@ -82,4 +78,48 @@
         </div>
     </div>
 </section>
+
+<!-- Dynamic Modal Container -->
+<div id="dynamicModalContainer"></div>
 @endsection
+
+@push('scripts')
+<script>
+    function showCategory(id) {
+        fetch(`/admin/categories/${id}/show-modal`)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('dynamicModalContainer').innerHTML = html;
+                $('#showCategoryModal').modal('show');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                swal('Ошибка!', 'Не удалось загрузить данные', 'error');
+            });
+    }
+
+    function editCategory(id) {
+        fetch(`/admin/categories/${id}/edit-modal`)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('dynamicModalContainer').innerHTML = html;
+                $('#editCategoryModal').modal('show');
+
+                // Initialize slug formatter
+                const slugInput = document.getElementById('edit_slug');
+                if (slugInput) {
+                    slugInput.addEventListener('input', function(e) {
+                        this.value = this.value.toLowerCase()
+                            .replace(/[^a-z0-9\s-]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                swal('Ошибка!', 'Не удалось загрузить данные', 'error');
+            });
+    }
+</script>
+@endpush

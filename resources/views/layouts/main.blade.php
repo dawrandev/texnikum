@@ -22,10 +22,13 @@
             @include('components.footer')
         </div>
     </div>
-
+    @include('partials.alerts')
+    @include('partials.delete-modal')
 </body>
 
 @include('partials.script')
+
+@include('partials.delete-script')
 
 @stack('script')
 
