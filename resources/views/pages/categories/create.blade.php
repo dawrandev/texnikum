@@ -40,16 +40,29 @@
                             $languages = \App\Models\Language::all();
                             @endphp
 
-                            @foreach($languages as $language)
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                    <h6 class="mb-0">
-                                        <i class="fas fa-language"></i> {{ $language->name }} ({{ $language->code }})
-                                    </h6>
-                                </div>
-                                <div class="card-body">
+                            <ul class="nav nav-tabs" id="languageTabs" role="tablist">
+                                @foreach($languages as $index => $language)
+                                <li class="nav-item">
+                                    <a class="nav-link {{ $index === 0 ? 'active' : '' }}"
+                                        id="lang-{{ $language->code }}-tab"
+                                        data-toggle="tab"
+                                        href="#lang-{{ $language->code }}"
+                                        role="tab">
+                                        {{ $language->name }}
+                                    </a>
+                                </li>
+                                @endforeach
+                            </ul>
+
+                            <div class="tab-content mt-3" id="languageTabsContent">
+                                @foreach($languages as $index => $language)
+                                <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}"
+                                    id="lang-{{ $language->code }}"
+                                    role="tabpanel">
                                     <div class="form-group">
-                                        <label for="name_{{ $language->id }}">{{ __('Name') }} ({{ $language->name }}) <span class="text-danger">*</span></label>
+                                        <label for="name_{{ $language->id }}">
+                                            {{ __('Name') }} <span class="text-danger">*</span>
+                                        </label>
                                         <input type="text"
                                             name="translations[{{ $language->id }}][name]"
                                             id="name_{{ $language->id }}"
@@ -62,8 +75,8 @@
                                     </div>
                                     <input type="hidden" name="translations[{{ $language->id }}][language_id]" value="{{ $language->id }}">
                                 </div>
+                                @endforeach
                             </div>
-                            @endforeach
                         </div>
                         <div class="card-footer text-right">
                             <a href="{{ route('categories.index') }}" class="btn btn-secondary">{{ __('Cancel') }}</a>

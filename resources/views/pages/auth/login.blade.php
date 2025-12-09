@@ -19,7 +19,7 @@
         <section class="section d-flex align-items-center" style="min-height: 100vh;">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4">
+                    <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5">
                         <div class="card card-primary">
                             <div class="card-header">
                                 <h4>{{ __('Login') }}</h4>

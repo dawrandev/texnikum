@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Post;
 use App\Repositories\PostRepository;
 
 class PostService
@@ -51,5 +52,15 @@ class PostService
     public function getAllPosts()
     {
         return $this->postRepository->getPosts();
+    }
+
+    public function getPostById($id)
+    {
+        $post = Post::with(['category', 'translations'])
+            ->findOrFail($id);
+
+        $post->increment('views_count');
+
+        return $post;
     }
 }

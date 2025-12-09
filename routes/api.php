@@ -17,6 +17,7 @@ Route::prefix('v1')->middleware('set-api-locale')->group(function () {
     Route::get('/posts/latest', [\App\Http\Controllers\API\PostController::class, 'latestPosts']);
     Route::get('/posts/all', [\App\Http\Controllers\API\PostController::class, 'allPosts']);
     Route::get('/posts/category/{id}', [\App\Http\Controllers\API\PostController::class, 'categoryPosts']);
+    Route::get('/posts/{id}', [\App\Http\Controllers\API\PostController::class, 'show']);
 
     Route::get('/posts/event/latest', [\App\Http\Controllers\API\PostController::class, 'latestEventPosts']);
     Route::get('/posts/event/all', [\App\Http\Controllers\API\PostController::class, 'allEventPosts']);

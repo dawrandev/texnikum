@@ -70,6 +70,43 @@ class PostController extends Controller
     }
 
     /**
+     * Get single post
+     * 
+     * Retrieve a specific post by ID and increment view count.
+     * 
+     * @urlParam id integer required Post ID
+     * 
+     * @responseField success boolean Operation success status
+     * @responseField message string Response message
+     * @responseField data object Post details
+     * @responseField data.id integer Post ID
+     * @responseField data.category_id integer Category ID
+     * @responseField data.slug string Post slug (unique identifier)
+     * @responseField data.title string Post title (translated)
+     * @responseField data.content string Post content (translated)
+     * @responseField data.image string|null Post image path
+     * @responseField data.published_at string|null Post publication timestamp (ISO 8601 format)
+     * @responseField data.views_count integer Number of post views
+     * @responseField data.created_at string Post creation timestamp (ISO 8601 format)
+     * @responseField data.updated_at string Post last update timestamp (ISO 8601 format)
+     * 
+     * @response 404 {
+     *   "success": false,
+     *   "message": "Post not found"
+     * }
+     */
+    public function show($id)
+    {
+        $post = $this->postService->getPostById($id);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Post retrieved successfully',
+            'data'    => new PostResource($post)
+        ]);
+    }
+
+    /**
      * Get posts by category
      * 
      * Retrieve all posts belonging to a specific category.
