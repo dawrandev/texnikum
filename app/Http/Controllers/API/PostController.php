@@ -28,8 +28,8 @@ class PostController extends Controller
      * @responseField data[].slug string Post slug (unique identifier)
      * @responseField data[].title string Post title (translated)
      * @responseField data[].content string Post content (translated)
-     * @responseField data[].image string|null Post image path
-     * @responseField data[].published_at string|null Post publication timestamp (ISO 8601 format)
+     * @responseField data[].image string Post image path
+     * @responseField data[].published_at string Post publication timestamp (ISO 8601 format)
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
@@ -55,8 +55,8 @@ class PostController extends Controller
      * @responseField data[].slug string Post slug (unique identifier)
      * @responseField data[].title string Post title (translated)
      * @responseField data[].content string Post content (translated)
-     * @responseField data[].image string|null Post image path
-     * @responseField data[].published_at string|null Post publication timestamp (ISO 8601 format)
+     * @responseField data[].image string Post image path
+     * @responseField data[].published_at string Post publication timestamp (ISO 8601 format)
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
@@ -84,8 +84,8 @@ class PostController extends Controller
      * @responseField data.slug string Post slug (unique identifier)
      * @responseField data.title string Post title (translated)
      * @responseField data.content string Post content (translated)
-     * @responseField data.image string|null Post image path
-     * @responseField data.published_at string|null Post publication timestamp (ISO 8601 format)
+     * @responseField data.image string Post image path
+     * @responseField data.published_at string Post publication timestamp (ISO 8601 format)
      * @responseField data.views_count integer Number of post views
      * @responseField data.created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data.updated_at string Post last update timestamp (ISO 8601 format)
@@ -121,8 +121,8 @@ class PostController extends Controller
      * @responseField data[].slug string Post slug (unique identifier)
      * @responseField data[].title string Post title (translated)
      * @responseField data[].content string Post content (translated)
-     * @responseField data[].image string|null Post image path
-     * @responseField data[].published_at string|null Post publication timestamp (ISO 8601 format)
+     * @responseField data[].image string Post image path
+     * @responseField data[].published_at string Post publication timestamp (ISO 8601 format)
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
@@ -153,8 +153,8 @@ class PostController extends Controller
      * @responseField data[].slug string Post slug (unique identifier)
      * @responseField data[].title string Post title (translated)
      * @responseField data[].content string Post content (translated)
-     * @responseField data[].image string|null Post image path
-     * @responseField data[].published_at string|null Post publication timestamp (ISO 8601 format)
+     * @responseField data[].image string Post image path
+     * @responseField data[].published_at string Post publication timestamp (ISO 8601 format)
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
@@ -180,8 +180,8 @@ class PostController extends Controller
      * @responseField data[].slug string Post slug (unique identifier)
      * @responseField data[].title string Post title (translated)
      * @responseField data[].content string Post content (translated)
-     * @responseField data[].image string|null Post image path
-     * @responseField data[].published_at string|null Post publication timestamp (ISO 8601 format)
+     * @responseField data[].image string Post image path
+     * @responseField data[].published_at string Post publication timestamp (ISO 8601 format)
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
