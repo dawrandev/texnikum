@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Post;
 use App\Models\PostTranslation;
-use App\Repositories\PostRepository;
+use App\Repositories\API\PostRepository;
 use Carbon\Carbon;
 
 class EventSeeder extends Seeder
@@ -23,7 +23,7 @@ class EventSeeder extends Seeder
         $postsData = [
             [
                 'slug' => 'diqqat-elon',
-                'image' => null,
+                'images' => [],
                 'published_at' => Carbon::parse('2025-11-28'),
                 'translations' => [
                     [
@@ -35,7 +35,7 @@ class EventSeeder extends Seeder
             ],
             [
                 'slug' => 'qosimov-xasanboy-phd-himoyasi',
-                'image' => 'event1.jpg',
+                'images' => ['event1.jpg'],
                 'published_at' => Carbon::parse('2025-11-17'),
                 'translations' => [
                     [
@@ -51,7 +51,7 @@ class EventSeeder extends Seeder
             $post = Post::create([
                 'category_id' => $eventCategoryId,
                 'slug' => $postData['slug'],
-                'image' => $postData['image'] ?? null,
+                'images' => json_encode($postData['images']) ?? null,
                 'published_at' => $postData['published_at'],
                 'views_count' => 0,
             ]);

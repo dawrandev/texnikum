@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('slug')->unique();
-            $table->string('image')->require();
-            $table->timestamp('published_at')->require();
+            $table->json('images');
+            $table->timestamp('published_at');
             $table->unsignedBigInteger('views_count')->default(0);
             $table->timestamps();
         });

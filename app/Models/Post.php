@@ -13,10 +13,17 @@ class Post extends Model
     [
         'category_id',
         'slug',
-        'image',
+        'images',
         'published_at',
         'views_count',
     ];
+
+    protected $casts = [
+        'images' => 'array',
+        'published_at' => 'datetime',
+        'views_count' => 'integer'
+    ];
+
 
     public function category()
     {
