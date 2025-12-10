@@ -28,7 +28,8 @@ class PostResource extends JsonResource
             'content' => $this->content,
 
             'slug' => $this->slug,
-            'image' => is_array($this->images) && count($this->images) ? $this->images[0] : null,
+            // Return all images (casted to array in model) and a primary image
+            'images' => $this->images ?? [],
             'published_at' => $this->published_at,
             'views_count' => $this->views_count,
             'created_at' => $this->created_at,
