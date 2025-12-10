@@ -9,3 +9,4 @@
 <!-- Custom style CSS -->
 <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css') }}">
 <link rel='shortcut icon' type='image/x-icon' href="{{ URL::asset('assets/img/favicon.ico') }}" />
+<link rel="stylesheet" href="{{ URL::asset('assets/bundles/select2/dist/css/select2.min.css') }}">

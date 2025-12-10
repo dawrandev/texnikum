@@ -11,3 +11,4 @@
   <script src="{{ URL::asset('assets/bundles/sweetalert/sweetalert.min.js') }}"></script>
   <!-- Page Specific JS File -->
   <script src="{{ URL::asset('assets/js/page/sweetalert.js') }}"></script>
+  <script src="{{ URL::asset('assets/bundles/select2/dist/js/select2.full.min.js') }}"></script>

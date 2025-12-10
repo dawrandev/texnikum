@@ -83,42 +83,73 @@
 <div id="dynamicModalContainer"></div>
 @endsection
 
-@push('scripts')
+@push('script')
 <script>
     function showCategory(id) {
         fetch(`/admin/categories/${id}/show-modal`)
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
             .then(html => {
+                // Clear previous modal and insert new one
                 document.getElementById('dynamicModalContainer').innerHTML = html;
-                $('#showCategoryModal').modal('show');
+
+                // Initialize and show the modal using jQuery (works with Bootstrap 4)
+                setTimeout(function() {
+                    const modal = $('#showCategoryModal');
+                    if (modal.length) {
+                        // Remove any existing backdrop
+                        $('.modal-backdrop').remove();
+                        $('body').removeClass('modal-open');
+
+                        // Show modal
+                        modal.modal('show');
+                    } else {
+                        swal('Ошибка!', 'Модальное окно не загружено', 'error');
+                    }
+                }, 100);
             })
             .catch(error => {
                 console.error('Error:', error);
-                swal('Ошибка!', 'Не удалось загрузить данные', 'error');
+                swal('Ошибка!', 'Не удалось загрузить данные: ' + error.message, 'error');
             });
     }
 
     function editCategory(id) {
         fetch(`/admin/categories/${id}/edit-modal`)
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
             .then(html => {
                 document.getElementById('dynamicModalContainer').innerHTML = html;
-                $('#editCategoryModal').modal('show');
 
-                // Initialize slug formatter
-                const slugInput = document.getElementById('edit_slug');
-                if (slugInput) {
-                    slugInput.addEventListener('input', function(e) {
-                        this.value = this.value.toLowerCase()
-                            .replace(/[^a-z0-9\s-]/g, '')
-                            .replace(/\s+/g, '-')
-                            .replace(/-+/g, '-');
-                    });
-                }
+                setTimeout(function() {
+                    const modal = $('#editCategoryModal');
+                    if (modal.length) {
+                        $('.modal-backdrop').remove();
+                        $('body').removeClass('modal-open');
+
+                        modal.modal('show');
+
+                        const slugInput = document.getElementById('edit_slug');
+                        if (slugInput) {
+                            slugInput.addEventListener('input', function(e) {
+                                this.value = this.value.toLowerCase()
+                                    .replace(/[^a-z0-9\s-]/g, '')
+                                    .replace(/\s+/g, '-')
+                                    .replace(/-+/g, '-');
+                            });
+                        }
+                    } else {
+                        swal('Ошибка!', 'Модальное окно не загружено', 'error');
+                    }
+                }, 100);
             })
             .catch(error => {
                 console.error('Error:', error);
-                swal('Ошибка!', 'Не удалось загрузить данные', 'error');
+                swal('Ошибка!', 'Не удалось загрузить данные: ' + error.message, 'error');
             });
     }
 </script>

@@ -27,6 +27,17 @@
                     <li><a class="nav-link" href="{{ route('categories.create') }}">{{ __('Создать категорию') }}</a></li>
                 </ul>
             </li>
+
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown">
+                    <i data-feather="file-text"></i>
+                    <span>{{ __('Посты') }}</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('categories.index') }}">{{ __('Все посты') }}</a></li>
+                    <li><a class="nav-link" href="{{ route('posts.create') }}">{{ __('Создать пост') }}</a></li>
+                </ul>
+            </li>
         </ul>
 
     </aside>

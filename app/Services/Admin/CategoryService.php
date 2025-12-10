@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Admin;
 
-use App\Repositories\CategoryRepository;
+use App\Repositories\Admin\CategoryRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 
@@ -140,5 +140,15 @@ class CategoryService
             // Delete category
             return $this->categoryRepository->delete($id);
         });
+    }
+
+    /**
+     * Get categories for select dropdown
+     * 
+     * ✨ YANGI METHOD - QOSHILDI
+     */
+    public function getForSelect(): array
+    {
+        return $this->categoryRepository->getForSelect();
     }
 }

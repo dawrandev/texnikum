@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Otika - Admin Dashboard Template</title>
+    <title>Otika - Панель администратора</title>
     <link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/bundles/bootstrap-social/bootstrap-social.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -22,13 +22,13 @@
                     <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5">
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h4>{{ __('Login') }}</h4>
+                                <h4>{{ __('Вход') }}</h4>
                             </div>
                             <div class="card-body">
                                 <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="login">{{ __('Login') }}</label>
+                                        <label for="login">{{ __('Логин') }}</label>
                                         <input id="login" type="text"
                                             class="form-control @error('login') is-invalid @enderror"
                                             name="login" tabindex="1" required autofocus
@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="d-block">
-                                            <label for="password" class="control-label">{{ __('Password') }}</label>
+                                            <label for="password" class="control-label">{{ __('Пароль') }}</label>
                                         </div>
                                         <input id="password" type="password"
                                             class="form-control @error('password') is-invalid @enderror"
@@ -57,7 +57,7 @@
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                            {{ __('Login') }}
+                                            {{ __('Войти') }}
                                         </button>
                                     </div>
                                 </form>
