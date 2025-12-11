@@ -23,7 +23,11 @@ Bugungi muloqotlar va savol-javoblar yakunida Berdaq nomidagi Qoraqalpoq davlat 
 "Rus tili va adabiyoti"
 Kafedra mudiri N.Sh.Karimxodjayev',
                 'slug' => 'qozon-federal-universiteti-vakillari-qoraqalpoq-davlat-universitetida',
-                'images' => ['posts/post1.jpg, posts/post1.1.jpg, posts/post1.2.jpg'],
+                'images' => [
+                    'posts/post1.jpg',
+                    'posts/post1.1.jpg',
+                    'posts/post1.2.jpg',
+                ],
                 'published_at' => now(),
                 'views_count' => 12,
             ],
@@ -42,7 +46,11 @@ U o‘z so‘zida bugungi kunda ham turkiy xalqlar adabiyotlari o‘rtasida adab
 
 Shundan so‘ng turkmanistonlik olimlardan B.Jepbarova, B.Ataniyazovalar so‘zga chiqib, qardosh turkiy adabiyotning qadimgi tarmoqlari, ularning rivojlanish tendensiyalari, zamonaviy adabiyotshunoslikda adabiy aloqalarning tadqiq etilishi masalalari va bu borada oldinda turgan vazifalar haqida fikrlarini bildirdi. Mehmonlar universitet talabalari bilan esdalik uchun suratga tushdi.',
                 'slug' => 'turkmanistonlik-olimlar-talabalar-bilan-uchrashdi',
-                'images' => ['posts/post2.jpg, posts/post2.1.jpg, posts/post2.2.jpg'],
+                'images' => [
+                    'posts/post2.jpg',
+                    'posts/post2.1.jpg',
+                    'posts/post2.2.jpg',
+                ],
                 'published_at' => now(),
                 'views_count' => 8,
             ],
@@ -59,7 +67,11 @@ Ushbu uchrashuvlarning eng muhim jihatlaridan biri shundaki, prorektor T.Nurimbe
 
 Nankin shahridagi muzokaralar Qoraqalpoq davlat universitetining xalqaro ilmiy hamkorlikdagi o‘rnini yanada mustahkamlash, uning reyting ko‘rsatkichlarini yuksaltirish va universitetning global ta’lim maydonidagi integratsiyasini kuchaytirishga xizmat qilmoqda.',
                 'slug' => 'xalqaro-hamkorlik',
-                'images' => ['posts/post3.jpg, posts/post3.1.jpg, posts/post3.2.jpg'],
+                'images' => [
+                    'posts/post3.jpg',
+                    'posts/post3.1.jpg',
+                    'posts/post3.2.jpg',
+                ],
                 'published_at' => now(),
                 'views_count' => 15,
             ],
@@ -72,7 +84,11 @@ Unda Nukus shahar Ichki ishlar boshqarmasi jinoyat qidiruv bo‘limi tezkor vaki
 
 Uchrashuv davomida talaba-yoshlar o‘zlarini qiziqtirgan savollar bilan murojaat qilishdi. Mutaxassislar har bir savolga amaliy misollar bilan asoslangan batafsil javoblar berdi. Tadbir mazmunida o‘zaro muloqot, ochiq fikr almashish va real hayotiy vaziyatlar asosidagi tushuntirishlar talabalarda giyohvandlikning salbiy oqibatlariga qarshi yanada kuchli immunitetni shakllantirishga xizmat qildi. Tadbir yakunida ishtirokchilarga targ‘ibot materiallari taqdim etildi, ularga sog‘lom turmush tarzi, huquqiy madaniyat va shaxsiy xavfsizlik bo‘yicha tavsiyalar berildi.',
                 'slug' => 'qduda-soha-mutaxassislari-bilan-uchrashuv-otkazildi',
-                'images' => ['posts/post4.jpg, posts/post4.1.jpg, posts/post4.2.jpg'],
+                'images' => [
+                    'posts/post4.jpg',
+                    'posts/post4.1.jpg',
+                    'posts/post4.2.jpg',
+                ],
                 'published_at' => now(),
                 'views_count' => 20,
             ],
@@ -91,7 +107,12 @@ Konferensiya davomida Berdaq nomidagi Qoraqalpoq davlat universiteti Yuridika fa
 
 Konferensiyada ishtirok etish amaliyotga yo’naltirilgan yuridik ta’lim sohasida kasbiy aloqalarni mustahkamlash va tajriba almashishga xizmat qiladi.',
                 'slug' => 'fuqarolik-va-biznes-huquqi-kafedrasi-vakillarining-yuridik-klinik-talim-boyicha-xalqaro-konferensiyada-ishtiroki',
-                'images' => ['posts/post5.jpg, posts/post5.1.jpg, posts/post5.2.jpg, posts/post5.3.jpg'],
+                'images' => [
+                    'posts/post5.jpg',
+                    'posts/post5.1.jpg',
+                    'posts/post5.2.jpg',
+                    'posts/post5.3.jpg',
+                ],
                 'published_at' => now(),
                 'views_count' => 5,
             ],
@@ -102,7 +123,11 @@ Konferensiyada ishtirok etish amaliyotga yo’naltirilgan yuridik ta’lim sohas
 
 Konferensiya ikki yo‘nalishda olib borilib, Yalpi majlisda Janubiy Orolbo‘yi ekologik muammolari va ularni bartaraf etish bo‘yicha strategik yondashuvlar muhokama qilindi. Seksiya ishlarida esa suv resurslari, tuproq unumdorligi, biologik xilma-xillik, ekologik monitoring va innovatsion yechimlar bo‘yicha ilmiy ma’ruzalar tinglandi. Ishtirokchilar tomonidan hududning ekologik tiklanishiga hissa qo‘shadigan ilmiy tashabbuslar va amaliy yechimlar taqdim etildi. Ushbu konferensiya Janubiy Orolbo‘yi tabiiy resurslaridan oqilona foydalanish bo‘yicha muhim ilmiy maydon bo‘lib xizmat qiladi.',
                 'slug' => 'biologiya-fakultetida-tabiiy-resurslardan-oqilona-foydalanish-mavzusida-ilmiy-amaliy-konferensiya-otkazildi',
-                'images' => ['posts/post6.jpg, posts/post6.1.jpg, posts/post6.2.jpg'],
+                'images' => [
+                    'posts/post6.jpg',
+                    'posts/post6.1.jpg',
+                    'posts/post6.2.jpg',
+                ],
                 'published_at' => now(),
                 'views_count' => 7,
             ]

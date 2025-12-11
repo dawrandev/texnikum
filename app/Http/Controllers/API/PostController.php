@@ -19,7 +19,10 @@ class PostController extends Controller
     /**
      * Get latest posts
      * 
-     * Retrieve the most recent blog posts (limited to latest 6).
+     * Retrieve the most recent blog posts (latest 6).  
+     * Optionally filter by category.
+     * 
+     * @queryParam category_id integer optional Filter posts by category. Example: 3
      * 
      * @responseField success boolean Operation success status
      * @responseField message string Response message
@@ -32,9 +35,8 @@ class PostController extends Controller
      * @responseField data[].images array Array of post image paths
      * @responseField data[].published_at string Post publication timestamp (ISO 8601 format)
      * @responseField data[].views_count integer Number of post views
-     * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
-     * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
-     * 
+     * @responseField data[].created_at string Post creation timestamp
+     * @responseField data[].updated_at string Post last update timestamp
      */
     public function latestPosts(Request $request)
     {
@@ -45,6 +47,7 @@ class PostController extends Controller
             $this->postService->getLatestPosts($categoryId)
         );
     }
+
     /**
      * Get all posts
      * 
