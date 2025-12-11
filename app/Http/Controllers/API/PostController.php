@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\PostResource;
 use App\Services\API\PostService;
+use Illuminate\Http\Request;
 
 /**
  * @group Posts
@@ -35,14 +36,15 @@ class PostController extends Controller
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
      * 
      */
-    public function latestPosts()
+    public function latestPosts(Request $request)
     {
+        $categoryId = $request->query('category_id');
+
         return $this->jsonResponse(
             'Latest posts retrieved successfully',
-            $this->postService->getLatestPosts()
+            $this->postService->getLatestPosts($categoryId)
         );
     }
-
     /**
      * Get all posts
      * 

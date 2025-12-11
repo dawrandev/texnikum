@@ -8,12 +8,34 @@ use App\Repositories\API\PostRepository;
 class PostService
 {
     protected string $eventSlug = 'events';
+    protected string $newsSlug = 'news';
 
     public function __construct(protected PostRepository $postRepository) {}
 
     public function getEventCategoryId(): ?int
     {
         return $this->postRepository->getCategoryIdBySlug($this->eventSlug);
+    }
+
+    public function getNewsCategoryId(): ?int
+    {
+        return $this->postRepository->getCategoryIdBySlug($this->newsSlug);
+    }
+
+    public function getLatestPosts($categoryId = null)
+    {
+        if ($categoryId === null) {
+            $categoryId = $this->getNewsCategoryId();
+
+            if (!$categoryId) {
+                return collect();
+            }
+        }
+
+        return $this->postRepository->getPosts(
+            ['category_id' => $categoryId],
+            6
+        );
     }
 
     public function getLatestEventPosts()
@@ -44,10 +66,6 @@ class PostService
         return $this->postRepository->getPosts(['category_id' => $id]);
     }
 
-    public function getLatestPosts()
-    {
-        return $this->postRepository->getPosts([], 6);
-    }
 
     public function getAllPosts()
     {
