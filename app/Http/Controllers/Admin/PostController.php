@@ -9,6 +9,7 @@ use App\Services\Admin\PostService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -42,7 +43,14 @@ class PostController extends Controller
     public function store(PostStoreRequest $request): RedirectResponse
     {
         try {
-            $this->postService->create($request->validated(), $request->file('image'));
+            // Get validated data
+            $data = $request->validated();
+
+            // Get image paths from request (uploaded via Dropzone)
+            $imagePaths = $request->input('images', []);
+
+            // Create post
+            $this->postService->create($data, $imagePaths);
 
             alert_success('Пост успешно создан!');
 
@@ -53,6 +61,32 @@ class PostController extends Controller
             alert_error('Ошибка при создании поста: ' . $e->getMessage());
 
             return redirect()->back()->withInput();
+        }
+    }
+
+    /**
+     * Upload image via Dropzone (AJAX)
+     */
+    public function uploadImage(Request $request)
+    {
+        try {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048'
+            ]);
+
+            $image = $request->file('image');
+            $path = $this->postService->uploadImage($image);
+
+            return response()->json([
+                'success' => true,
+                'path' => $path,
+                'url' => Storage::url($path)
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 422);
         }
     }
 
@@ -82,7 +116,10 @@ class PostController extends Controller
     public function update(PostStoreRequest $request, int $id): RedirectResponse
     {
         try {
-            $this->postService->update($id, $request->validated(), $request->file('image'));
+            $data = $request->validated();
+            $imagePaths = $request->input('images', []);
+
+            $this->postService->update($id, $data, $imagePaths);
 
             alert_success('Пост успешно обновлен!');
 

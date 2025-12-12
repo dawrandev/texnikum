@@ -33,6 +33,9 @@ Route::middleware(['web'])->group(function () {
             Route::get('/', [App\Http\Controllers\Admin\PostController::class, 'index'])->name('index');
             Route::get('/create', [App\Http\Controllers\Admin\PostController::class, 'create'])->name('create');
             Route::post('/store', [App\Http\Controllers\Admin\PostController::class, 'store'])->name('store');
+
+            Route::post('/upload-image', [App\Http\Controllers\Admin\PostController::class, 'uploadImage'])->name('upload-image');
+
             Route::get('/{id}/edit', [App\Http\Controllers\Admin\PostController::class, 'edit'])->name('edit');
             Route::put('/{id}', [App\Http\Controllers\Admin\PostController::class, 'update'])->name('update');
             Route::delete('/{id}', [App\Http\Controllers\Admin\PostController::class, 'destroy'])->name('destroy');
