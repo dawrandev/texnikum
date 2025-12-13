@@ -2,10 +2,10 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         swal({
-            title: '{{ session("alert.type") === "success" ? "Muvaffaqiyatli!" : (session("alert.type") === "error" ? "Xatolik!" : (session("alert.type") === "warning" ? "Ogohlantirish!" : "Ma\'lumot")) }}',
+            title: '{{ session("alert.type") === "success" ? "Успешно!" : (session("alert.type") === "error" ? "Ошибка!" : (session("alert.type") === "warning" ? "Предупреждение!" : "Информация")) }}',
             text: '{{ session("alert.message") }}',
             icon: '{{ session("alert.type") }}',
-            button: 'OK',
+            button: 'ОК',
         });
     });
 </script>

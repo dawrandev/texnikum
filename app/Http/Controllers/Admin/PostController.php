@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostStoreRequest;
+use App\Models\Post;
 use App\Services\Admin\CategoryService;
 use App\Services\Admin\PostService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,18 +20,26 @@ class PostController extends Controller
         protected CategoryService $categoryService
     ) {}
 
-    /**
-     * Display a listing of posts
-     */
-    public function index(): View
+    public function index(Request $request): View
     {
-        $posts = $this->postService->getAllPosts();
+        $query = Post::with(['category.translations', 'translations'])
+            ->orderBy('published_at', 'desc');
+
+        if ($request->filled('lang')) {
+            $query->whereHas('translations', function ($q) use ($request) {
+                $q->where('lang_code', $request->lang);
+            });
+        }
+
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        $posts = $query->get();
+
         return view('pages.posts.index', compact('posts'));
     }
 
-    /**
-     * Show the form for creating a new post
-     */
     public function create(): View
     {
         $categories = $this->categoryService->getForSelect();
@@ -37,26 +47,20 @@ class PostController extends Controller
         return view('pages.posts.create', compact('categories', 'languages'));
     }
 
-    /**
-     * Store a newly created post
-     */
     public function store(PostStoreRequest $request): RedirectResponse
     {
         try {
-            // Get validated data
             $data = $request->validated();
 
-            // Get image paths from request (uploaded via Dropzone)
             $imagePaths = $request->input('images', []);
 
-            // Create post
             $this->postService->create($data, $imagePaths);
 
             alert_success('Пост успешно создан!');
 
             return redirect()->route('posts.index');
         } catch (\Exception $e) {
-            \Log::error('Post creation error: ' . $e->getMessage());
+            Log::error('Post creation error: ' . $e->getMessage());
 
             alert_error('Ошибка при создании поста: ' . $e->getMessage());
 
@@ -64,9 +68,6 @@ class PostController extends Controller
         }
     }
 
-    /**
-     * Upload image via Dropzone (AJAX)
-     */
     public function uploadImage(Request $request)
     {
         try {
@@ -90,18 +91,12 @@ class PostController extends Controller
         }
     }
 
-    /**
-     * Display the specified post
-     */
     public function show(int $id): View
     {
         $post = $this->postService->getPostById($id);
         return view('pages.posts.show', compact('post'));
     }
 
-    /**
-     * Show the form for editing the specified post
-     */
     public function edit(int $id): View
     {
         $post = $this->postService->getPostById($id);
@@ -110,12 +105,11 @@ class PostController extends Controller
         return view('pages.posts.edit', compact('post', 'categories', 'languages'));
     }
 
-    /**
-     * Update the specified post
-     */
     public function update(PostStoreRequest $request, int $id): RedirectResponse
     {
         try {
+            $request->merge(['post_id' => $id]);
+
             $data = $request->validated();
             $imagePaths = $request->input('images', []);
 
@@ -125,7 +119,7 @@ class PostController extends Controller
 
             return redirect()->route('posts.index');
         } catch (\Exception $e) {
-            \Log::error('Post update error: ' . $e->getMessage());
+            Log::error('Post update error: ' . $e->getMessage());
 
             alert_error('Ошибка при обновлении поста: ' . $e->getMessage());
 
@@ -133,9 +127,6 @@ class PostController extends Controller
         }
     }
 
-    /**
-     * Remove the specified post
-     */
     public function destroy(int $id): RedirectResponse
     {
         try {
@@ -145,7 +136,7 @@ class PostController extends Controller
 
             return redirect()->route('posts.index');
         } catch (\Exception $e) {
-            \Log::error('Post deletion error: ' . $e->getMessage());
+            Log::error('Post deletion error: ' . $e->getMessage());
 
             alert_error('Ошибка при удалении поста: ' . $e->getMessage());
 

@@ -68,30 +68,33 @@ class PostService
     /**
      * Create a new post with translations
      */
-    public function create(array $data, ?UploadedFile $image = null): Post
+    public function create(array $data, array $imagePaths = []): Post
     {
-        return DB::transaction(function () use ($data, $image) {
-            // Handle image upload
-            if ($image) {
-                $data['image'] = $this->uploadImage($image);
-            }
-
+        return DB::transaction(function () use ($data, $imagePaths) {
             // Create post
             $post = Post::create([
                 'category_id' => $data['category_id'],
                 'slug' => $data['slug'],
-                'image' => $data['image'] ?? null,
+                'images' => json_encode($imagePaths),
                 'published_at' => $data['published_at'] ?? now(),
                 'views_count' => 0,
             ]);
 
-            // Create translations
+            // Create translations (only for non-empty translations)
             if (isset($data['translations']) && is_array($data['translations'])) {
                 foreach ($data['translations'] as $translation) {
+                    $title = $translation['title'] ?? '';
+                    $content = $translation['content'] ?? '';
+
+                    // Skip empty translations
+                    if (empty(trim($title)) || empty(strip_tags(trim($content)))) {
+                        continue;
+                    }
+
                     $post->translations()->create([
                         'lang_code' => $translation['lang_code'],
-                        'title' => $translation['title'],
-                        'content' => $translation['content'],
+                        'title' => $title,
+                        'content' => $content,
                     ]);
                 }
             }
@@ -101,9 +104,9 @@ class PostService
     }
 
     /**
-     * Upload image and return path
+     * Upload image and return path (for AJAX upload)
      */
-    protected function uploadImage(UploadedFile $image): string
+    public function uploadImage(UploadedFile $image): string
     {
         $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
         $path = $image->storeAs('posts', $filename, 'public');
@@ -124,25 +127,29 @@ class PostService
     /**
      * Update existing post
      */
-    public function update(int $id, array $data, ?UploadedFile $image = null): Post
+    public function update(int $id, array $data, array $imagePaths = []): Post
     {
-        return DB::transaction(function () use ($id, $data, $image) {
+        return DB::transaction(function () use ($id, $data, $imagePaths) {
             $post = Post::findOrFail($id);
 
-            // Handle image upload
-            if ($image) {
-                // Delete old image if exists
-                if ($post->image) {
-                    $this->deleteImage($post->image);
+            // Handle images
+            $currentImages = json_decode($post->images, true) ?? [];
+
+            // If new images provided, delete old ones and use new ones
+            if (!empty($imagePaths)) {
+                foreach ($currentImages as $oldImage) {
+                    $this->deleteImage($oldImage);
                 }
-                $data['image'] = $this->uploadImage($image);
+                $finalImages = $imagePaths;
+            } else {
+                $finalImages = $currentImages;
             }
 
             // Update post
             $post->update([
                 'category_id' => $data['category_id'],
                 'slug' => $data['slug'],
-                'image' => $data['image'] ?? $post->image,
+                'images' => json_encode($finalImages),
                 'published_at' => $data['published_at'] ?? $post->published_at,
             ]);
 
@@ -151,12 +158,20 @@ class PostService
                 // Delete existing translations
                 $post->translations()->delete();
 
-                // Create new translations
+                // Create new translations (only non-empty ones)
                 foreach ($data['translations'] as $translation) {
+                    $title = $translation['title'] ?? '';
+                    $content = $translation['content'] ?? '';
+
+                    // Skip empty translations
+                    if (empty(trim($title)) || empty(strip_tags(trim($content)))) {
+                        continue;
+                    }
+
                     $post->translations()->create([
                         'lang_code' => $translation['lang_code'],
-                        'title' => $translation['title'],
-                        'content' => $translation['content'],
+                        'title' => $title,
+                        'content' => $content,
                     ]);
                 }
             }
@@ -173,8 +188,10 @@ class PostService
         return DB::transaction(function () use ($id) {
             $post = Post::findOrFail($id);
 
-            if ($post->image) {
-                $this->deleteImage($post->image);
+            // Delete all images
+            $images = json_decode($post->images, true) ?? [];
+            foreach ($images as $image) {
+                $this->deleteImage($image);
             }
 
             $post->translations()->delete();

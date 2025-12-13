@@ -13,17 +13,21 @@ class PostStoreRequest extends FormRequest
 
     public function rules(): array
     {
-        $postId = $this->route('post');
+        // Get post ID from route parameter {id}
+        $postId = $this->route('id');
 
         return [
             'category_id' => 'required|exists:categories,id',
-            'slug' => 'required|string|max:255|unique:posts,slug,' . $postId,
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'slug' => [
+                'required',
+                'string',
+                'max:255',
+                $postId ? 'unique:posts,slug,' . $postId : 'unique:posts,slug'
+            ],
+            'images' => 'nullable|array',
+            'images.*' => 'string',
             'published_at' => 'nullable|date',
             'translations' => 'required|array|min:1',
-            'translations.*.title' => 'required|string|max:255',
-            'translations.*.content' => 'required|string',
-            'translations.*.lang_code' => 'required|string|in:en,uz,ru,kk',
         ];
     }
 
@@ -34,14 +38,56 @@ class PostStoreRequest extends FormRequest
             'category_id.exists' => 'Выбранная категория не существует',
             'slug.required' => 'Slug обязателен для заполнения',
             'slug.unique' => 'Этот slug уже используется',
-            'image.image' => 'Файл должен быть изображением',
-            'image.mimes' => 'Поддерживаемые форматы: jpeg, png, jpg, webp',
-            'image.max' => 'Максимальный размер изображения: 2MB',
+            'images.array' => 'Изображения должны быть массивом',
             'published_at.date' => 'Неверный формат даты',
             'translations.required' => 'Необходимо добавить хотя бы один перевод',
-            'translations.*.title.required' => 'Заголовок обязателен для заполнения',
-            'translations.*.content.required' => 'Содержание обязательно для заполнения',
-            'translations.*.lang_code.exists' => 'Неверный код языка',
+            'translations.min' => 'Необходимо добавить хотя бы один перевод',
         ];
+    }
+
+    /**
+     * Prepare data for validation - remove empty translations
+     */
+    protected function prepareForValidation()
+    {
+        if ($this->has('translations')) {
+            $translations = [];
+
+            foreach ($this->translations as $langCode => $translation) {
+                $title = $translation['title'] ?? null;
+                $content = $translation['content'] ?? '';
+
+                // Clean HTML tags and check if content is really empty
+                $cleanContent = trim(strip_tags($content));
+
+                // Only keep translations that have both title AND content
+                if (!empty($title) && !empty($cleanContent)) {
+                    $translations[$langCode] = [
+                        'title' => $title,
+                        'content' => $content,
+                        'lang_code' => $langCode
+                    ];
+                }
+            }
+
+            $this->merge(['translations' => $translations]);
+        }
+    }
+
+    /**
+     * Custom validation - check at least one valid translation exists
+     */
+    public function withValidator($validator)
+    {
+        $validator->after(function ($validator) {
+            $translations = $this->input('translations', []);
+
+            if (empty($translations)) {
+                $validator->errors()->add(
+                    'translations',
+                    'Необходимо заполнить хотя бы один перевод полностью (заголовок и содержание)'
+                );
+            }
+        });
     }
 }

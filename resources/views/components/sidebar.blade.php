@@ -34,7 +34,7 @@
                     <span>{{ __('Посты') }}</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ route('categories.index') }}">{{ __('Все посты') }}</a></li>
+                    <li><a class="nav-link" href="{{ route('posts.index') }}">{{ __('Все посты') }}</a></li>
                     <li><a class="nav-link" href="{{ route('posts.create') }}">{{ __('Создать пост') }}</a></li>
                 </ul>
             </li>
