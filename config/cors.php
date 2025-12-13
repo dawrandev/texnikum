@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://admin.karsu.dbc.uz'],
+    'allowed_origins' => ['https://admin.karsu.dbc.uz'],
 
     'allowed_origins_patterns' => [],
 
