@@ -49,6 +49,28 @@
                     <li><a class="nav-link" href="{{ route('videos.create') }}">{{ __('Создать видео') }}</a></li>
                 </ul>
             </li>
+
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown">
+                    <i data-feather="layers"></i>
+                    <span>{{ __('Интерактивные Услуги') }}</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('interactive-services.index') }}">{{ __('Все услуги') }}</a></li>
+                    <li><a class="nav-link" href="{{ route('interactive-services.create') }}">{{ __('Добавить услуги') }}</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown">
+                    <i data-feather="bar-chart-2"></i>
+                    <span>{{ __('Статистика') }}</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('stats.index') }}">{{ __('Все статистика') }}</a></li>
+                    <li><a class="nav-link" href="{{ route('stats.create') }}">{{ __('Добавить статистику') }}</a></li>
+                </ul>
+            </li>
         </ul>
 
     </aside>

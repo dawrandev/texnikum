@@ -50,5 +50,23 @@ Route::middleware(['web'])->group(function () {
             Route::put('/{id}', [App\Http\Controllers\Admin\VideoController::class, 'update'])->name('update');
             Route::delete('/{id}', [App\Http\Controllers\Admin\VideoController::class, 'destroy'])->name('destroy');
         });
+
+        Route::prefix('interactive-services')->as('interactive-services.')->group(function () {
+            Route::get('/', [App\Http\Controllers\Admin\InteractiveServiceController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\InteractiveServiceController::class, 'create'])->name('create');
+            Route::post('/store', [App\Http\Controllers\Admin\InteractiveServiceController::class, 'store'])->name('store');
+            Route::get('/{id}/edit-modal', [App\Http\Controllers\Admin\InteractiveServiceController::class, 'editModal'])->name('edit-modal');
+            Route::put('/{id}', [App\Http\Controllers\Admin\InteractiveServiceController::class, 'update'])->name('update');
+            Route::delete('/{id}', [App\Http\Controllers\Admin\InteractiveServiceController::class, 'destroy'])->name('destroy');
+        });
+
+        Route::prefix('stats')->as('stats.')->group(function () {
+            Route::get('/', [App\Http\Controllers\Admin\StatsController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\StatsController::class, 'create'])->name('create');
+            Route::post('/store', [App\Http\Controllers\Admin\StatsController::class, 'store'])->name('store');
+            Route::get('/{id}/edit-modal', [App\Http\Controllers\Admin\StatsController::class, 'editModal'])->name('edit-modal');
+            Route::put('/{id}', [App\Http\Controllers\Admin\StatsController::class, 'update'])->name('update');
+            Route::delete('/{id}', [App\Http\Controllers\Admin\StatsController::class, 'destroy'])->name('destroy');
+        });
     });
 });
