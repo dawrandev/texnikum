@@ -5,6 +5,13 @@
 @push('styles')
 <link rel="stylesheet" href="{{ URL::asset('assets/bundles/datatables/datatables.min.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
+<style>
+    #categoryFilter {
+        border-radius: 0.25rem !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+</style>
 @endpush
 
 @section('content')
@@ -31,6 +38,7 @@
                         <div class="card-header-form">
                             <form method="GET" id="filterForm">
                                 <div class="input-group">
+
                                     <select name="lang" id="langFilter" class="form-control" style="width: 150px;">
                                         <option value="">Все языки</option>
                                         @foreach(\App\Models\Language::all() as $language)
@@ -39,6 +47,7 @@
                                         </option>
                                         @endforeach
                                     </select>
+
                                     <select name="category" id="categoryFilter" class="form-control ml-2" style="width: 180px;">
                                         <option value="">Все категории</option>
                                         @foreach(\App\Models\Category::all() as $category)
@@ -47,6 +56,7 @@
                                         </option>
                                         @endforeach
                                     </select>
+
                                     <div class="input-group-btn ml-2">
                                         <button class="btn btn-primary" type="submit">
                                             <i class="fas fa-filter"></i> Фильтр
@@ -57,6 +67,7 @@
                                         </a>
                                         @endif
                                     </div>
+
                                 </div>
                             </form>
                         </div>
@@ -108,7 +119,6 @@
                                         <td>
                                             @if($firstImage)
                                             <img src="{{ Storage::url($firstImage) }}"
-                                                alt="{{ $translation->title ?? 'Post image' }}"
                                                 class="rounded"
                                                 style="width: 80px; height: 60px; object-fit: cover;">
                                             @else
@@ -161,7 +171,7 @@
                                                     class="btn btn-sm btn-danger"
                                                     data-toggle="tooltip"
                                                     title="Удалить"
-                                                    onclick="confirmDelete({{ $post->id }})">
+                                                    onclick="deleteItem({{ $post->id }}, 'posts')">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
                                             </div>

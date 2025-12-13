@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    /**
+     * Show login form
+     *
+     * Returns the login page.
+     *
+     * @group Authentication
+     *
+     * @response 200 {
+     *   "html": "Login page HTML"
+     * }
+     */
     public function showLoginForm()
     {
         return view('pages.auth.login');

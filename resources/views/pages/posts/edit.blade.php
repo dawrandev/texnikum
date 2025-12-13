@@ -18,12 +18,12 @@
         color: #999;
     }
 
-    .existing-images img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
+    .dropzone .dz-preview {
+        margin: 10px;
+    }
+
+    .dropzone .dz-image {
         border-radius: 5px;
-        margin: 5px;
     }
 </style>
 @endpush
@@ -87,25 +87,9 @@
                             $existingImages = is_array($post->images) ? $post->images : (json_decode($post->images, true) ?? []);
                             @endphp
 
-                            @if(!empty($existingImages))
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">
-                                    Текущие изображения
-                                </label>
-                                <div class="col-sm-12 col-md-7">
-                                    <div class="existing-images">
-                                        @foreach($existingImages as $image)
-                                        <img src="{{ Storage::url($image) }}" alt="Existing image">
-                                        @endforeach
-                                    </div>
-                                    <small class="form-text text-muted">Эти изображения будут заменены, если вы загрузите новые</small>
-                                </div>
-                            </div>
-                            @endif
-
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">
-                                    Новые изображения
+                                    Изображения
                                 </label>
                                 <div class="col-sm-12 col-md-7">
                                     <div id="imageDropzone" class="dropzone"></div>
@@ -115,8 +99,9 @@
                                     @error('images.*')
                                     <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
-                                    <small class="form-text text-muted">Оставьте пустым, чтобы сохранить текущие изображения</small>
+                                    <small class="form-text text-muted">Перетащите новые изображения или удалите существующие</small>
                                     <div id="uploadedImages"></div>
+                                    <div id="deletedImages"></div>
                                 </div>
                             </div>
 
@@ -253,6 +238,9 @@
 
         // Initialize Dropzone
         let uploadedImages = [];
+        let deletedImages = [];
+        const existingImages = @json($existingImages);
+
         const myDropzone = new Dropzone("#imageDropzone", {
             url: "{{ route('posts.upload-image') }}",
             paramName: "image",
@@ -266,17 +254,43 @@
             dictRemoveFile: "Удалить",
             dictCancelUpload: "Отменить",
             init: function() {
+                const dropzone = this;
+
+                // Add existing images to dropzone
+                existingImages.forEach(function(imagePath) {
+                    const mockFile = {
+                        name: imagePath.split('/').pop(),
+                        size: 12345,
+                        serverPath: imagePath,
+                        existing: true
+                    };
+
+                    dropzone.emit("addedfile", mockFile);
+                    dropzone.emit("thumbnail", mockFile, "{{ Storage::url('') }}" + imagePath);
+                    dropzone.emit("complete", mockFile);
+                    dropzone.files.push(mockFile);
+                });
+
+                // Handle new file uploads
                 this.on("success", function(file, response) {
                     if (response.success) {
                         uploadedImages.push(response.path);
                         file.serverPath = response.path;
+                        file.existing = false;
                         updateHiddenInputs();
                     }
                 });
 
+                // Handle file removal
                 this.on("removedfile", function(file) {
                     if (file.serverPath) {
-                        uploadedImages = uploadedImages.filter(path => path !== file.serverPath);
+                        if (file.existing) {
+                            // Existing image - add to deleted list
+                            deletedImages.push(file.serverPath);
+                        } else {
+                            // New upload - remove from uploaded list
+                            uploadedImages = uploadedImages.filter(path => path !== file.serverPath);
+                        }
                         updateHiddenInputs();
                     }
                 });
@@ -288,13 +302,33 @@
         });
 
         function updateHiddenInputs() {
+            // Update new images
             $('#uploadedImages').empty();
-            uploadedImages.forEach((path, index) => {
+            uploadedImages.forEach((path) => {
                 $('#uploadedImages').append(
-                    `<input type="hidden" name="images[]" value="${path}">`
+                    `<input type="hidden" name="new_images[]" value="${path}">`
+                );
+            });
+
+            // Update deleted images
+            $('#deletedImages').empty();
+            deletedImages.forEach((path) => {
+                $('#deletedImages').append(
+                    `<input type="hidden" name="deleted_images[]" value="${path}">`
+                );
+            });
+
+            // Keep existing images that weren't deleted
+            const keptImages = existingImages.filter(img => !deletedImages.includes(img));
+            keptImages.forEach((path) => {
+                $('#uploadedImages').append(
+                    `<input type="hidden" name="kept_images[]" value="${path}">`
                 );
             });
         }
+
+        // Initial hidden inputs for existing images
+        updateHiddenInputs();
 
         // Track translation completion
         $('.translation-field').on('input change', function() {

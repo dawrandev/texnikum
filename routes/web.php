@@ -33,15 +33,22 @@ Route::middleware(['web'])->group(function () {
             Route::get('/', [App\Http\Controllers\Admin\PostController::class, 'index'])->name('index');
             Route::get('/create', [App\Http\Controllers\Admin\PostController::class, 'create'])->name('create');
             Route::post('/store', [App\Http\Controllers\Admin\PostController::class, 'store'])->name('store');
-
             Route::post('/upload-image', [App\Http\Controllers\Admin\PostController::class, 'uploadImage'])->name('upload-image');
-
             Route::get('/{id}/edit', [App\Http\Controllers\Admin\PostController::class, 'edit'])->name('edit');
             Route::put('/{id}', [App\Http\Controllers\Admin\PostController::class, 'update'])->name('update');
             Route::delete('/{id}', [App\Http\Controllers\Admin\PostController::class, 'destroy'])->name('destroy');
             Route::get('/{id}', [App\Http\Controllers\Admin\PostController::class, 'show'])->name('show');
             Route::get('/{id}/show-modal', [App\Http\Controllers\Admin\PostController::class, 'showModal'])->name('show-modal');
             Route::get('/{id}/edit-modal', [App\Http\Controllers\Admin\PostController::class, 'editModal'])->name('edit-modal');
+        });
+
+        Route::prefix('videos')->as('videos.')->group(function () {
+            Route::get('/', [App\Http\Controllers\Admin\VideoController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\VideoController::class, 'create'])->name('create');
+            Route::post('/store', [App\Http\Controllers\Admin\VideoController::class, 'store'])->name('store');
+            Route::get('/{id}/edit-modal', [App\Http\Controllers\Admin\VideoController::class, 'editModal'])->name('edit-modal');
+            Route::put('/{id}', [App\Http\Controllers\Admin\VideoController::class, 'update'])->name('update');
+            Route::delete('/{id}', [App\Http\Controllers\Admin\VideoController::class, 'destroy'])->name('destroy');
         });
     });
 });

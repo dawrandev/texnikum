@@ -111,9 +111,13 @@ class PostController extends Controller
             $request->merge(['post_id' => $id]);
 
             $data = $request->validated();
-            $imagePaths = $request->input('images', []);
 
-            $this->postService->update($id, $data, $imagePaths);
+            // Get image data from request
+            $newImages = $request->input('new_images', []);
+            $keptImages = $request->input('kept_images', []);
+            $deletedImages = $request->input('deleted_images', []);
+
+            $this->postService->update($id, $data, $newImages, $keptImages, $deletedImages);
 
             alert_success('Пост успешно обновлен!');
 

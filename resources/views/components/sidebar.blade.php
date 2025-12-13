@@ -38,6 +38,17 @@
                     <li><a class="nav-link" href="{{ route('posts.create') }}">{{ __('Создать пост') }}</a></li>
                 </ul>
             </li>
+
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown">
+                    <i data-feather="video"></i>
+                    <span>{{ __('Видео') }}</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('videos.index') }}">{{ __('Все видео') }}</a></li>
+                    <li><a class="nav-link" href="{{ route('videos.create') }}">{{ __('Создать видео') }}</a></li>
+                </ul>
+            </li>
         </ul>
 
     </aside>
