@@ -65,7 +65,7 @@ class InteractiveServiceController extends Controller
     {
         $service = InteractiveService::findOrFail($id);
 
-        return view('pages.interactive-services.edit-modal', compact('service'));
+        return view('pages.interactive-services.edit', compact('service'));
     }
 
     /**

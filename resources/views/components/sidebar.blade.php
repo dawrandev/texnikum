@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">
+            <a href="#">
                 <img alt="image" src="{{ asset('assets/img/logo.png') }}" class="header-logo" />
                 <span class="logo-name">{{ __('Техникум') }}</span>
             </a>
@@ -11,7 +11,7 @@
             <li class="menu-header">{{ __('Главное меню') }}</li>
 
             <li class="dropdown active">
-                <a href="index.html" class="nav-link">
+                <a href="#}" class="nav-link">
                     <i data-feather="monitor"></i>
                     <span>{{ __('Панель управления') }}</span>
                 </a>

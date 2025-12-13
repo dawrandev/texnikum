@@ -96,7 +96,7 @@ class StatsController extends Controller
         $stat = Stats::with(['translations'])->findOrFail($id);
         $languages = \App\Models\Language::all();
 
-        return view('pages.stats.edit-modal', compact('stat', 'languages'));
+        return view('pages.stats.edit', compact('stat', 'languages'));
     }
 
     /**

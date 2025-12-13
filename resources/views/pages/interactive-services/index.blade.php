@@ -62,7 +62,7 @@
                                         </td>
                                         <td>
                                             @if($service->url && $service->url !== '#')
-                                            <a href="{{ $service->url }}" target="_blank" class="text-primary">
+                                            <a href="{{ $service->url }}" target="_blank" class="text-dark">
                                                 <i class="fas fa-external-link-alt"></i>
                                                 {{ Str::limit($service->url, 30) }}
                                             </a>

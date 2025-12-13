@@ -38,4 +38,14 @@ class AuthController extends Controller
             'login' => __('auth.failed'),
         ])->withInput($request->only('login'));
     }
+
+    public function logout(Request $request)
+    {
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('showLoginForm');
+    }
 }

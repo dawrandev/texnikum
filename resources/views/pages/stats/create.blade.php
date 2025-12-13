@@ -72,25 +72,25 @@
                                     role="tabpanel">
 
                                     <div class="form-group">
-                                        <label for="title_{{ $language->id }}">
+                                        <label for="title_{{ $language->code }}">
                                             Название <span class="text-danger">*</span>
                                         </label>
 
                                         <input type="text"
-                                            name="translations[{{ $language->id }}][title]"
-                                            id="title_{{ $language->id }}"
-                                            class="form-control @error('translations.'.$language->id.'.title') is-invalid @enderror"
-                                            value="{{ old('translations.'.$language->id.'.title') }}"
+                                            name="translations[{{ $language->code }}][title]"
+                                            id="title_{{ $language->code }}"
+                                            class="form-control @error('translations.'.$language->code.'.title') is-invalid @enderror"
+                                            value="{{ old('translations.'.$language->code.'.title') }}"
                                             placeholder="Например: Активных пользователей"
                                             required>
 
-                                        @error('translations.'.$language->id.'.title')
+                                        @error('translations.'.$language->code.'.title')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
 
                                     <input type="hidden"
-                                        name="translations[{{ $language->id }}][lang_code]"
+                                        name="translations[{{ $language->code }}][lang_code]"
                                         value="{{ $language->code }}">
                                 </div>
                                 @endforeach
