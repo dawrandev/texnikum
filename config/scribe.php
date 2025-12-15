@@ -91,7 +91,8 @@ return [
         'enabled' => true,
 
         // The base URL to use in the API tester. Leave as null to be the same as the displayed URL (`scribe.base_url`).
-        'base_url' => 'https://admin.karsu.dbc.uz/api',
+        'base_url' => env('SCRIBE_BASE_URL'),
+
 
         // [Laravel Sanctum] Fetch a CSRF token before each request, and add it as an X-XSRF-TOKEN header.
         'use_csrf' => false,
