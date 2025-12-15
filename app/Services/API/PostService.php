@@ -34,7 +34,7 @@ class PostService
 
         return $this->postRepository->getPosts(
             ['category_id' => $categoryId],
-            6
+            8
         );
     }
 
@@ -46,7 +46,7 @@ class PostService
 
         return $this->postRepository->getPosts(
             ['category_id' => $categoryId],
-            8
+            6
         );
     }
 
