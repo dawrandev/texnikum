@@ -28,6 +28,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->group('api', [
             \App\Http\Middleware\SetApiLocale::class,
+            \App\Http\Middleware\CountPostMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

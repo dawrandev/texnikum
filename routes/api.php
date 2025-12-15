@@ -25,7 +25,7 @@ Route::prefix('v1')->middleware('set-api-locale')->group(function () {
     Route::get('/posts/event/all', [\App\Http\Controllers\API\PostController::class, 'allEventPosts']);
 
     // Single post by slug (must be last to avoid conflicts)
-    Route::get('/posts/{slug}', [\App\Http\Controllers\API\PostController::class, 'show']);
+    Route::get('/posts/{slug}', [\App\Http\Controllers\API\PostController::class, 'show'])->middleware('count.post');
 
     // Interactive Services
     Route::get('/interactive-services', [\App\Http\Controllers\API\InteractiveServiceController::class, 'getServices']);

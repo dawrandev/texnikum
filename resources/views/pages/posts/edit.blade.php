@@ -4,27 +4,27 @@
 
 @push('styles')
 <link rel="stylesheet" href="{{ URL::asset('assets/bundles/summernote/summernote-bs4.css') }}">
-<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-<style>
-    .dropzone {
-        border: 2px dashed #0087F7;
-        border-radius: 5px;
-        background: white;
-        min-height: 150px;
-    }
+<link rel="stylesheet" href="{{ URL::asset('assets/css/dropzone.css') }}"
+    <style>
+.dropzone {
+border: 2px dashed #0087F7;
+border-radius: 5px;
+background: white;
+min-height: 150px;
+}
 
-    .dropzone .dz-message {
-        font-size: 1.2em;
-        color: #999;
-    }
+.dropzone .dz-message {
+font-size: 1.2em;
+color: #999;
+}
 
-    .dropzone .dz-preview {
-        margin: 10px;
-    }
+.dropzone .dz-preview {
+margin: 10px;
+}
 
-    .dropzone .dz-image {
-        border-radius: 5px;
-    }
+.dropzone .dz-image {
+border-radius: 5px;
+}
 </style>
 @endpush
 
@@ -201,7 +201,7 @@
 
 @push('script')
 <script src="{{ URL::asset('assets/bundles/summernote/summernote-bs4.js') }}"></script>
-<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<script src="{{ URL::asset('assets/js/dropzone.js') }}"></script>
 <script>
     Dropzone.autoDiscover = false;
 

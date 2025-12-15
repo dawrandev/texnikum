@@ -8,7 +8,7 @@ Route::get('/admin', [App\Http\Controllers\AuthController::class, 'showLoginForm
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
     Route::prefix('categories')->as('categories.')->group(function () {
