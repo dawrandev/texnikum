@@ -1,23 +1,23 @@
-name: Videos
+name: 'Interactive Services'
 description: |-
 
-  Managing video content and media
+  Managing online services and interactive tools
 endpoints:
   -
     custom: []
     httpMethods:
       - GET
-    uri: api/v1/videos
+    uri: api/v1/interactive-services
     metadata:
       custom: []
-      groupName: Videos
+      groupName: 'Interactive Services'
       groupDescription: |-
 
-        Managing video content and media
+        Managing online services and interactive tools
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get all videos'
-      description: 'Retrieve a list of all published videos with translated titles.'
+      title: 'Get all interactive services'
+      description: 'Retrieve a list of all available interactive services with their urls.'
       authenticated: false
       deprecated: false
     headers:
@@ -34,11 +34,12 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Videos retrieved successfully","data":[{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":2,"title":"Berdakh Karakalpak State University: Modern Education, Competitive Future!","url":"https:\/\/www.youtube.com\/watch?v=wlRMcv_zQew","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}]}'
+        content: '{"success":true,"message":"Interactive services retrieved successfully","data":[{"id":1,"title":"\u041f\u043e\u0434\u0430\u0447\u0430 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0439 \u043d\u0430 \u0432\u044b\u0445\u043e\u0434 \u0438\u0437 \u0430\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u043e\u0442\u043f\u0443\u0441\u043a\u0430","url":"#","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":2,"title":"\u0412\u0430\u043a\u0430\u043d\u0441\u0438\u0438 \u0440\u0430\u0431\u043e\u0447\u0438\u0445 \u043c\u0435\u0441\u0442 \u0432 \u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0430","url":"#","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":3,"title":"\u041f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0435 \u0434\u0430\u043d\u043d\u044b\u0445 \u043e\u0431 \u0443\u0441\u043f\u0435\u0432\u0430\u0435\u043c\u043e\u0441\u0442\u0438 \u0441\u0442\u0443\u0434\u0435\u043d\u0442\u043e\u0432","url":"#","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":4,"title":"\u041f\u043e\u0434\u0430\u0447\u0430 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0439 \u043d\u0430 \u043f\u0440\u043e\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0432 \u0441\u0442\u0443\u0434\u0435\u043d\u0447\u0435\u0441\u043a\u043e\u043c \u043e\u0431\u0449\u0435\u0436\u0438\u0442\u0438\u0438","url":"#","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":5,"title":"\u041f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0435 \u0441\u043f\u0440\u0430\u0432\u043a\u0438 \u043e\u0431 \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u0438","url":"#","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":6,"title":"\u0421\u0438\u0441\u0442\u0435\u043c\u0430 \u043f\u043e\u0434\u0430\u0447\u0438 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0439 \u043f\u043e \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u043e\u0439 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435","url":"#","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          vary: Origin
+          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
+          access-control-allow-credentials: 'true'
         description: null
     responseFields:
       success:
@@ -66,7 +67,7 @@ endpoints:
       data:
         custom: []
         name: data
-        description: 'List of videos'
+        description: 'List of interactive services'
         required: false
         example: null
         type: 'string[]'
@@ -77,7 +78,7 @@ endpoints:
       'data[].id':
         custom: []
         name: 'data[].id'
-        description: 'Video ID'
+        description: 'Service ID'
         required: false
         example: null
         type: integer
@@ -85,21 +86,10 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].url':
-        custom: []
-        name: 'data[].url'
-        description: 'Video URL'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
       'data[].title':
         custom: []
         name: 'data[].title'
-        description: 'Video title (translated)'
+        description: 'Service title'
         required: false
         example: null
         type: string
@@ -107,10 +97,10 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].published_at':
+      'data[].url':
         custom: []
-        name: 'data[].published_at'
-        description: 'Video publication timestamp (ISO 8601)'
+        name: 'data[].url'
+        description: 'Service URL (link)'
         required: false
         example: null
         type: string
@@ -121,7 +111,7 @@ endpoints:
       'data[].created_at':
         custom: []
         name: 'data[].created_at'
-        description: 'Video creation timestamp (ISO 8601)'
+        description: 'Service creation timestamp (ISO 8601 format)'
         required: false
         example: null
         type: string
@@ -132,310 +122,7 @@ endpoints:
       'data[].updated_at':
         custom: []
         name: 'data[].updated_at'
-        description: 'Video update timestamp (ISO 8601)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: api/v1/videos/latest
-    metadata:
-      custom: []
-      groupName: Videos
-      groupDescription: |-
-
-        Managing video content and media
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get latest videos'
-      description: 'Retrieve the latest 5 published videos ordered by publish date.'
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: '{"success":true,"message":"Latest videos retrieved successfully","data":[{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":2,"title":"Berdakh Karakalpak State University: Modern Education, Competitive Future!","url":"https:\/\/www.youtube.com\/watch?v=wlRMcv_zQew","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}]}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-    responseFields:
-      success:
-        custom: []
-        name: success
-        description: 'Operation success status'
-        required: false
-        example: null
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      message:
-        custom: []
-        name: message
-        description: 'Response message'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data:
-        custom: []
-        name: data
-        description: 'List of latest videos'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].id':
-        custom: []
-        name: 'data[].id'
-        description: 'Video ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].url':
-        custom: []
-        name: 'data[].url'
-        description: 'Video URL'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].title':
-        custom: []
-        name: 'data[].title'
-        description: 'Video title (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].published_at':
-        custom: []
-        name: 'data[].published_at'
-        description: 'Video publication timestamp (ISO 8601)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].created_at':
-        custom: []
-        name: 'data[].created_at'
-        description: 'Video creation timestamp (ISO 8601)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].updated_at':
-        custom: []
-        name: 'data[].updated_at'
-        description: 'Video update timestamp (ISO 8601)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/v1/videos/{id}'
-    metadata:
-      custom: []
-      groupName: Videos
-      groupDescription: |-
-
-        Managing video content and media
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get single video'
-      description: 'Retrieve a single video by its ID with translated title.'
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'The ID of the video.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: '{"success":true,"message":"Video retrieved successfully","data":{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-      -
-        custom: []
-        status: 404
-        content: |-
-          {
-            "message": "No query results for model [Video]"
-          }
-        headers: []
-        description: ''
-    responseFields:
-      success:
-        custom: []
-        name: success
-        description: 'Operation success status'
-        required: false
-        example: null
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      message:
-        custom: []
-        name: message
-        description: 'Response message'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data:
-        custom: []
-        name: data
-        description: 'Video object'
-        required: false
-        example: null
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.id:
-        custom: []
-        name: data.id
-        description: 'Video ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.url:
-        custom: []
-        name: data.url
-        description: 'Video URL'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.title:
-        custom: []
-        name: data.title
-        description: 'Video title (translated from video_translations)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.published_at:
-        custom: []
-        name: data.published_at
-        description: 'Video publication timestamp (ISO 8601)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.created_at:
-        custom: []
-        name: data.created_at
-        description: 'Video creation timestamp (ISO 8601)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.updated_at:
-        custom: []
-        name: data.updated_at
-        description: 'Video update timestamp (ISO 8601)'
+        description: 'Service last update timestamp (ISO 8601 format)'
         required: false
         example: null
         type: string

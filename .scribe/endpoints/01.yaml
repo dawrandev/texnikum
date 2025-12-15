@@ -1,42 +1,26 @@
-name: Categories
-description: |-
-
-  Managing post categories
+name: Authentication
+description: ''
 endpoints:
   -
     custom: []
     httpMethods:
       - GET
-    uri: 'api/v1/categories/{id}'
+    uri: api/v1/showLoginForm
     metadata:
       custom: []
-      groupName: Categories
-      groupDescription: |-
-
-        Managing post categories
+      groupName: Authentication
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get category by ID'
-      description: ''
+      title: 'Show login form'
+      description: 'Returns the login page.'
       authenticated: false
       deprecated: false
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'Category ID'
-        required: true
-        example: 17
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      id: 17
+    urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -45,115 +29,14 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
+        status: 200
         content: |-
           {
-            "success": false,
-            "message": "Category not found"
+            "html": "Login page HTML"
           }
         headers: []
         description: ''
-      -
-        custom: []
-        status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-    responseFields:
-      success:
-        custom: []
-        name: success
-        description: 'Operation success status'
-        required: false
-        example: null
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      message:
-        custom: []
-        name: message
-        description: 'Response message'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data:
-        custom: []
-        name: data
-        description: 'Category details'
-        required: false
-        example: null
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.id:
-        custom: []
-        name: data.id
-        description: 'Category ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.slug:
-        custom: []
-        name: data.slug
-        description: 'Category slug (unique identifier)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.name:
-        custom: []
-        name: data.name
-        description: 'Category name (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.created_at:
-        custom: []
-        name: data.created_at
-        description: 'Category creation timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.updated_at:
-        custom: []
-        name: data.updated_at
-        description: 'Category last update timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
+    responseFields: []
     auth: []
     controller: null
     method: null

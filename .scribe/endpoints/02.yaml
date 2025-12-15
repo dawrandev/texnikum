@@ -1,222 +1,23 @@
-name: Posts
+name: Categories
 description: |-
 
-  Managing blog posts and news articles
+  Managing post categories
 endpoints:
   -
     custom: []
     httpMethods:
       - GET
-    uri: api/v1/posts/latest
+    uri: api/v1/categories
     metadata:
       custom: []
-      groupName: Posts
+      groupName: Categories
       groupDescription: |-
 
-        Managing blog posts and news articles
+        Managing post categories
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get latest posts'
-      description: |-
-        Retrieve the most recent blog posts (latest 6).
-        Optionally filter by category.
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters:
-      category_id:
-        custom: []
-        name: category_id
-        description: 'optional Filter posts by category.'
-        required: false
-        example: 3
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-    cleanQueryParameters:
-      category_id: 3
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: '{"success":true,"message":"Latest posts retrieved successfully","data":[]}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-    responseFields:
-      success:
-        custom: []
-        name: success
-        description: 'Operation success status'
-        required: false
-        example: null
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      message:
-        custom: []
-        name: message
-        description: 'Response message'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data:
-        custom: []
-        name: data
-        description: 'List of latest posts'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].id':
-        custom: []
-        name: 'data[].id'
-        description: 'Post ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].category_id':
-        custom: []
-        name: 'data[].category_id'
-        description: 'Category ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].slug':
-        custom: []
-        name: 'data[].slug'
-        description: 'Post slug (unique identifier)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].title':
-        custom: []
-        name: 'data[].title'
-        description: 'Post title (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].content':
-        custom: []
-        name: 'data[].content'
-        description: 'Post content (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].images':
-        custom: []
-        name: 'data[].images'
-        description: 'Array of post image paths'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].published_at':
-        custom: []
-        name: 'data[].published_at'
-        description: 'Post publication timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].views_count':
-        custom: []
-        name: 'data[].views_count'
-        description: 'Number of post views'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].created_at':
-        custom: []
-        name: 'data[].created_at'
-        description: 'Post creation timestamp'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].updated_at':
-        custom: []
-        name: 'data[].updated_at'
-        description: 'Post last update timestamp'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: api/v1/posts/all
-    metadata:
-      custom: []
-      groupName: Posts
-      groupDescription: |-
-
-        Managing blog posts and news articles
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get all posts'
-      description: 'Retrieve all blog posts with pagination.'
+      title: 'Get all categories'
+      description: ''
       authenticated: false
       deprecated: false
     headers:
@@ -233,11 +34,12 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"All posts retrieved successfully","data":[{"id":1,"category_id":1,"title":"New Technologies in 2024","content":"<h2>Artificial Intelligence and Machine Learning<\/h2>\n                                      <p>2024 has been a year of major changes in technology. <strong>Artificial intelligence<\/strong> and machine learning have covered all areas of activity.<\/p>\n                                      <h3>Main directions:<\/h3>\n                                      <ul>\n                                        <li>Development of generative AI models<\/li>\n                                        <li>New generation of large language models (LLM)<\/li>\n                                        <li>Computer vision and image recognition<\/li>\n                                      <\/ul>\n                                      <p>According to experts, <em>these technologies will develop even more in the coming years<\/em> and will radically change human life.<\/p>\n                                      <blockquote>\n                                        <p>\"AI is the future, and we are creating this future today\" - says a famous technology expert.<\/p>\n                                      <\/blockquote>","slug":"new-technologies-2024","images":["posts\/news1.jpg","posts\/news2.jpg"],"published_at":"2025-12-10T14:10:08.000000Z","views_count":464,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":1,"slug":"news"}},{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
+        content: '{"success":true,"message":"Categories retrieved successfully","data":[{"id":1,"slug":"news","name":"News","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":2,"slug":"eco-active-students","name":"Eco Active Students","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":3,"slug":"anti-corruption","name":"Anti-Corruption","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":4,"slug":"events","name":"Events","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          vary: Origin
+          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
+          access-control-allow-credentials: 'true'
         description: null
     responseFields:
       success:
@@ -265,7 +67,7 @@ endpoints:
       data:
         custom: []
         name: data
-        description: 'List of all posts'
+        description: 'List of categories'
         required: false
         example: null
         type: 'string[]'
@@ -276,17 +78,6 @@ endpoints:
       'data[].id':
         custom: []
         name: 'data[].id'
-        description: 'Post ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].category_id':
-        custom: []
-        name: 'data[].category_id'
         description: 'Category ID'
         required: false
         example: null
@@ -298,7 +89,7 @@ endpoints:
       'data[].slug':
         custom: []
         name: 'data[].slug'
-        description: 'Post slug (unique identifier)'
+        description: 'Category slug (unique identifier)'
         required: false
         example: null
         type: string
@@ -306,57 +97,13 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].title':
+      'data[].name':
         custom: []
-        name: 'data[].title'
-        description: 'Post title (translated)'
+        name: 'data[].name'
+        description: 'Category name (translated)'
         required: false
         example: null
         type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].content':
-        custom: []
-        name: 'data[].content'
-        description: 'Post content (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].images':
-        custom: []
-        name: 'data[].images'
-        description: 'Array of post image paths'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].published_at':
-        custom: []
-        name: 'data[].published_at'
-        description: 'Post publication timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].views_count':
-        custom: []
-        name: 'data[].views_count'
-        description: 'Number of post views'
-        required: false
-        example: null
-        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -364,7 +111,7 @@ endpoints:
       'data[].created_at':
         custom: []
         name: 'data[].created_at'
-        description: 'Post creation timestamp (ISO 8601 format)'
+        description: 'Category creation timestamp (ISO 8601 format)'
         required: false
         example: null
         type: string
@@ -375,7 +122,7 @@ endpoints:
       'data[].updated_at':
         custom: []
         name: 'data[].updated_at'
-        description: 'Post last update timestamp (ISO 8601 format)'
+        description: 'Category last update timestamp (ISO 8601 format)'
         required: false
         example: null
         type: string
@@ -391,17 +138,17 @@ endpoints:
     custom: []
     httpMethods:
       - GET
-    uri: 'api/v1/posts/category/{id}'
+    uri: 'api/v1/categories/{id}'
     metadata:
       custom: []
-      groupName: Posts
+      groupName: Categories
       groupDescription: |-
 
-        Managing blog posts and news articles
+        Managing post categories
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get posts by category'
-      description: 'Retrieve all posts belonging to a specific category.'
+      title: 'Get category by ID'
+      description: ''
       authenticated: false
       deprecated: false
     headers:
@@ -411,16 +158,16 @@ endpoints:
       id:
         custom: []
         name: id
-        description: 'Category ID.'
+        description: 'Category ID'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
-        exampleWasSpecified: true
+        exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -429,12 +176,26 @@ endpoints:
     responses:
       -
         custom: []
-        status: 200
-        content: '{"success":true,"message":"Category posts retrieved successfully","data":[{"id":1,"category_id":1,"title":"New Technologies in 2024","content":"<h2>Artificial Intelligence and Machine Learning<\/h2>\n                                      <p>2024 has been a year of major changes in technology. <strong>Artificial intelligence<\/strong> and machine learning have covered all areas of activity.<\/p>\n                                      <h3>Main directions:<\/h3>\n                                      <ul>\n                                        <li>Development of generative AI models<\/li>\n                                        <li>New generation of large language models (LLM)<\/li>\n                                        <li>Computer vision and image recognition<\/li>\n                                      <\/ul>\n                                      <p>According to experts, <em>these technologies will develop even more in the coming years<\/em> and will radically change human life.<\/p>\n                                      <blockquote>\n                                        <p>\"AI is the future, and we are creating this future today\" - says a famous technology expert.<\/p>\n                                      <\/blockquote>","slug":"new-technologies-2024","images":["posts\/news1.jpg","posts\/news2.jpg"],"published_at":"2025-12-10T14:10:08.000000Z","views_count":464,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":1,"slug":"news"}}]}'
+        status: 404
+        content: |-
+          {
+            "success": false,
+            "message": "Category not found"
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 500
+        content: |-
+          {
+              "message": "Server Error"
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          vary: Origin
+          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
+          access-control-allow-credentials: 'true'
         description: null
     responseFields:
       success:
@@ -462,565 +223,7 @@ endpoints:
       data:
         custom: []
         name: data
-        description: 'List of posts in the category'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].id':
-        custom: []
-        name: 'data[].id'
-        description: 'Post ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].category_id':
-        custom: []
-        name: 'data[].category_id'
-        description: 'Category ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].slug':
-        custom: []
-        name: 'data[].slug'
-        description: 'Post slug (unique identifier)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].title':
-        custom: []
-        name: 'data[].title'
-        description: 'Post title (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].content':
-        custom: []
-        name: 'data[].content'
-        description: 'Post content (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].images':
-        custom: []
-        name: 'data[].images'
-        description: 'Array of post image paths'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].published_at':
-        custom: []
-        name: 'data[].published_at'
-        description: 'Post publication timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].views_count':
-        custom: []
-        name: 'data[].views_count'
-        description: 'Number of post views'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].created_at':
-        custom: []
-        name: 'data[].created_at'
-        description: 'Post creation timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].updated_at':
-        custom: []
-        name: 'data[].updated_at'
-        description: 'Post last update timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: api/v1/posts/event/latest
-    metadata:
-      custom: []
-      groupName: Posts
-      groupDescription: |-
-
-        Managing blog posts and news articles
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get latest event posts'
-      description: 'Retrieve the most recent event announcements (limited to latest 6).'
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: '{"success":true,"message":"Latest event posts retrieved successfully","data":[{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-    responseFields:
-      success:
-        custom: []
-        name: success
-        description: 'Operation success status'
-        required: false
-        example: null
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      message:
-        custom: []
-        name: message
-        description: 'Response message'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data:
-        custom: []
-        name: data
-        description: 'List of latest event posts'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].id':
-        custom: []
-        name: 'data[].id'
-        description: 'Post ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].category_id':
-        custom: []
-        name: 'data[].category_id'
-        description: 'Category ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].slug':
-        custom: []
-        name: 'data[].slug'
-        description: 'Post slug (unique identifier)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].title':
-        custom: []
-        name: 'data[].title'
-        description: 'Post title (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].content':
-        custom: []
-        name: 'data[].content'
-        description: 'Post content (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].images':
-        custom: []
-        name: 'data[].images'
-        description: 'Array of post image paths'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].published_at':
-        custom: []
-        name: 'data[].published_at'
-        description: 'Post publication timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].views_count':
-        custom: []
-        name: 'data[].views_count'
-        description: 'Number of post views'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].created_at':
-        custom: []
-        name: 'data[].created_at'
-        description: 'Post creation timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].updated_at':
-        custom: []
-        name: 'data[].updated_at'
-        description: 'Post last update timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: api/v1/posts/event/all
-    metadata:
-      custom: []
-      groupName: Posts
-      groupDescription: |-
-
-        Managing blog posts and news articles
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get all event posts'
-      description: 'Retrieve all event announcements with pagination.'
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: '{"success":true,"message":"All event posts retrieved successfully","data":[{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-    responseFields:
-      success:
-        custom: []
-        name: success
-        description: 'Operation success status'
-        required: false
-        example: null
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      message:
-        custom: []
-        name: message
-        description: 'Response message'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data:
-        custom: []
-        name: data
-        description: 'List of all event posts'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].id':
-        custom: []
-        name: 'data[].id'
-        description: 'Post ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].category_id':
-        custom: []
-        name: 'data[].category_id'
-        description: 'Category ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].slug':
-        custom: []
-        name: 'data[].slug'
-        description: 'Post slug (unique identifier)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].title':
-        custom: []
-        name: 'data[].title'
-        description: 'Post title (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].content':
-        custom: []
-        name: 'data[].content'
-        description: 'Post content (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].images':
-        custom: []
-        name: 'data[].images'
-        description: 'Array of post image paths'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].published_at':
-        custom: []
-        name: 'data[].published_at'
-        description: 'Post publication timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].views_count':
-        custom: []
-        name: 'data[].views_count'
-        description: 'Number of post views'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].created_at':
-        custom: []
-        name: 'data[].created_at'
-        description: 'Post creation timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      'data[].updated_at':
-        custom: []
-        name: 'data[].updated_at'
-        description: 'Post last update timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/v1/posts/{slug}'
-    metadata:
-      custom: []
-      groupName: Posts
-      groupDescription: |-
-
-        Managing blog posts and news articles
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get single post by slug'
-      description: 'Retrieve a specific post by slug and increment view count.'
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      slug:
-        custom: []
-        name: slug
-        description: 'Post slug (language-specific).'
-        required: true
-        example: yangi-texnologiyalar-2024
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      slug: yangi-texnologiyalar-2024
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields:
-      success:
-        custom: []
-        name: success
-        description: 'Operation success status'
-        required: false
-        example: null
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      message:
-        custom: []
-        name: message
-        description: 'Response message'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data:
-        custom: []
-        name: data
-        description: 'Post details'
+        description: 'Category details'
         required: false
         example: null
         type: object
@@ -1031,17 +234,6 @@ endpoints:
       data.id:
         custom: []
         name: data.id
-        description: 'Post ID'
-        required: false
-        example: null
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.category_id:
-        custom: []
-        name: data.category_id
         description: 'Category ID'
         required: false
         example: null
@@ -1053,7 +245,7 @@ endpoints:
       data.slug:
         custom: []
         name: data.slug
-        description: 'Post slug (unique identifier)'
+        description: 'Category slug (unique identifier)'
         required: false
         example: null
         type: string
@@ -1061,57 +253,13 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      data.title:
+      data.name:
         custom: []
-        name: data.title
-        description: 'Post title (translated)'
+        name: data.name
+        description: 'Category name (translated)'
         required: false
         example: null
         type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.content:
-        custom: []
-        name: data.content
-        description: 'Post content (translated)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.images:
-        custom: []
-        name: data.images
-        description: 'Array of post image paths'
-        required: false
-        example: null
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.published_at:
-        custom: []
-        name: data.published_at
-        description: 'Post publication timestamp (ISO 8601 format)'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      data.views_count:
-        custom: []
-        name: data.views_count
-        description: 'Number of post views'
-        required: false
-        example: null
-        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -1119,7 +267,7 @@ endpoints:
       data.created_at:
         custom: []
         name: data.created_at
-        description: 'Post creation timestamp (ISO 8601 format)'
+        description: 'Category creation timestamp (ISO 8601 format)'
         required: false
         example: null
         type: string
@@ -1130,7 +278,7 @@ endpoints:
       data.updated_at:
         custom: []
         name: data.updated_at
-        description: 'Post last update timestamp (ISO 8601 format)'
+        description: 'Category last update timestamp (ISO 8601 format)'
         required: false
         example: null
         type: string

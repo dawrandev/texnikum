@@ -1,23 +1,23 @@
-name: Statistics
+name: Videos
 description: |-
 
-  Managing university statistics and metrics
+  Managing video content and media
 endpoints:
   -
     custom: []
     httpMethods:
       - GET
-    uri: api/v1/stats
+    uri: api/v1/videos
     metadata:
       custom: []
-      groupName: Statistics
+      groupName: Videos
       groupDescription: |-
 
-        Managing university statistics and metrics
+        Managing video content and media
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get all statistics'
-      description: 'Retrieve a list of all university statistics with their counts and translated titles.'
+      title: 'Get all videos'
+      description: 'Retrieve a list of all published videos with translated titles.'
       authenticated: false
       deprecated: false
     headers:
@@ -34,11 +34,12 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Statistics retrieved successfully","data":[{"id":1,"count":82,"title":"Areas of study","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":2,"count":1072,"title":"Faculty members","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":3,"count":27330,"title":"Students","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":4,"count":53,"title":"Number of classrooms","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":5,"count":17,"title":"Number of faculties","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":6,"count":265,"title":"Doctoral students","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}]}'
+        content: '{"success":true,"message":"Videos retrieved successfully","data":[{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":2,"title":"Berdakh Karakalpak State University: Modern Education, Competitive Future!","url":"https:\/\/www.youtube.com\/watch?v=wlRMcv_zQew","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          vary: Origin
+          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
+          access-control-allow-credentials: 'true'
         description: null
     responseFields:
       success:
@@ -66,7 +67,7 @@ endpoints:
       data:
         custom: []
         name: data
-        description: 'List of statistics'
+        description: 'List of videos'
         required: false
         example: null
         type: 'string[]'
@@ -77,7 +78,7 @@ endpoints:
       'data[].id':
         custom: []
         name: 'data[].id'
-        description: 'Statistic ID'
+        description: 'Video ID'
         required: false
         example: null
         type: integer
@@ -85,13 +86,13 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].count':
+      'data[].url':
         custom: []
-        name: 'data[].count'
-        description: 'Statistical count/number'
+        name: 'data[].url'
+        description: 'Video URL'
         required: false
         example: null
-        type: integer
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -99,7 +100,18 @@ endpoints:
       'data[].title':
         custom: []
         name: 'data[].title'
-        description: 'Statistic title (translated)'
+        description: 'Video title (translated)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'data[].published_at':
+        custom: []
+        name: 'data[].published_at'
+        description: 'Video publication timestamp (ISO 8601)'
         required: false
         example: null
         type: string
@@ -110,7 +122,7 @@ endpoints:
       'data[].created_at':
         custom: []
         name: 'data[].created_at'
-        description: 'Statistic creation timestamp (ISO 8601 format)'
+        description: 'Video creation timestamp (ISO 8601)'
         required: false
         example: null
         type: string
@@ -121,7 +133,312 @@ endpoints:
       'data[].updated_at':
         custom: []
         name: 'data[].updated_at'
-        description: 'Statistic last update timestamp (ISO 8601 format)'
+        description: 'Video update timestamp (ISO 8601)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/videos/latest
+    metadata:
+      custom: []
+      groupName: Videos
+      groupDescription: |-
+
+        Managing video content and media
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get latest videos'
+      description: 'Retrieve the latest 5 published videos ordered by publish date.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"Latest videos retrieved successfully","data":[{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":2,"title":"Berdakh Karakalpak State University: Modern Education, Competitive Future!","url":"https:\/\/www.youtube.com\/watch?v=wlRMcv_zQew","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
+          access-control-allow-credentials: 'true'
+        description: null
+    responseFields:
+      success:
+        custom: []
+        name: success
+        description: 'Operation success status'
+        required: false
+        example: null
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      message:
+        custom: []
+        name: message
+        description: 'Response message'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data:
+        custom: []
+        name: data
+        description: 'List of latest videos'
+        required: false
+        example: null
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'data[].id':
+        custom: []
+        name: 'data[].id'
+        description: 'Video ID'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'data[].url':
+        custom: []
+        name: 'data[].url'
+        description: 'Video URL'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'data[].title':
+        custom: []
+        name: 'data[].title'
+        description: 'Video title (translated)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'data[].published_at':
+        custom: []
+        name: 'data[].published_at'
+        description: 'Video publication timestamp (ISO 8601)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'data[].created_at':
+        custom: []
+        name: 'data[].created_at'
+        description: 'Video creation timestamp (ISO 8601)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'data[].updated_at':
+        custom: []
+        name: 'data[].updated_at'
+        description: 'Video update timestamp (ISO 8601)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/videos/{id}'
+    metadata:
+      custom: []
+      groupName: Videos
+      groupDescription: |-
+
+        Managing video content and media
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get single video'
+      description: 'Retrieve a single video by its ID with translated title.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the video.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"Video retrieved successfully","data":{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
+          access-control-allow-credentials: 'true'
+        description: null
+      -
+        custom: []
+        status: 404
+        content: |-
+          {
+            "message": "No query results for model [Video]"
+          }
+        headers: []
+        description: ''
+    responseFields:
+      success:
+        custom: []
+        name: success
+        description: 'Operation success status'
+        required: false
+        example: null
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      message:
+        custom: []
+        name: message
+        description: 'Response message'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data:
+        custom: []
+        name: data
+        description: 'Video object'
+        required: false
+        example: null
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.id:
+        custom: []
+        name: data.id
+        description: 'Video ID'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.url:
+        custom: []
+        name: data.url
+        description: 'Video URL'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.title:
+        custom: []
+        name: data.title
+        description: 'Video title (translated from video_translations)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.published_at:
+        custom: []
+        name: data.published_at
+        description: 'Video publication timestamp (ISO 8601)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.created_at:
+        custom: []
+        name: data.created_at
+        description: 'Video creation timestamp (ISO 8601)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.updated_at:
+        custom: []
+        name: data.updated_at
+        description: 'Video update timestamp (ISO 8601)'
         required: false
         example: null
         type: string
