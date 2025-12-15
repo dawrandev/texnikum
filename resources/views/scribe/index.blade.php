@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "https://admin.karsu.dbc.uz/api";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -66,29 +66,23 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-authentication" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authentication">
+                    <a href="#authentication">Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="authentication-GETapi-v1-showLoginForm">
+                                <a href="#authentication-GETapi-v1-showLoginForm">Show login form</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-categories" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="categories">
                     <a href="#categories">Categories</a>
                 </li>
                                     <ul id="tocify-subheader-categories" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="categories-GETapi-v1-categories">
-                                <a href="#categories-GETapi-v1-categories">Get all categories</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="categories-GETapi-v1-categories--id-">
+                                                    <li class="tocify-item level-2" data-unique="categories-GETapi-v1-categories--id-">
                                 <a href="#categories-GETapi-v1-categories--id-">Get category by ID</a>
-                            </li>
-                                                                        </ul>
-                            </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
-                </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
-                                <a href="#endpoints-GETapi-user">GET api/user</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-showLoginForm">
-                                <a href="#endpoints-GETapi-v1-showLoginForm">GET api/v1/showLoginForm</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -132,6 +126,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="posts-GETapi-v1-posts-event-all">
                                 <a href="#posts-GETapi-v1-posts-event-all">Get all event posts</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="posts-GETapi-v1-posts--slug-">
+                                <a href="#posts-GETapi-v1-posts--slug-">Get single post by slug</a>
+                            </li>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-statistics" class="tocify-header">
@@ -155,6 +152,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="videos-GETapi-v1-videos-latest">
                                 <a href="#videos-GETapi-v1-videos-latest">Get latest videos</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="videos-GETapi-v1-videos--id-">
+                                <a href="#videos-GETapi-v1-videos--id-">Get single video</a>
+                            </li>
                                                                         </ul>
                             </ul>
             </div>
@@ -166,7 +166,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 8, 2025</li>
+        <li>Last updated: December 15, 2025</li>
     </ul>
 </div>
 
@@ -175,7 +175,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>http://admin.karsu.dbc.uz/</code>
 </aside>
 <pre><code>This documentation aims to provide all the information you need to work with our API.
 
@@ -185,31 +185,31 @@ You can switch the language used with the tabs at the top right (or from the nav
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
 
-        <h1 id="categories">Categories</h1>
+        <h1 id="authentication">Authentication</h1>
 
-    <p>Managing post categories</p>
+    
 
-                                <h2 id="categories-GETapi-v1-categories">Get all categories</h2>
+                                <h2 id="authentication-GETapi-v1-showLoginForm">Show login form</h2>
 
 <p>
 </p>
 
+<p>Returns the login page.</p>
 
-
-<span id="example-requests-GETapi-v1-categories">
+<span id="example-requests-GETapi-v1-showLoginForm">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/categories" \
+    --get "https://admin.karsu.dbc.uz/api/v1/showLoginForm" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/categories"
+    "https://admin.karsu.dbc.uz/api/v1/showLoginForm"
 );
 
 const headers = {
@@ -224,92 +224,54 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-v1-categories">
+<span id="example-responses-GETapi-v1-showLoginForm">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;message&quot;: &quot;Categories retrieved successfully&quot;,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;slug&quot;: &quot;news&quot;,
-            &quot;name&quot;: &quot;News&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:32.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:32.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;slug&quot;: &quot;eco-active-students&quot;,
-            &quot;name&quot;: &quot;Eco Active Students&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;slug&quot;: &quot;anti-corruption&quot;,
-            &quot;name&quot;: &quot;Anti-Corruption&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;slug&quot;: &quot;events&quot;,
-            &quot;name&quot;: &quot;Events&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
-        }
-    ]
+    &quot;html&quot;: &quot;Login page HTML&quot;
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-v1-categories" hidden>
+<span id="execution-results-GETapi-v1-showLoginForm" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-categories"></span>:
+                id="execution-response-status-GETapi-v1-showLoginForm"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-categories"
+    <pre class="json"><code id="execution-response-content-GETapi-v1-showLoginForm"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-v1-categories" hidden>
+<span id="execution-error-GETapi-v1-showLoginForm" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-categories">
+    <pre><code id="execution-error-message-GETapi-v1-showLoginForm">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-v1-categories" data-method="GET"
-      data-path="api/v1/categories"
+<form id="form-GETapi-v1-showLoginForm" data-method="GET"
+      data-path="api/v1/showLoginForm"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-categories', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-showLoginForm', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-categories"
-                    onclick="tryItOut('GETapi-v1-categories');">Try it out ⚡
+                    id="btn-tryout-GETapi-v1-showLoginForm"
+                    onclick="tryItOut('GETapi-v1-showLoginForm');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-categories"
-                    onclick="cancelTryOut('GETapi-v1-categories');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-v1-showLoginForm"
+                    onclick="cancelTryOut('GETapi-v1-showLoginForm');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-categories"
+                    id="btn-executetryout-GETapi-v1-showLoginForm"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -317,7 +279,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/v1/categories</code></b>
+            <b><code>api/v1/showLoginForm</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -326,7 +288,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-categories"
+                              name="Content-Type"                data-endpoint="GETapi-v1-showLoginForm"
                value="application/json"
                data-component="header">
     <br>
@@ -338,7 +300,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-categories"
+                              name="Accept"                data-endpoint="GETapi-v1-showLoginForm"
                value="application/json"
                data-component="header">
     <br>
@@ -346,77 +308,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-    <h3>Response</h3>
-    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
-    <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>success</code></b>&nbsp;&nbsp;
-<small>boolean</small>&nbsp;
- &nbsp;
- &nbsp;
-<br>
-<p>Operation success status</p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-<br>
-<p>Response message</p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
-<small>string[]</small>&nbsp;
- &nbsp;
- &nbsp;
-<br>
-<p>List of categories</p>
-            </summary>
-                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-<br>
-<p>Category ID</p>
-                    </div>
-                                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-<br>
-<p>Category slug (unique identifier)</p>
-                    </div>
-                                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-<br>
-<p>Category name (translated)</p>
-                    </div>
-                                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>created_at</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-<br>
-<p>Category creation timestamp (ISO 8601 format)</p>
-                    </div>
-                                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>updated_at</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-<br>
-<p>Category last update timestamp (ISO 8601 format)</p>
-                    </div>
-                                    </details>
-        </div>
-                        <h2 id="categories-GETapi-v1-categories--id-">Get category by ID</h2>
+                <h1 id="categories">Categories</h1>
+
+    <p>Managing post categories</p>
+
+                                <h2 id="categories-GETapi-v1-categories--id-">Get category by ID</h2>
 
 <p>
 </p>
@@ -429,14 +325,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/categories/17" \
+    --get "https://admin.karsu.dbc.uz/api/v1/categories/17" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/categories/17"
+    "https://admin.karsu.dbc.uz/api/v1/categories/17"
 );
 
 const headers = {
@@ -471,7 +367,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -635,263 +531,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     </div>
                                     </details>
         </div>
-                    <h1 id="endpoints">Endpoints</h1>
-
-    
-
-                                <h2 id="endpoints-GETapi-user">GET api/user</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-user">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-user">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-user" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-user"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-user"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-user" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-user">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-user" data-method="GET"
-      data-path="api/user"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-user"
-                    onclick="tryItOut('GETapi-user');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-user"
-                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-user"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/user</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-v1-showLoginForm">GET api/v1/showLoginForm</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-showLoginForm">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/showLoginForm" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/showLoginForm"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-showLoginForm">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-showLoginForm" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-showLoginForm"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-showLoginForm"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-showLoginForm" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-showLoginForm">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-showLoginForm" data-method="GET"
-      data-path="api/v1/showLoginForm"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-showLoginForm', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-showLoginForm"
-                    onclick="tryItOut('GETapi-v1-showLoginForm');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-showLoginForm"
-                    onclick="cancelTryOut('GETapi-v1-showLoginForm');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-showLoginForm"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/showLoginForm</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-showLoginForm"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-showLoginForm"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                <h1 id="interactive-services">Interactive Services</h1>
+                    <h1 id="interactive-services">Interactive Services</h1>
 
     <p>Managing online services and interactive tools</p>
 
@@ -908,14 +548,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/interactive-services" \
+    --get "https://admin.karsu.dbc.uz/api/v1/interactive-services" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/interactive-services"
+    "https://admin.karsu.dbc.uz/api/v1/interactive-services"
 );
 
 const headers = {
@@ -940,7 +580,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -951,43 +591,43 @@ access-control-allow-origin: *
             &quot;id&quot;: 1,
             &quot;title&quot;: &quot;Подача заявлений на выход из академического отпуска&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;title&quot;: &quot;Вакансии рабочих мест в Университета&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
         },
         {
             &quot;id&quot;: 3,
             &quot;title&quot;: &quot;Получение данных об успеваемости студентов&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
         },
         {
             &quot;id&quot;: 4,
             &quot;title&quot;: &quot;Подача заявлений на проживание в студенческом общежитии&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
         },
         {
             &quot;id&quot;: 5,
             &quot;title&quot;: &quot;Получение справки об обучении&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 6,
             &quot;title&quot;: &quot;Система подачи заявлений по совместной образовательной программе&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         }
     ]
 }</code>
@@ -1153,14 +793,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/partners" \
+    --get "https://admin.karsu.dbc.uz/api/v1/partners" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/partners"
+    "https://admin.karsu.dbc.uz/api/v1/partners"
 );
 
 const headers = {
@@ -1185,7 +825,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1197,24 +837,24 @@ access-control-allow-origin: *
             &quot;name&quot;: &quot;KARSU&quot;,
             &quot;logo&quot;: &quot;partners/karsu.png&quot;,
             &quot;url&quot;: &quot;https://karsu.uz/uz/&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;name&quot;: &quot;TATU&quot;,
             &quot;logo&quot;: &quot;partners/tatu.png&quot;,
             &quot;url&quot;: &quot;https://tuit.uz/&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;NMTU&quot;,
             &quot;logo&quot;: &quot;partners/nmtu.png&quot;,
             &quot;url&quot;: &quot;https://nmtu.uz/&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         }
     ]
 }</code>
@@ -1380,7 +1020,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>
 </p>
 
-<p>Retrieve the most recent blog posts (limited to latest 6).</p>
+<p>Retrieve the most recent blog posts (latest 6).
+Optionally filter by category.</p>
 
 <span id="example-requests-GETapi-v1-posts-latest">
 <blockquote>Example request:</blockquote>
@@ -1388,15 +1029,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/posts/latest" \
+    --get "https://admin.karsu.dbc.uz/api/v1/posts/latest?category_id=3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/posts/latest"
+    "https://admin.karsu.dbc.uz/api/v1/posts/latest"
 );
+
+const params = {
+    "category_id": "3",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Content-Type": "application/json",
@@ -1420,104 +1067,13 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
     &quot;message&quot;: &quot;Latest posts retrieved successfully&quot;,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;qozon-federal-universiteti-vakillari-qoraqalpoq-davlat-universitetida&quot;,
-            &quot;image&quot;: &quot;posts/post1.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 12,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;turkmanistonlik-olimlar-talabalar-bilan-uchrashdi&quot;,
-            &quot;image&quot;: &quot;posts/post2.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 8,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;xalqaro-hamkorlik&quot;,
-            &quot;image&quot;: &quot;posts/post3.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 15,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;qduda-soha-mutaxassislari-bilan-uchrashuv-otkazildi&quot;,
-            &quot;image&quot;: &quot;posts/post4.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 20,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;fuqarolik-va-biznes-huquqi-kafedrasi-vakillarining-yuridik-klinik-talim-boyicha-xalqaro-konferensiyada-ishtiroki&quot;,
-            &quot;image&quot;: &quot;posts/post5.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 5,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;biologiya-fakultetida-tabiiy-resurslardan-oqilona-foydalanish-mavzusida-ilmiy-amaliy-konferensiya-otkazildi&quot;,
-            &quot;image&quot;: &quot;posts/post6.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 7,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        }
-    ]
+    &quot;data&quot;: []
 }</code>
  </pre>
     </span>
@@ -1592,7 +1148,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="category_id"                data-endpoint="GETapi-v1-posts-latest"
+               value="3"
+               data-component="query">
+    <br>
+<p>optional Filter posts by category. Example: <code>3</code></p>
+            </div>
+                </form>
 
     <h3>Response</h3>
     <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
@@ -1663,16 +1232,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Post content (translated)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+                        <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
-<p>Post image path</p>
+<p>Array of post image paths</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>published_at</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
@@ -1692,7 +1261,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
 <br>
-<p>Post creation timestamp (ISO 8601 format)</p>
+<p>Post creation timestamp</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>updated_at</code></b>&nbsp;&nbsp;
@@ -1700,7 +1269,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
 <br>
-<p>Post last update timestamp (ISO 8601 format)</p>
+<p>Post last update timestamp</p>
                     </div>
                                     </details>
         </div>
@@ -1717,14 +1286,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/posts/all" \
+    --get "https://admin.karsu.dbc.uz/api/v1/posts/all" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/posts/all"
+    "https://admin.karsu.dbc.uz/api/v1/posts/all"
 );
 
 const headers = {
@@ -1749,7 +1318,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1759,13 +1328,16 @@ access-control-allow-origin: *
         {
             &quot;id&quot;: 1,
             &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;qozon-federal-universiteti-vakillari-qoraqalpoq-davlat-universitetida&quot;,
-            &quot;image&quot;: &quot;posts/post1.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 12,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
+            &quot;title&quot;: &quot;New Technologies in 2024&quot;,
+            &quot;content&quot;: &quot;&lt;h2&gt;Artificial Intelligence and Machine Learning&lt;/h2&gt;\n                                      &lt;p&gt;2024 has been a year of major changes in technology. &lt;strong&gt;Artificial intelligence&lt;/strong&gt; and machine learning have covered all areas of activity.&lt;/p&gt;\n                                      &lt;h3&gt;Main directions:&lt;/h3&gt;\n                                      &lt;ul&gt;\n                                        &lt;li&gt;Development of generative AI models&lt;/li&gt;\n                                        &lt;li&gt;New generation of large language models (LLM)&lt;/li&gt;\n                                        &lt;li&gt;Computer vision and image recognition&lt;/li&gt;\n                                      &lt;/ul&gt;\n                                      &lt;p&gt;According to experts, &lt;em&gt;these technologies will develop even more in the coming years&lt;/em&gt; and will radically change human life.&lt;/p&gt;\n                                      &lt;blockquote&gt;\n                                        &lt;p&gt;\&quot;AI is the future, and we are creating this future today\&quot; - says a famous technology expert.&lt;/p&gt;\n                                      &lt;/blockquote&gt;&quot;,
+            &quot;slug&quot;: &quot;new-technologies-2024&quot;,
+            &quot;images&quot;: [
+                &quot;posts/news1.jpg&quot;,
+                &quot;posts/news2.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-10T14:10:08.000000Z&quot;,
+            &quot;views_count&quot;: 464,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 1,
                 &quot;slug&quot;: &quot;news&quot;
@@ -1773,104 +1345,48 @@ access-control-allow-origin: *
         },
         {
             &quot;id&quot;: 2,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;turkmanistonlik-olimlar-talabalar-bilan-uchrashdi&quot;,
-            &quot;image&quot;: &quot;posts/post2.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 8,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;xalqaro-hamkorlik&quot;,
-            &quot;image&quot;: &quot;posts/post3.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 15,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;qduda-soha-mutaxassislari-bilan-uchrashuv-otkazildi&quot;,
-            &quot;image&quot;: &quot;posts/post4.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 20,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;fuqarolik-va-biznes-huquqi-kafedrasi-vakillarining-yuridik-klinik-talim-boyicha-xalqaro-konferensiyada-ishtiroki&quot;,
-            &quot;image&quot;: &quot;posts/post5.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 5,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;biologiya-fakultetida-tabiiy-resurslardan-oqilona-foydalanish-mavzusida-ilmiy-amaliy-konferensiya-otkazildi&quot;,
-            &quot;image&quot;: &quot;posts/post6.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;views_count&quot;: 7,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;news&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 7,
             &quot;category_id&quot;: 4,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;diqqat-elon&quot;,
-            &quot;image&quot;: null,
-            &quot;published_at&quot;: &quot;2025-11-28 00:00:00&quot;,
-            &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/event1.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-12T14:10:08.000000Z&quot;,
+            &quot;views_count&quot;: 60,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 4,
                 &quot;slug&quot;: &quot;events&quot;
             }
         },
         {
-            &quot;id&quot;: 8,
+            &quot;id&quot;: 3,
             &quot;category_id&quot;: 4,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;qosimov-xasanboy-phd-himoyasi&quot;,
-            &quot;image&quot;: &quot;event1.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-11-17 00:00:00&quot;,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [],
+            &quot;published_at&quot;: &quot;2025-11-27T19:00:00.000000Z&quot;,
+            &quot;views_count&quot;: 1,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 4,
+                &quot;slug&quot;: &quot;events&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;category_id&quot;: 4,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;event1.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-11-16T19:00:00.000000Z&quot;,
             &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 4,
                 &quot;slug&quot;: &quot;events&quot;
@@ -2022,16 +1538,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Post content (translated)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+                        <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
-<p>Post image path</p>
+<p>Array of post image paths</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>published_at</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
@@ -2076,14 +1592,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/posts/category/17" \
+    --get "https://admin.karsu.dbc.uz/api/v1/posts/category/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/posts/category/17"
+    "https://admin.karsu.dbc.uz/api/v1/posts/category/1"
 );
 
 const headers = {
@@ -2108,23 +1624,32 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
     &quot;message&quot;: &quot;Category posts retrieved successfully&quot;,
-    &quot;data&quot;: []
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;Category not found&quot;
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: &quot;New Technologies in 2024&quot;,
+            &quot;content&quot;: &quot;&lt;h2&gt;Artificial Intelligence and Machine Learning&lt;/h2&gt;\n                                      &lt;p&gt;2024 has been a year of major changes in technology. &lt;strong&gt;Artificial intelligence&lt;/strong&gt; and machine learning have covered all areas of activity.&lt;/p&gt;\n                                      &lt;h3&gt;Main directions:&lt;/h3&gt;\n                                      &lt;ul&gt;\n                                        &lt;li&gt;Development of generative AI models&lt;/li&gt;\n                                        &lt;li&gt;New generation of large language models (LLM)&lt;/li&gt;\n                                        &lt;li&gt;Computer vision and image recognition&lt;/li&gt;\n                                      &lt;/ul&gt;\n                                      &lt;p&gt;According to experts, &lt;em&gt;these technologies will develop even more in the coming years&lt;/em&gt; and will radically change human life.&lt;/p&gt;\n                                      &lt;blockquote&gt;\n                                        &lt;p&gt;\&quot;AI is the future, and we are creating this future today\&quot; - says a famous technology expert.&lt;/p&gt;\n                                      &lt;/blockquote&gt;&quot;,
+            &quot;slug&quot;: &quot;new-technologies-2024&quot;,
+            &quot;images&quot;: [
+                &quot;posts/news1.jpg&quot;,
+                &quot;posts/news2.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-10T14:10:08.000000Z&quot;,
+            &quot;views_count&quot;: 464,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        }
+    ]
 }</code>
  </pre>
     </span>
@@ -2207,10 +1732,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-v1-posts-category--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>Category ID Example: <code>17</code></p>
+<p>Category ID. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -2283,16 +1808,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Post content (translated)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+                        <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
-<p>Post image path</p>
+<p>Array of post image paths</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>published_at</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
@@ -2337,14 +1862,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/posts/event/latest" \
+    --get "https://admin.karsu.dbc.uz/api/v1/posts/event/latest" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/posts/event/latest"
+    "https://admin.karsu.dbc.uz/api/v1/posts/event/latest"
 );
 
 const headers = {
@@ -2369,7 +1894,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2377,30 +1902,49 @@ access-control-allow-origin: *
     &quot;message&quot;: &quot;Latest event posts retrieved successfully&quot;,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 7,
+            &quot;id&quot;: 2,
             &quot;category_id&quot;: 4,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;diqqat-elon&quot;,
-            &quot;image&quot;: null,
-            &quot;published_at&quot;: &quot;2025-11-28 00:00:00&quot;,
-            &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/event1.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-12T14:10:08.000000Z&quot;,
+            &quot;views_count&quot;: 60,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 4,
                 &quot;slug&quot;: &quot;events&quot;
             }
         },
         {
-            &quot;id&quot;: 8,
+            &quot;id&quot;: 3,
             &quot;category_id&quot;: 4,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;qosimov-xasanboy-phd-himoyasi&quot;,
-            &quot;image&quot;: &quot;event1.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-11-17 00:00:00&quot;,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [],
+            &quot;published_at&quot;: &quot;2025-11-27T19:00:00.000000Z&quot;,
+            &quot;views_count&quot;: 1,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 4,
+                &quot;slug&quot;: &quot;events&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;category_id&quot;: 4,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;event1.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-11-16T19:00:00.000000Z&quot;,
             &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 4,
                 &quot;slug&quot;: &quot;events&quot;
@@ -2552,16 +2096,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Post content (translated)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+                        <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
-<p>Post image path</p>
+<p>Array of post image paths</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>published_at</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
@@ -2606,14 +2150,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/posts/event/all" \
+    --get "https://admin.karsu.dbc.uz/api/v1/posts/event/all" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/posts/event/all"
+    "https://admin.karsu.dbc.uz/api/v1/posts/event/all"
 );
 
 const headers = {
@@ -2638,7 +2182,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2646,30 +2190,49 @@ access-control-allow-origin: *
     &quot;message&quot;: &quot;All event posts retrieved successfully&quot;,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 7,
+            &quot;id&quot;: 2,
             &quot;category_id&quot;: 4,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;diqqat-elon&quot;,
-            &quot;image&quot;: null,
-            &quot;published_at&quot;: &quot;2025-11-28 00:00:00&quot;,
-            &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/event1.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-12T14:10:08.000000Z&quot;,
+            &quot;views_count&quot;: 60,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 4,
                 &quot;slug&quot;: &quot;events&quot;
             }
         },
         {
-            &quot;id&quot;: 8,
+            &quot;id&quot;: 3,
             &quot;category_id&quot;: 4,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
-            &quot;slug&quot;: &quot;qosimov-xasanboy-phd-himoyasi&quot;,
-            &quot;image&quot;: &quot;event1.jpg&quot;,
-            &quot;published_at&quot;: &quot;2025-11-17 00:00:00&quot;,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [],
+            &quot;published_at&quot;: &quot;2025-11-27T19:00:00.000000Z&quot;,
+            &quot;views_count&quot;: 1,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 4,
+                &quot;slug&quot;: &quot;events&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;category_id&quot;: 4,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;event1.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-11-16T19:00:00.000000Z&quot;,
             &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 4,
                 &quot;slug&quot;: &quot;events&quot;
@@ -2821,16 +2384,249 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Post content (translated)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+                        <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
-<p>Post image path</p>
+<p>Array of post image paths</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>published_at</code></b>&nbsp;&nbsp;
-<small>string|null</small>&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post publication timestamp (ISO 8601 format)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>views_count</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Number of post views</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>created_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post creation timestamp (ISO 8601 format)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>updated_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post last update timestamp (ISO 8601 format)</p>
+                    </div>
+                                    </details>
+        </div>
+                        <h2 id="posts-GETapi-v1-posts--slug-">Get single post by slug</h2>
+
+<p>
+</p>
+
+<p>Retrieve a specific post by slug and increment view count.</p>
+
+<span id="example-requests-GETapi-v1-posts--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://admin.karsu.dbc.uz/api/v1/posts/yangi-texnologiyalar-2024" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://admin.karsu.dbc.uz/api/v1/posts/yangi-texnologiyalar-2024"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-posts--slug-">
+    </span>
+<span id="execution-results-GETapi-v1-posts--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-posts--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-posts--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-posts--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-posts--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-posts--slug-" data-method="GET"
+      data-path="api/v1/posts/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-posts--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-posts--slug-"
+                    onclick="tryItOut('GETapi-v1-posts--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-posts--slug-"
+                    onclick="cancelTryOut('GETapi-v1-posts--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-posts--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/posts/{slug}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-posts--slug-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-posts--slug-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="slug"                data-endpoint="GETapi-v1-posts--slug-"
+               value="yangi-texnologiyalar-2024"
+               data-component="url">
+    <br>
+<p>Post slug (language-specific). Example: <code>yangi-texnologiyalar-2024</code></p>
+            </div>
+                    </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>success</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Operation success status</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Response message</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post details</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post ID</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Category ID</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post slug (unique identifier)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post title (translated)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post content (translated)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Array of post image paths</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>published_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
@@ -2879,14 +2675,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/stats" \
+    --get "https://admin.karsu.dbc.uz/api/v1/stats" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/stats"
+    "https://admin.karsu.dbc.uz/api/v1/stats"
 );
 
 const headers = {
@@ -2911,7 +2707,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2922,43 +2718,43 @@ access-control-allow-origin: *
             &quot;id&quot;: 1,
             &quot;count&quot;: 82,
             &quot;title&quot;: &quot;Areas of study&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;count&quot;: 1072,
             &quot;title&quot;: &quot;Faculty members&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 3,
             &quot;count&quot;: 27330,
             &quot;title&quot;: &quot;Students&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 4,
             &quot;count&quot;: 53,
             &quot;title&quot;: &quot;Number of classrooms&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 5,
             &quot;count&quot;: 17,
             &quot;title&quot;: &quot;Number of faculties&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 6,
             &quot;count&quot;: 265,
             &quot;title&quot;: &quot;Doctoral students&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         }
     ]
 }</code>
@@ -3124,14 +2920,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/videos" \
+    --get "https://admin.karsu.dbc.uz/api/v1/videos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/videos"
+    "https://admin.karsu.dbc.uz/api/v1/videos"
 );
 
 const headers = {
@@ -3156,7 +2952,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3167,17 +2963,17 @@ access-control-allow-origin: *
             &quot;id&quot;: 1,
             &quot;title&quot;: &quot;Karakalpak state university&quot;,
             &quot;url&quot;: &quot;https://www.youtube.com/watch?v=F-ql5OMdMdo&amp;t=136s&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;title&quot;: &quot;Berdakh Karakalpak State University: Modern Education, Competitive Future!&quot;,
             &quot;url&quot;: &quot;https://www.youtube.com/watch?v=wlRMcv_zQew&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         }
     ]
 }</code>
@@ -3314,7 +3110,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
 <br>
-<p>Video publication timestamp (ISO 8601 format)</p>
+<p>Video publication timestamp (ISO 8601)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>created_at</code></b>&nbsp;&nbsp;
@@ -3322,7 +3118,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
 <br>
-<p>Video creation timestamp (ISO 8601 format)</p>
+<p>Video creation timestamp (ISO 8601)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>updated_at</code></b>&nbsp;&nbsp;
@@ -3330,7 +3126,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
 <br>
-<p>Video last update timestamp (ISO 8601 format)</p>
+<p>Video update timestamp (ISO 8601)</p>
                     </div>
                                     </details>
         </div>
@@ -3339,7 +3135,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>
 </p>
 
-<p>Retrieve the most recent published videos (limited to latest 5).</p>
+<p>Retrieve the latest 5 published videos ordered by publish date.</p>
 
 <span id="example-requests-GETapi-v1-videos-latest">
 <blockquote>Example request:</blockquote>
@@ -3347,14 +3143,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/videos/latest" \
+    --get "https://admin.karsu.dbc.uz/api/v1/videos/latest" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/videos/latest"
+    "https://admin.karsu.dbc.uz/api/v1/videos/latest"
 );
 
 const headers = {
@@ -3379,7 +3175,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3390,17 +3186,17 @@ access-control-allow-origin: *
             &quot;id&quot;: 1,
             &quot;title&quot;: &quot;Karakalpak state university&quot;,
             &quot;url&quot;: &quot;https://www.youtube.com/watch?v=F-ql5OMdMdo&amp;t=136s&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;title&quot;: &quot;Berdakh Karakalpak State University: Modern Education, Competitive Future!&quot;,
             &quot;url&quot;: &quot;https://www.youtube.com/watch?v=wlRMcv_zQew&quot;,
-            &quot;published_at&quot;: &quot;2025-12-08 21:59:33&quot;,
-            &quot;created_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-08T16:59:33.000000Z&quot;
+            &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
         }
     ]
 }</code>
@@ -3537,7 +3333,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
 <br>
-<p>Video publication timestamp (ISO 8601 format)</p>
+<p>Video publication timestamp (ISO 8601)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>created_at</code></b>&nbsp;&nbsp;
@@ -3545,7 +3341,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
 <br>
-<p>Video creation timestamp (ISO 8601 format)</p>
+<p>Video creation timestamp (ISO 8601)</p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>updated_at</code></b>&nbsp;&nbsp;
@@ -3553,7 +3349,242 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
 <br>
-<p>Video last update timestamp (ISO 8601 format)</p>
+<p>Video update timestamp (ISO 8601)</p>
+                    </div>
+                                    </details>
+        </div>
+                        <h2 id="videos-GETapi-v1-videos--id-">Get single video</h2>
+
+<p>
+</p>
+
+<p>Retrieve a single video by its ID with translated title.</p>
+
+<span id="example-requests-GETapi-v1-videos--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://admin.karsu.dbc.uz/api/v1/videos/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://admin.karsu.dbc.uz/api/v1/videos/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-videos--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;Video retrieved successfully&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;Karakalpak state university&quot;,
+        &quot;url&quot;: &quot;https://www.youtube.com/watch?v=F-ql5OMdMdo&amp;t=136s&quot;,
+        &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;No query results for model [Video]&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-videos--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-videos--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-videos--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-videos--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-videos--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-videos--id-" data-method="GET"
+      data-path="api/v1/videos/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-videos--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-videos--id-"
+                    onclick="tryItOut('GETapi-v1-videos--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-videos--id-"
+                    onclick="cancelTryOut('GETapi-v1-videos--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-videos--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/videos/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-videos--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-videos--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-v1-videos--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the video. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>success</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Operation success status</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Response message</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Video object</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Video ID</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Video URL</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Video title (translated from video_translations)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>published_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Video publication timestamp (ISO 8601)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>created_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Video creation timestamp (ISO 8601)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>updated_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Video update timestamp (ISO 8601)</p>
                     </div>
                                     </details>
         </div>

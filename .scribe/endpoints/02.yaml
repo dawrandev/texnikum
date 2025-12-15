@@ -17,7 +17,9 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Get latest posts'
-      description: 'Retrieve the most recent blog posts (limited to latest 6).'
+      description: |-
+        Retrieve the most recent blog posts (latest 6).
+        Optionally filter by category.
       authenticated: false
       deprecated: false
     headers:
@@ -25,8 +27,20 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
+    queryParameters:
+      category_id:
+        custom: []
+        name: category_id
+        description: 'optional Filter posts by category.'
+        required: false
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      category_id: 3
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -34,11 +48,11 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Latest posts retrieved successfully","data":[{"id":1,"category_id":1,"title":null,"content":null,"slug":"qozon-federal-universiteti-vakillari-qoraqalpoq-davlat-universitetida","image":"posts\/post1.jpg","published_at":"2025-12-08 21:59:33","views_count":12,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":2,"category_id":1,"title":null,"content":null,"slug":"turkmanistonlik-olimlar-talabalar-bilan-uchrashdi","image":"posts\/post2.jpg","published_at":"2025-12-08 21:59:33","views_count":8,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":3,"category_id":1,"title":null,"content":null,"slug":"xalqaro-hamkorlik","image":"posts\/post3.jpg","published_at":"2025-12-08 21:59:33","views_count":15,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":4,"category_id":1,"title":null,"content":null,"slug":"qduda-soha-mutaxassislari-bilan-uchrashuv-otkazildi","image":"posts\/post4.jpg","published_at":"2025-12-08 21:59:33","views_count":20,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":5,"category_id":1,"title":null,"content":null,"slug":"fuqarolik-va-biznes-huquqi-kafedrasi-vakillarining-yuridik-klinik-talim-boyicha-xalqaro-konferensiyada-ishtiroki","image":"posts\/post5.jpg","published_at":"2025-12-08 21:59:33","views_count":5,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":6,"category_id":1,"title":null,"content":null,"slug":"biologiya-fakultetida-tabiiy-resurslardan-oqilona-foydalanish-mavzusida-ilmiy-amaliy-konferensiya-otkazildi","image":"posts\/post6.jpg","published_at":"2025-12-08 21:59:33","views_count":7,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}}]}'
+        content: '{"success":true,"message":"Latest posts retrieved successfully","data":[]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
+          vary: Origin
         description: null
     responseFields:
       success:
@@ -129,13 +143,13 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].image':
+      'data[].images':
         custom: []
-        name: 'data[].image'
-        description: 'Post image path'
+        name: 'data[].images'
+        description: 'Array of post image paths'
         required: false
         example: null
-        type: string|null
+        type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -146,7 +160,7 @@ endpoints:
         description: 'Post publication timestamp (ISO 8601 format)'
         required: false
         example: null
-        type: string|null
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -165,7 +179,7 @@ endpoints:
       'data[].created_at':
         custom: []
         name: 'data[].created_at'
-        description: 'Post creation timestamp (ISO 8601 format)'
+        description: 'Post creation timestamp'
         required: false
         example: null
         type: string
@@ -176,7 +190,7 @@ endpoints:
       'data[].updated_at':
         custom: []
         name: 'data[].updated_at'
-        description: 'Post last update timestamp (ISO 8601 format)'
+        description: 'Post last update timestamp'
         required: false
         example: null
         type: string
@@ -219,11 +233,11 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"All posts retrieved successfully","data":[{"id":1,"category_id":1,"title":null,"content":null,"slug":"qozon-federal-universiteti-vakillari-qoraqalpoq-davlat-universitetida","image":"posts\/post1.jpg","published_at":"2025-12-08 21:59:33","views_count":12,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":2,"category_id":1,"title":null,"content":null,"slug":"turkmanistonlik-olimlar-talabalar-bilan-uchrashdi","image":"posts\/post2.jpg","published_at":"2025-12-08 21:59:33","views_count":8,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":3,"category_id":1,"title":null,"content":null,"slug":"xalqaro-hamkorlik","image":"posts\/post3.jpg","published_at":"2025-12-08 21:59:33","views_count":15,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":4,"category_id":1,"title":null,"content":null,"slug":"qduda-soha-mutaxassislari-bilan-uchrashuv-otkazildi","image":"posts\/post4.jpg","published_at":"2025-12-08 21:59:33","views_count":20,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":5,"category_id":1,"title":null,"content":null,"slug":"fuqarolik-va-biznes-huquqi-kafedrasi-vakillarining-yuridik-klinik-talim-boyicha-xalqaro-konferensiyada-ishtiroki","image":"posts\/post5.jpg","published_at":"2025-12-08 21:59:33","views_count":5,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":6,"category_id":1,"title":null,"content":null,"slug":"biologiya-fakultetida-tabiiy-resurslardan-oqilona-foydalanish-mavzusida-ilmiy-amaliy-konferensiya-otkazildi","image":"posts\/post6.jpg","published_at":"2025-12-08 21:59:33","views_count":7,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":1,"slug":"news"}},{"id":7,"category_id":4,"title":null,"content":null,"slug":"diqqat-elon","image":null,"published_at":"2025-11-28 00:00:00","views_count":0,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":4,"slug":"events"}},{"id":8,"category_id":4,"title":null,"content":null,"slug":"qosimov-xasanboy-phd-himoyasi","image":"event1.jpg","published_at":"2025-11-17 00:00:00","views_count":0,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":4,"slug":"events"}}]}'
+        content: '{"success":true,"message":"All posts retrieved successfully","data":[{"id":1,"category_id":1,"title":"New Technologies in 2024","content":"<h2>Artificial Intelligence and Machine Learning<\/h2>\n                                      <p>2024 has been a year of major changes in technology. <strong>Artificial intelligence<\/strong> and machine learning have covered all areas of activity.<\/p>\n                                      <h3>Main directions:<\/h3>\n                                      <ul>\n                                        <li>Development of generative AI models<\/li>\n                                        <li>New generation of large language models (LLM)<\/li>\n                                        <li>Computer vision and image recognition<\/li>\n                                      <\/ul>\n                                      <p>According to experts, <em>these technologies will develop even more in the coming years<\/em> and will radically change human life.<\/p>\n                                      <blockquote>\n                                        <p>\"AI is the future, and we are creating this future today\" - says a famous technology expert.<\/p>\n                                      <\/blockquote>","slug":"new-technologies-2024","images":["posts\/news1.jpg","posts\/news2.jpg"],"published_at":"2025-12-10T14:10:08.000000Z","views_count":464,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":1,"slug":"news"}},{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
+          vary: Origin
         description: null
     responseFields:
       success:
@@ -314,13 +328,13 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].image':
+      'data[].images':
         custom: []
-        name: 'data[].image'
-        description: 'Post image path'
+        name: 'data[].images'
+        description: 'Array of post image paths'
         required: false
         example: null
-        type: string|null
+        type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -331,7 +345,7 @@ endpoints:
         description: 'Post publication timestamp (ISO 8601 format)'
         required: false
         example: null
-        type: string|null
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -397,16 +411,16 @@ endpoints:
       id:
         custom: []
         name: id
-        description: 'Category ID'
+        description: 'Category ID.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -416,22 +430,12 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Category posts retrieved successfully","data":[]}'
+        content: '{"success":true,"message":"Category posts retrieved successfully","data":[{"id":1,"category_id":1,"title":"New Technologies in 2024","content":"<h2>Artificial Intelligence and Machine Learning<\/h2>\n                                      <p>2024 has been a year of major changes in technology. <strong>Artificial intelligence<\/strong> and machine learning have covered all areas of activity.<\/p>\n                                      <h3>Main directions:<\/h3>\n                                      <ul>\n                                        <li>Development of generative AI models<\/li>\n                                        <li>New generation of large language models (LLM)<\/li>\n                                        <li>Computer vision and image recognition<\/li>\n                                      <\/ul>\n                                      <p>According to experts, <em>these technologies will develop even more in the coming years<\/em> and will radically change human life.<\/p>\n                                      <blockquote>\n                                        <p>\"AI is the future, and we are creating this future today\" - says a famous technology expert.<\/p>\n                                      <\/blockquote>","slug":"new-technologies-2024","images":["posts\/news1.jpg","posts\/news2.jpg"],"published_at":"2025-12-10T14:10:08.000000Z","views_count":464,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":1,"slug":"news"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
+          vary: Origin
         description: null
-      -
-        custom: []
-        status: 404
-        content: |-
-          {
-            "success": false,
-            "message": "Category not found"
-          }
-        headers: []
-        description: ''
     responseFields:
       success:
         custom: []
@@ -521,13 +525,13 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].image':
+      'data[].images':
         custom: []
-        name: 'data[].image'
-        description: 'Post image path'
+        name: 'data[].images'
+        description: 'Array of post image paths'
         required: false
         example: null
-        type: string|null
+        type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -538,7 +542,7 @@ endpoints:
         description: 'Post publication timestamp (ISO 8601 format)'
         required: false
         example: null
-        type: string|null
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -611,11 +615,11 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Latest event posts retrieved successfully","data":[{"id":7,"category_id":4,"title":null,"content":null,"slug":"diqqat-elon","image":null,"published_at":"2025-11-28 00:00:00","views_count":0,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":4,"slug":"events"}},{"id":8,"category_id":4,"title":null,"content":null,"slug":"qosimov-xasanboy-phd-himoyasi","image":"event1.jpg","published_at":"2025-11-17 00:00:00","views_count":0,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":4,"slug":"events"}}]}'
+        content: '{"success":true,"message":"Latest event posts retrieved successfully","data":[{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
+          vary: Origin
         description: null
     responseFields:
       success:
@@ -706,13 +710,13 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].image':
+      'data[].images':
         custom: []
-        name: 'data[].image'
-        description: 'Post image path'
+        name: 'data[].images'
+        description: 'Array of post image paths'
         required: false
         example: null
-        type: string|null
+        type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -723,7 +727,7 @@ endpoints:
         description: 'Post publication timestamp (ISO 8601 format)'
         required: false
         example: null
-        type: string|null
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -796,11 +800,11 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"All event posts retrieved successfully","data":[{"id":7,"category_id":4,"title":null,"content":null,"slug":"diqqat-elon","image":null,"published_at":"2025-11-28 00:00:00","views_count":0,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":4,"slug":"events"}},{"id":8,"category_id":4,"title":null,"content":null,"slug":"qosimov-xasanboy-phd-himoyasi","image":"event1.jpg","published_at":"2025-11-17 00:00:00","views_count":0,"created_at":"2025-12-08T16:59:33.000000Z","category":{"id":4,"slug":"events"}}]}'
+        content: '{"success":true,"message":"All event posts retrieved successfully","data":[{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
+          vary: Origin
         description: null
     responseFields:
       success:
@@ -891,13 +895,13 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      'data[].image':
+      'data[].images':
         custom: []
-        name: 'data[].image'
-        description: 'Post image path'
+        name: 'data[].images'
+        description: 'Array of post image paths'
         required: false
         example: null
-        type: string|null
+        type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -908,7 +912,7 @@ endpoints:
         description: 'Post publication timestamp (ISO 8601 format)'
         required: false
         example: null
-        type: string|null
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
@@ -938,6 +942,194 @@ endpoints:
       'data[].updated_at':
         custom: []
         name: 'data[].updated_at'
+        description: 'Post last update timestamp (ISO 8601 format)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/posts/{slug}'
+    metadata:
+      custom: []
+      groupName: Posts
+      groupDescription: |-
+
+        Managing blog posts and news articles
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get single post by slug'
+      description: 'Retrieve a specific post by slug and increment view count.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      slug:
+        custom: []
+        name: slug
+        description: 'Post slug (language-specific).'
+        required: true
+        example: yangi-texnologiyalar-2024
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      slug: yangi-texnologiyalar-2024
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields:
+      success:
+        custom: []
+        name: success
+        description: 'Operation success status'
+        required: false
+        example: null
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      message:
+        custom: []
+        name: message
+        description: 'Response message'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data:
+        custom: []
+        name: data
+        description: 'Post details'
+        required: false
+        example: null
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.id:
+        custom: []
+        name: data.id
+        description: 'Post ID'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.category_id:
+        custom: []
+        name: data.category_id
+        description: 'Category ID'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.slug:
+        custom: []
+        name: data.slug
+        description: 'Post slug (unique identifier)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.title:
+        custom: []
+        name: data.title
+        description: 'Post title (translated)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.content:
+        custom: []
+        name: data.content
+        description: 'Post content (translated)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.images:
+        custom: []
+        name: data.images
+        description: 'Array of post image paths'
+        required: false
+        example: null
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.published_at:
+        custom: []
+        name: data.published_at
+        description: 'Post publication timestamp (ISO 8601 format)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.views_count:
+        custom: []
+        name: data.views_count
+        description: 'Number of post views'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.created_at:
+        custom: []
+        name: data.created_at
+        description: 'Post creation timestamp (ISO 8601 format)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.updated_at:
+        custom: []
+        name: data.updated_at
         description: 'Post last update timestamp (ISO 8601 format)'
         required: false
         example: null
