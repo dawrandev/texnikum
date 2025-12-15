@@ -26,6 +26,7 @@ Route::prefix('v1')->middleware('set-api-locale')->group(function () {
 
     Route::get('/videos', [\App\Http\Controllers\API\VideoController::class, 'getVideos']);
     Route::get('/videos/latest', [\App\Http\Controllers\API\VideoController::class, 'getLatestVideos']);
+    Route::get('/videos/{id}', [\App\Http\Controllers\API\VideoController::class, 'show']);
 
     Route::get('/stats', [\App\Http\Controllers\API\StatsController::class, 'getStats']);
 
