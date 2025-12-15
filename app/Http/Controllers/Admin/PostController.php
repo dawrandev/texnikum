@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostStoreRequest;
+use App\Models\Category;
 use App\Models\Post;
 use App\Services\Admin\CategoryService;
 use App\Services\Admin\PostService;
@@ -40,10 +41,13 @@ class PostController extends Controller
         return view('pages.posts.index', compact('posts'));
     }
 
-    public function create(): View
+    public function create()
     {
-        $categories = $this->categoryService->getForSelect();
+        $categories = Category::with(['translations' => function ($query) {
+            $query->where('lang_code', 'ru');
+        }])->get();
         $languages = \App\Models\Language::all();
+
         return view('pages.posts.create', compact('categories', 'languages'));
     }
 
@@ -100,7 +104,10 @@ class PostController extends Controller
     public function edit(int $id): View
     {
         $post = $this->postService->getPostById($id);
-        $categories = $this->categoryService->getForSelect();
+        $categories = Category::with(['translations' => function ($query) {
+            $query->where('lang_code', 'ru');
+        }])->get();
+
         $languages = \App\Models\Language::all();
         return view('pages.posts.edit', compact('post', 'categories', 'languages'));
     }

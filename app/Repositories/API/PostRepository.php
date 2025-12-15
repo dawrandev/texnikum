@@ -4,6 +4,7 @@ namespace App\Repositories\API;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\PostTranslation;
 
 class PostRepository
 {
@@ -27,5 +28,17 @@ class PostRepository
         }
 
         return $query->get();
+    }
+
+    public function getPostBySlug(string $slug)
+    {
+        $translation = PostTranslation::where('slug', $slug)->firstOrFail();
+
+        $post = Post::with(['category', 'translations'])
+            ->findOrFail($translation->post_id);
+
+        $post->increment('views_count');
+
+        return $post;
     }
 }

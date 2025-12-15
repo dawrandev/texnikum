@@ -66,7 +66,6 @@ class PostService
         return $this->postRepository->getPosts(['category_id' => $id]);
     }
 
-
     public function getAllPosts()
     {
         return $this->postRepository->getPosts();
@@ -80,5 +79,10 @@ class PostService
         $post->increment('views_count');
 
         return $post;
+    }
+
+    public function getPostBySlug(string $slug)
+    {
+        return $this->postRepository->getPostBySlug($slug);
     }
 }

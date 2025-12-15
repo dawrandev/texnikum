@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->string('slug')->unique();
             $table->json('images');
             $table->timestamp('published_at');
             $table->unsignedBigInteger('views_count')->default(0);

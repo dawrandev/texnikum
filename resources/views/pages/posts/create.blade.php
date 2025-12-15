@@ -49,28 +49,16 @@
                                 <div class="col-sm-12 col-md-7">
                                     <select name="category_id" id="category_id" class="form-control select2 @error('category_id') is-invalid @enderror" required>
                                         <option value="">-- Выберите категорию --</option>
-                                        @foreach($categories as $id => $name)
-                                        <option value="{{ $id }}" {{ old('category_id') == $id ? 'selected' : '' }}>
-                                            {{ $name }}
+                                        @foreach($categories as $category)
+                                        <option value="{{ $category->id }}" {{ old('category_id', $post->category_id ?? '') == $category->id ? 'selected' : '' }}>
+                                            {{ $category->translations->where('lang_code', 'ru')->first()?->name ?? $category->slug }}
                                         </option>
                                         @endforeach
                                     </select>
+
                                     @error('category_id')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-4">
-                                <label for="slug" class="col-form-label text-md-right col-12 col-md-3 col-lg-3">
-                                    Slug <span class="text-danger">*</span>
-                                </label>
-                                <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ old('slug') }}" required>
-                                    @error('slug')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                    <small class="form-text text-muted">URL-идентификатор (например: mening-postim)</small>
                                 </div>
                             </div>
 
@@ -293,30 +281,6 @@
             }
         }
 
-        // Slug auto-format
-        const slugInput = $('#slug');
-        const firstTitleInput = $('input[name*="[title]"]').first();
-
-        if (firstTitleInput.length) {
-            firstTitleInput.on('input', function() {
-                if (!slugInput.val() || slugInput.data('manually-edited') !== true) {
-                    slugInput.val(generateSlug($(this).val()));
-                }
-            });
-        }
-
-        slugInput.on('input', function() {
-            $(this).data('manually-edited', true);
-            $(this).val(generateSlug($(this).val()));
-        });
-
-        function generateSlug(text) {
-            return text.toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, '')
-                .replace(/\s+/g, '-')
-                .replace(/-+/g, '-')
-                .replace(/^-+|-+$/g, '');
-        }
 
         // Form submission with validation
         $('#postForm').on('submit', function(e) {
@@ -341,11 +305,7 @@
                 errorMessage += 'Пожалуйста, выберите категорию.\n';
             }
 
-            // Check slug
-            if (!$('#slug').val()) {
-                isValid = false;
-                errorMessage += 'Пожалуйста, введите slug.\n';
-            }
+
 
             // Check at least one translation
             let hasTranslation = false;

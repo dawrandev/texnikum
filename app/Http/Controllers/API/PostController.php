@@ -66,8 +66,6 @@ class PostController extends Controller
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
-     * 
-    
      */
     public function allPosts()
     {
@@ -78,11 +76,11 @@ class PostController extends Controller
     }
 
     /**
-     * Get single post
+     * Get single post by slug
      * 
-     * Retrieve a specific post by ID and increment view count.
+     * Retrieve a specific post by slug and increment view count.
      * 
-     * @urlParam id integer required Post ID
+     * @urlParam slug string required Post slug (language-specific). Example: yangi-texnologiyalar-2024
      * 
      * @responseField success boolean Operation success status
      * @responseField message string Response message
@@ -97,12 +95,10 @@ class PostController extends Controller
      * @responseField data.views_count integer Number of post views
      * @responseField data.created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data.updated_at string Post last update timestamp (ISO 8601 format)
-     * 
-    
      */
-    public function show($id)
+    public function show($slug)
     {
-        $post = $this->postService->getPostById($id);
+        $post = $this->postService->getPostBySlug($slug);
 
         return response()->json([
             'success' => true,
@@ -116,7 +112,7 @@ class PostController extends Controller
      * 
      * Retrieve all posts belonging to a specific category.
      * 
-     * @urlParam id integer required Category ID
+     * @urlParam id integer required Category ID. Example: 1
      * 
      * @responseField success boolean Operation success status
      * @responseField message string Response message
@@ -131,7 +127,6 @@ class PostController extends Controller
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
-     * 
      */
     public function categoryPosts($id)
     {
@@ -159,7 +154,6 @@ class PostController extends Controller
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
-     * 
      */
     public function latestEventPosts()
     {
@@ -187,7 +181,6 @@ class PostController extends Controller
      * @responseField data[].views_count integer Number of post views
      * @responseField data[].created_at string Post creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Post last update timestamp (ISO 8601 format)
-     * 
      */
     public function allEventPosts()
     {

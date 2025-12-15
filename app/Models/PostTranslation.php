@@ -10,6 +10,7 @@ class PostTranslation extends Model
     [
         'post_id',
         'lang_code',
+        'slug',
         'title',
         'content',
     ];

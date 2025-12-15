@@ -22,6 +22,22 @@
         line-height: 1.8;
         font-size: 15px;
     }
+
+    .slug-badge {
+        font-size: 11px;
+        padding: 5px 10px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+        word-break: break-all;
+        max-width: 100%;
+    }
+
+    .slug-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
 </style>
 @endpush
 
@@ -53,15 +69,24 @@
                             <label class="text-muted">Категория</label>
                             <div>
                                 <span class="badge badge-primary badge-lg">
-                                    {{ $post->category->translations->first()->name ?? $post->category->slug }}
+                                    {{ $post->category->translations->where('lang_code', 'ru')->first()?->name ?? $post->category->slug }}
                                 </span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="text-muted">Slug</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" value="{{ $post->slug }}" readonly>
+                            <label class="text-muted d-block mb-2">Slugs (по языкам)</label>
+                            <div class="slug-container">
+                                @foreach($post->translations as $translation)
+                                <div class="w-100 mb-2">
+                                    <span class="badge badge-secondary" style="font-size: 10px;">
+                                        {{ strtoupper($translation->lang_code) }}
+                                    </span>
+                                    <code class="ml-2" style="font-size: 12px; word-break: break-all;">
+                                        {{ $translation->slug }}
+                                    </code>
+                                </div>
+                                @endforeach
                             </div>
                         </div>
 
@@ -132,6 +157,10 @@
                             <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}"
                                 id="lang-{{ $translation->lang_code }}"
                                 role="tabpanel">
+                                <div class="mb-3">
+                                    <small class="text-muted">Slug:</small>
+                                    <code>{{ $translation->slug }}</code>
+                                </div>
                                 <h5 class="mb-3">{{ $translation->title }}</h5>
                                 <div class="content-preview">
                                     {!! $translation->content !!}
@@ -207,16 +236,6 @@
 
 @push('script')
 <script>
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(function() {
-            iziToast.success({
-                title: 'Скопировано!',
-                message: 'Slug скопирован в буфер обмена',
-                position: 'topRight'
-            });
-        });
-    }
-
     function showImageModal(imageUrl) {
         $('#modalImage').attr('src', imageUrl);
         $('#imageModal').modal('show');

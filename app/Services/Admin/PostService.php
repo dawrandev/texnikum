@@ -70,7 +70,6 @@ class PostService
         return DB::transaction(function () use ($data, $imagePaths) {
             $post = Post::create([
                 'category_id' => $data['category_id'],
-                'slug' => $data['slug'],
                 'images' => $imagePaths,
                 'published_at' => $data['published_at'] ?? now(),
                 'views_count' => 0,
@@ -80,6 +79,7 @@ class PostService
                 foreach ($data['translations'] as $translation) {
                     $title = $translation['title'] ?? '';
                     $content = $translation['content'] ?? '';
+                    $slug = $translation['slug'] ?? '';
 
                     if (empty(trim($title)) || empty(strip_tags(trim($content)))) {
                         continue;
@@ -87,6 +87,7 @@ class PostService
 
                     $post->translations()->create([
                         'lang_code' => $translation['lang_code'],
+                        'slug' => $slug,
                         'title' => $title,
                         'content' => $content,
                     ]);
@@ -122,17 +123,14 @@ class PostService
         return DB::transaction(function () use ($id, $data, $newImages, $keptImages, $deletedImages) {
             $post = Post::findOrFail($id);
 
-            // Delete removed images from storage
             foreach ($deletedImages as $deletedImage) {
                 $this->deleteImage($deletedImage);
             }
 
-            // Combine kept images and new images
             $finalImages = array_merge($keptImages, $newImages);
 
             $post->update([
                 'category_id' => $data['category_id'],
-                'slug' => $data['slug'],
                 'images' => !empty($finalImages) ? $finalImages : [],
                 'published_at' => $data['published_at'] ?? $post->published_at,
             ]);
@@ -143,6 +141,7 @@ class PostService
                 foreach ($data['translations'] as $translation) {
                     $title = $translation['title'] ?? '';
                     $content = $translation['content'] ?? '';
+                    $slug = $translation['slug'] ?? '';
 
                     if (empty(trim($title)) || empty(strip_tags(trim($content)))) {
                         continue;
@@ -150,6 +149,7 @@ class PostService
 
                     $post->translations()->create([
                         'lang_code' => $translation['lang_code'],
+                        'slug' => $slug,
                         'title' => $title,
                         'content' => $content,
                     ]);

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('post_id')->constrained()->onDelete('cascade');
             $table->string('lang_code', 5);
+            $table->string('slug')->unique();
             $table->string('title');
             $table->text('content');
             $table->timestamps();
