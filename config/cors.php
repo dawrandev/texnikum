@@ -19,17 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    /*
-    |---------------------------------------------------------------------
-    | Allowed origins
-    |---------------------------------------------------------------------
-    |
-    | When `supports_credentials` is `true`, CORS cannot use a wildcard
-    | origin. Provide a comma-separated list via `CORS_ALLOWED_ORIGINS`
-    | (e.g. `http://localhost:8000,http://127.0.0.1:8000`).
-    |
-    */
-    'allowed_origins' => explode(',', env('CORS_ALLOWED_ORIGINS', env('APP_URL', 'http://localhost'))),
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
