@@ -43,4 +43,9 @@ class Post extends Model
     {
         return $this->getTranslatedAttribute('content');
     }
+
+    protected function slug(): Attribute
+    {
+        return $this->getTranslatedAttribute('slug');
+    }
 }
