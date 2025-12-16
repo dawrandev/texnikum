@@ -8,8 +8,9 @@
                 </a></li>
         </ul>
     </div>
-    <ul class="navbar-nav navbar-right">
 
+    <ul class="navbar-nav navbar-right">
+        <h1>{{ app()->getLocale() }}</h1>
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{{ asset('assets/img/user.png') }}"
                     class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>

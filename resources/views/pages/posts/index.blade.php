@@ -41,18 +41,22 @@
 
                                     <select name="lang" id="langFilter" class="form-control" style="width: 150px;">
                                         <option value="">Все языки</option>
-                                        @foreach(\App\Models\Language::all() as $language)
-                                        <option value="{{ $language->code }}" {{ request('lang') == $language->code ? 'selected' : '' }}>
-                                            {{ $language->name }}
+
+                                        @foreach(getLanguages() as $code => $name)
+                                        <option value="{{ $code }}"
+                                            {{ request('lang') === $code ? 'selected' : '' }}>
+                                            {{ $name }}
                                         </option>
                                         @endforeach
                                     </select>
 
                                     <select name="category" id="categoryFilter" class="form-control ml-2" style="width: 180px;">
                                         <option value="">Все категории</option>
-                                        @foreach(\App\Models\Category::all() as $category)
-                                        <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
-                                            {{ $category->translations->first()->name ?? $category->slug }}
+
+                                        @foreach(getCategories() as $category)
+                                        <option value="{{ $category->id }}"
+                                            {{ request('category') == $category->id ? 'selected' : '' }}>
+                                            {{ $category->translations->where('lang_code', 'ru')->first()?->name ?? $category->slug }}
                                         </option>
                                         @endforeach
                                     </select>
@@ -134,10 +138,16 @@
                                         <td>
                                             @if($post->category)
                                             <span class="badge badge-primary">
-                                                {{ $post->category->translations->first()->name ?? $post->category->slug }}
+                                                {{
+                                                    $post->category->translations
+                                                        ->where('lang_code', $lang)
+                                                        ->first()?->name
+                                                    ?? $post->category->slug
+                                                }}
                                             </span>
                                             @endif
                                         </td>
+
                                         <td>
                                             @foreach($post->translations as $trans)
                                             <span class="badge badge-info mb-1">{{ strtoupper($trans->lang_code) }}</span>

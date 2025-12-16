@@ -23,12 +23,17 @@ class PostController extends Controller
 
     public function index(Request $request): View
     {
-        $query = Post::with(['category.translations', 'translations'])
+        $lang = $request->get('lang', app()->getLocale());
+
+        $query = Post::with([
+            'category.translations',
+            'translations'
+        ])
             ->orderBy('published_at', 'desc');
 
         if ($request->filled('lang')) {
-            $query->whereHas('translations', function ($q) use ($request) {
-                $q->where('lang_code', $request->lang);
+            $query->whereHas('translations', function ($q) use ($lang) {
+                $q->where('lang_code', $lang);
             });
         }
 
@@ -38,8 +43,9 @@ class PostController extends Controller
 
         $posts = $query->get();
 
-        return view('pages.posts.index', compact('posts'));
+        return view('pages.posts.index', compact('posts', 'lang'));
     }
+
 
     public function create()
     {

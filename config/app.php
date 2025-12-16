@@ -82,10 +82,10 @@ return [
 
     'locales' =>
     [
-        'en' => 'English',
-        'kk' => 'Qaraqalpaqsha',
+        'en' => 'Инглиш',
+        'kk' => 'Каракалпакский',
         'ru' => 'Русский',
-        'uz' => "O'zbekcha",
+        'uz' => "Узбекский",
     ],
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),

@@ -13,14 +13,17 @@ class LanguageSeeder extends Seeder
     public function run(): void
     {
         $languages = [
-            ['code' => 'en', 'name' => 'English'],
-            ['code' => 'kk', 'name' => 'Qaraqalpaqsha'],
+            ['code' => 'en', 'name' => 'Aнглийский'],
+            ['code' => 'kk', 'name' => 'Каракалпакский'],
             ['code' => 'ru', 'name' => 'Русский'],
-            ['code' => 'uz', 'name' => "O'zbekcha"],
+            ['code' => 'uz', 'name' => 'Узбекский'],
         ];
 
         foreach ($languages as $language) {
-            \App\Models\Language::create($language);
+            \App\Models\Language::updateOrCreate(
+                ['code' => $language['code']],
+                ['name' => $language['name']]
+            );
         }
     }
 }
