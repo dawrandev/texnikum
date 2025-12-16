@@ -85,4 +85,17 @@ class PostService
     {
         return $this->postRepository->getPostBySlug($slug);
     }
+
+    public function getEventPostBySlug(string $slug)
+    {
+        $post = $this->postRepository->getPostBySlug($slug);
+
+        $eventCategoryId = $this->getEventCategoryId();
+
+        if (!$eventCategoryId || $post->category_id !== $eventCategoryId) {
+            abort(404, 'Event post not found');
+        }
+
+        return $post;
+    }
 }

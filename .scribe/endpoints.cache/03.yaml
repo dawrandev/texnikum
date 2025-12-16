@@ -54,8 +54,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
-          access-control-allow-credentials: 'true'
+          vary: Origin
         description: null
     responseFields:
       success:
@@ -240,8 +239,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
-          access-control-allow-credentials: 'true'
+          vary: Origin
         description: null
     responseFields:
       success:
@@ -438,8 +436,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
-          access-control-allow-credentials: 'true'
+          vary: Origin
         description: null
     responseFields:
       success:
@@ -624,8 +621,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
-          access-control-allow-credentials: 'true'
+          vary: Origin
         description: null
     responseFields:
       success:
@@ -810,8 +806,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: 'https://admin.karsu.dbc.uz'
-          access-control-allow-credentials: 'true'
+          vary: Origin
         description: null
     responseFields:
       success:

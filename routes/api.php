@@ -23,6 +23,7 @@ Route::prefix('v1')->middleware('set-api-locale')->group(function () {
     // Events
     Route::get('/posts/event/latest', [\App\Http\Controllers\API\PostController::class, 'latestEventPosts']);
     Route::get('/posts/event/all', [\App\Http\Controllers\API\PostController::class, 'allEventPosts']);
+    Route::get('/posts/event/{slug}', [\App\Http\Controllers\API\PostController::class, 'showEventPost']);
 
     // Single post by slug (must be last to avoid conflicts)
     Route::get('/posts/{slug}', [\App\Http\Controllers\API\PostController::class, 'show'])->middleware('count.post');

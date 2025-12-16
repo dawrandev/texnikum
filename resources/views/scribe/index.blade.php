@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "https://admin.karsu.dbc.uz";
+        var tryItOutBaseUrl = "https://admin.karsu.dbc.uz/api";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -215,14 +215,14 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/showLoginForm" \
+    --get "http://localhost/api/v1/showLoginForm" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/showLoginForm"
+    "http://localhost/api/v1/showLoginForm"
 );
 
 const headers = {
@@ -338,14 +338,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/categories" \
+    --get "http://localhost/api/v1/categories" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/categories"
+    "http://localhost/api/v1/categories"
 );
 
 const headers = {
@@ -370,8 +370,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -566,14 +565,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/categories/17" \
+    --get "http://localhost/api/v1/categories/17" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/categories/17"
+    "http://localhost/api/v1/categories/17"
 );
 
 const headers = {
@@ -608,8 +607,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -790,14 +788,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/user" \
+    --get "http://localhost/api/user" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/user"
+    "http://localhost/api/user"
 );
 
 const headers = {
@@ -822,8 +820,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -921,14 +918,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/interactive-services" \
+    --get "http://localhost/api/v1/interactive-services" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/interactive-services"
+    "http://localhost/api/v1/interactive-services"
 );
 
 const headers = {
@@ -953,8 +950,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1167,14 +1163,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/partners" \
+    --get "http://localhost/api/v1/partners" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/partners"
+    "http://localhost/api/v1/partners"
 );
 
 const headers = {
@@ -1199,8 +1195,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1404,14 +1399,14 @@ Optionally filter by category.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/posts/latest?category_id=3" \
+    --get "http://localhost/api/v1/posts/latest?category_id=3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/posts/latest"
+    "http://localhost/api/v1/posts/latest"
 );
 
 const params = {
@@ -1442,8 +1437,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1662,14 +1656,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/posts/all" \
+    --get "http://localhost/api/v1/posts/all" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/posts/all"
+    "http://localhost/api/v1/posts/all"
 );
 
 const headers = {
@@ -1694,8 +1688,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1969,14 +1962,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/posts/category/1" \
+    --get "http://localhost/api/v1/posts/category/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/posts/category/1"
+    "http://localhost/api/v1/posts/category/1"
 );
 
 const headers = {
@@ -2001,8 +1994,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2240,14 +2232,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/posts/event/latest" \
+    --get "http://localhost/api/v1/posts/event/latest" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/posts/event/latest"
+    "http://localhost/api/v1/posts/event/latest"
 );
 
 const headers = {
@@ -2272,8 +2264,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2529,14 +2520,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/posts/event/all" \
+    --get "http://localhost/api/v1/posts/event/all" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/posts/event/all"
+    "http://localhost/api/v1/posts/event/all"
 );
 
 const headers = {
@@ -2561,8 +2552,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2818,14 +2808,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/posts/yangi-texnologiyalar-2024" \
+    --get "http://localhost/api/v1/posts/yangi-texnologiyalar-2024" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/posts/yangi-texnologiyalar-2024"
+    "http://localhost/api/v1/posts/yangi-texnologiyalar-2024"
 );
 
 const headers = {
@@ -3055,14 +3045,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/stats" \
+    --get "http://localhost/api/v1/stats" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/stats"
+    "http://localhost/api/v1/stats"
 );
 
 const headers = {
@@ -3087,8 +3077,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3301,14 +3290,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/videos" \
+    --get "http://localhost/api/v1/videos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/videos"
+    "http://localhost/api/v1/videos"
 );
 
 const headers = {
@@ -3333,8 +3322,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3525,14 +3513,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/videos/latest" \
+    --get "http://localhost/api/v1/videos/latest" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/videos/latest"
+    "http://localhost/api/v1/videos/latest"
 );
 
 const headers = {
@@ -3557,8 +3545,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3749,14 +3736,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://admin.karsu.dbc.uz/api/v1/videos/1" \
+    --get "http://localhost/api/v1/videos/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://admin.karsu.dbc.uz/api/v1/videos/1"
+    "http://localhost/api/v1/videos/1"
 );
 
 const headers = {
@@ -3781,8 +3768,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: https://admin.karsu.dbc.uz
-access-control-allow-credentials: true
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{

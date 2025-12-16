@@ -24,6 +24,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'set-api-locale' => \App\Http\Middleware\SetApiLocale::class,
+            'count.post' => \App\Http\Middleware\CountPostMiddleware::class,
         ]);
 
         $middleware->group('api', [

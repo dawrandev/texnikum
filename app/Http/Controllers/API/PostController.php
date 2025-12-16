@@ -190,6 +190,38 @@ class PostController extends Controller
         );
     }
 
+    /**
+     * Get single event post by slug
+     * 
+     * Retrieve a specific event post by slug and increment view count.
+     * This endpoint only returns posts from the events category.
+     * 
+     * @urlParam slug string required Event post slug (language-specific). Example: tech-conference-2024
+     * @responseField success boolean Operation success status
+     * @responseField message string Response message
+     * @responseField data object Event post details
+     * @responseField data.id integer Post ID
+     * @responseField data.category_id integer Category ID (events category)
+     * @responseField data.slug string Post slug (unique identifier)
+     * @responseField data.title string Post title (translated)
+     * @responseField data.content string Post content (translated, may contain HTML)
+     * @responseField data.images array Array of post image paths
+     * @responseField data.published_at string Post publication timestamp (ISO 8601 format)
+     * @responseField data.views_count integer Number of post views (incremented on retrieval)
+     * @responseField data.created_at string Post creation timestamp (ISO 8601 format)
+     * @responseField data.updated_at string Post last update timestamp (ISO 8601 format)
+     */
+    public function showEventPost($slug)
+    {
+        $post = $this->postService->getEventPostBySlug($slug);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Event post retrieved successfully',
+            'data'    => new PostResource($post)
+        ]);
+    }
+
     private function jsonResponse($message, $data)
     {
         return response()->json([
