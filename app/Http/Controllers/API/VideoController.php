@@ -16,7 +16,7 @@ class VideoController extends Controller
     /**
      * Get all videos
      * 
-     * Retrieve a list of all published videos with translated titles.
+     * Retrieve a list of published videos with translated titles, paginated by 6.
      *
      * @responseField success boolean Operation success status
      * @responseField message string Response message
@@ -30,7 +30,7 @@ class VideoController extends Controller
      */
     public function getVideos()
     {
-        $videos = Video::all();
+        $videos = Video::paginate(6);
 
         return $this->jsonResponse(
             'Videos retrieved successfully',

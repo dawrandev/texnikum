@@ -13,21 +13,17 @@ class PostRepository
         return Category::where('slug', $slug)->value('id');
     }
 
-    public function getPosts(array $filters = [], $limit = null)
+    public function getPosts(array $filters = [], int $perPage = 10)
     {
         $query = Post::with(['category', 'translations']);
 
-        if (isset($filters['category_id'])) {
+        if (!empty($filters['category_id'])) {
             $query->where('category_id', $filters['category_id']);
         }
 
-        $query->orderBy('created_at', 'desc');
-
-        if ($limit) {
-            $query->limit($limit);
-        }
-
-        return $query->get();
+        return $query
+            ->orderBy('created_at', 'desc')
+            ->paginate($perPage);
     }
 
     public function getPostBySlug(string $slug)
