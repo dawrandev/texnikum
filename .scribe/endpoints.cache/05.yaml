@@ -36,7 +36,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Videos retrieved successfully","data":[{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":2,"title":"Berdakh Karakalpak State University: Modern Education, Competitive Future!","url":"https:\/\/www.youtube.com\/watch?v=wlRMcv_zQew","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}]}'
+        content: '{"success":true,"message":"Videos retrieved successfully","data":[{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T07:21:36.000000Z","created_at":"2025-12-15T07:21:36.000000Z","updated_at":"2025-12-15T07:21:36.000000Z"},{"id":2,"title":"Berdakh Karakalpak State University: Modern Education, Competitive Future!","url":"https:\/\/www.youtube.com\/watch?v=wlRMcv_zQew","published_at":"2025-12-15T07:21:36.000000Z","created_at":"2025-12-15T07:21:36.000000Z","updated_at":"2025-12-15T07:21:36.000000Z"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -177,7 +177,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Latest videos retrieved successfully","data":[{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"},{"id":2,"title":"Berdakh Karakalpak State University: Modern Education, Competitive Future!","url":"https:\/\/www.youtube.com\/watch?v=wlRMcv_zQew","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}]}'
+        content: '{"success":true,"message":"Latest videos retrieved successfully","data":[{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T07:21:36.000000Z","created_at":"2025-12-15T07:21:36.000000Z","updated_at":"2025-12-15T07:21:36.000000Z"},{"id":2,"title":"Berdakh Karakalpak State University: Modern Education, Competitive Future!","url":"https:\/\/www.youtube.com\/watch?v=wlRMcv_zQew","published_at":"2025-12-15T07:21:36.000000Z","created_at":"2025-12-15T07:21:36.000000Z","updated_at":"2025-12-15T07:21:36.000000Z"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -330,7 +330,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Video retrieved successfully","data":{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T14:10:09.000000Z","created_at":"2025-12-15T14:10:09.000000Z","updated_at":"2025-12-15T14:10:09.000000Z"}}'
+        content: '{"success":true,"message":"Video retrieved successfully","data":{"id":1,"title":"Karakalpak state university","url":"https:\/\/www.youtube.com\/watch?v=F-ql5OMdMdo&t=136s","published_at":"2025-12-15T07:21:36.000000Z","created_at":"2025-12-15T07:21:36.000000Z","updated_at":"2025-12-15T07:21:36.000000Z"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

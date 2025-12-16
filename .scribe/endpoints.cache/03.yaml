@@ -235,7 +235,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"All posts retrieved successfully","data":[{"id":1,"category_id":1,"title":"New Technologies in 2024","content":"<h2>Artificial Intelligence and Machine Learning<\/h2>\n                                      <p>2024 has been a year of major changes in technology. <strong>Artificial intelligence<\/strong> and machine learning have covered all areas of activity.<\/p>\n                                      <h3>Main directions:<\/h3>\n                                      <ul>\n                                        <li>Development of generative AI models<\/li>\n                                        <li>New generation of large language models (LLM)<\/li>\n                                        <li>Computer vision and image recognition<\/li>\n                                      <\/ul>\n                                      <p>According to experts, <em>these technologies will develop even more in the coming years<\/em> and will radically change human life.<\/p>\n                                      <blockquote>\n                                        <p>\"AI is the future, and we are creating this future today\" - says a famous technology expert.<\/p>\n                                      <\/blockquote>","slug":"new-technologies-2024","images":["posts\/news1.jpg","posts\/news2.jpg"],"published_at":"2025-12-10T14:10:08.000000Z","views_count":464,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":1,"slug":"news"}},{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
+        content: '{"success":true,"message":"All posts retrieved successfully","data":[{"id":14,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/1765865081_6940f679c66e1.jpg"],"published_at":"2025-12-16T06:04:00.000000Z","views_count":0,"created_at":"2025-12-16T06:04:50.000000Z","category":{"id":4,"slug":"events"}},{"id":13,"category_id":4,"title":"The Faculty of Biology hosted a scientific and practical conference on \"Rational Use of Natural Resources\"","content":"<p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\">Berdaq at\u0131nda\u01f5\u0131 Qaraqalpaq m\u00e1mleketlik universitetinde 2025\/2026-oq\u0131w j\u0131l\u0131 ush\u0131n \u00d3zbekstan Respublikas\u0131 Prezidenti m\u00e1mleketlik stipendiyas\u0131, ataql\u0131 m\u00e1mleketlik stipendiyalar\u0131 h\u00e1m Berdaq at\u0131nda\u01f5\u0131 stipendiya ta\u0144law\u0131 \u00f3tkeriletu\u01f5\u0131nl\u0131\u01f5\u0131n j\u00e1riyalaym\u0131z. Stipendiyalar ta\u0144law\u0131nda qatnas\u0131w tilegin bildirgen ziyrek studentler \u00f3zleri t\u00e1lim al\u0131p at\u0131r\u01f5an fakultet dekanatlar\u0131 arqal\u0131 dizimnen \u00f3tip, fakultet basq\u0131sh\u0131nan \u00f3tiwleri h\u00e1m fakultet dekanatlar\u0131 talaban-studentler boy\u0131nsha us\u0131n\u0131slar\u0131n 2025-j\u0131l 5-iyul s\u00e1nesine shekem Ziyrek studentlerdi\u0144 ilimiy-izertlew jum\u0131slar\u0131n sh\u00f3lkemlestiriw b\u00f3limine us\u0131n\u0131w\u0131 kerek.<\/p><p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\"><span style=\"margin: 0px; padding: 0px; font-weight: bolder;\">Ta\u0144law haqq\u0131nda\u01f5\u0131 qos\u0131msha ma\u01f5l\u0131wmatlard\u0131 Ziyrek studentlerdi\u0144 ilimiy-izertlew jum\u0131slar\u0131n sh\u00f3lkemlestiriw b\u00f3limi arqal\u0131 al\u0131w\u0131\u0144\u0131z m\u00famkin.<\/span><\/p><p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\"><span style=\"margin: 0px; padding: 0px; font-weight: bolder;\">\ud83d\udcf2 Telefonlar: +996 61 223 60 62, +998 93 614 26 76<\/span><\/p>","slug":"the-faculty-of-biology-hosted-a-scientific-and-practical-conference-on-rational-use-of-natural-resources","images":[],"published_at":"2025-12-16T06:51:31.000000Z","views_count":3,"created_at":"2025-12-16T05:56:04.000000Z","category":{"id":4,"slug":"events"}},{"id":12,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783997_693fb9bd49cc8.jpg","posts\/1765783997_693fb9bd49cb8.jpg","posts\/1765783997_693fb9bd66335.jpg"],"published_at":"2025-12-16T05:40:59.000000Z","views_count":6,"created_at":"2025-12-15T07:33:39.000000Z","category":{"id":1,"slug":"news"}},{"id":11,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783931_693fb97b37a3c.jpg","posts\/1765783931_693fb97b44401.jpg","posts\/1765783931_693fb97b626ec.jpg"],"published_at":"2025-12-15T07:31:00.000000Z","views_count":0,"created_at":"2025-12-15T07:32:33.000000Z","category":{"id":1,"slug":"news"}},{"id":10,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783844_693fb924529de.jpg","posts\/1765783844_693fb92454524.jpg","posts\/1765783844_693fb9247cceb.jpg"],"published_at":"2025-12-15T07:30:00.000000Z","views_count":0,"created_at":"2025-12-15T07:31:10.000000Z","category":{"id":1,"slug":"news"}},{"id":9,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783767_693fb8d72c145.jpg","posts\/1765783767_693fb8d72fc6a.jpg","posts\/1765783767_693fb8d75ce1e.jpg"],"published_at":"2025-12-15T07:29:00.000000Z","views_count":0,"created_at":"2025-12-15T07:29:56.000000Z","category":{"id":1,"slug":"news"}},{"id":8,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783689_693fb889b3259.jpg","posts\/1765783689_693fb889b54f2.jpg","posts\/1765783689_693fb889cec06.jpg"],"published_at":"2025-12-15T07:27:00.000000Z","views_count":0,"created_at":"2025-12-15T07:28:36.000000Z","category":{"id":1,"slug":"news"}},{"id":7,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783596_693fb82c382dc.jpg","posts\/1765783596_693fb82c463a5.jpg","posts\/1765783596_693fb82c52c76.jpg"],"published_at":"2025-12-15T07:26:00.000000Z","views_count":0,"created_at":"2025-12-15T07:27:16.000000Z","category":{"id":1,"slug":"news"}},{"id":6,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783531_693fb7eb9b4bf.jpg","posts\/1765783531_693fb7eb9b93b.jpg","posts\/1765783531_693fb7ebc517d.jpg"],"published_at":"2025-12-15T07:25:00.000000Z","views_count":0,"created_at":"2025-12-15T07:25:56.000000Z","category":{"id":1,"slug":"news"}},{"id":5,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783442_693fb792f30aa.jpg","posts\/1765783442_693fb792f314d.jpg","posts\/1765783443_693fb7932e120.jpg"],"published_at":"2025-12-15T07:23:00.000000Z","views_count":0,"created_at":"2025-12-15T07:24:49.000000Z","category":{"id":1,"slug":"news"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -432,7 +432,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Category posts retrieved successfully","data":[{"id":1,"category_id":1,"title":"New Technologies in 2024","content":"<h2>Artificial Intelligence and Machine Learning<\/h2>\n                                      <p>2024 has been a year of major changes in technology. <strong>Artificial intelligence<\/strong> and machine learning have covered all areas of activity.<\/p>\n                                      <h3>Main directions:<\/h3>\n                                      <ul>\n                                        <li>Development of generative AI models<\/li>\n                                        <li>New generation of large language models (LLM)<\/li>\n                                        <li>Computer vision and image recognition<\/li>\n                                      <\/ul>\n                                      <p>According to experts, <em>these technologies will develop even more in the coming years<\/em> and will radically change human life.<\/p>\n                                      <blockquote>\n                                        <p>\"AI is the future, and we are creating this future today\" - says a famous technology expert.<\/p>\n                                      <\/blockquote>","slug":"new-technologies-2024","images":["posts\/news1.jpg","posts\/news2.jpg"],"published_at":"2025-12-10T14:10:08.000000Z","views_count":464,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":1,"slug":"news"}}]}'
+        content: '{"success":true,"message":"Category posts retrieved successfully","data":[{"id":12,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783997_693fb9bd49cc8.jpg","posts\/1765783997_693fb9bd49cb8.jpg","posts\/1765783997_693fb9bd66335.jpg"],"published_at":"2025-12-16T05:40:59.000000Z","views_count":6,"created_at":"2025-12-15T07:33:39.000000Z","category":{"id":1,"slug":"news"}},{"id":11,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783931_693fb97b37a3c.jpg","posts\/1765783931_693fb97b44401.jpg","posts\/1765783931_693fb97b626ec.jpg"],"published_at":"2025-12-15T07:31:00.000000Z","views_count":0,"created_at":"2025-12-15T07:32:33.000000Z","category":{"id":1,"slug":"news"}},{"id":10,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783844_693fb924529de.jpg","posts\/1765783844_693fb92454524.jpg","posts\/1765783844_693fb9247cceb.jpg"],"published_at":"2025-12-15T07:30:00.000000Z","views_count":0,"created_at":"2025-12-15T07:31:10.000000Z","category":{"id":1,"slug":"news"}},{"id":9,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783767_693fb8d72c145.jpg","posts\/1765783767_693fb8d72fc6a.jpg","posts\/1765783767_693fb8d75ce1e.jpg"],"published_at":"2025-12-15T07:29:00.000000Z","views_count":0,"created_at":"2025-12-15T07:29:56.000000Z","category":{"id":1,"slug":"news"}},{"id":8,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783689_693fb889b3259.jpg","posts\/1765783689_693fb889b54f2.jpg","posts\/1765783689_693fb889cec06.jpg"],"published_at":"2025-12-15T07:27:00.000000Z","views_count":0,"created_at":"2025-12-15T07:28:36.000000Z","category":{"id":1,"slug":"news"}},{"id":7,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783596_693fb82c382dc.jpg","posts\/1765783596_693fb82c463a5.jpg","posts\/1765783596_693fb82c52c76.jpg"],"published_at":"2025-12-15T07:26:00.000000Z","views_count":0,"created_at":"2025-12-15T07:27:16.000000Z","category":{"id":1,"slug":"news"}},{"id":6,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783531_693fb7eb9b4bf.jpg","posts\/1765783531_693fb7eb9b93b.jpg","posts\/1765783531_693fb7ebc517d.jpg"],"published_at":"2025-12-15T07:25:00.000000Z","views_count":0,"created_at":"2025-12-15T07:25:56.000000Z","category":{"id":1,"slug":"news"}},{"id":5,"category_id":1,"title":null,"content":null,"slug":null,"images":["posts\/1765783442_693fb792f30aa.jpg","posts\/1765783442_693fb792f314d.jpg","posts\/1765783443_693fb7932e120.jpg"],"published_at":"2025-12-15T07:23:00.000000Z","views_count":0,"created_at":"2025-12-15T07:24:49.000000Z","category":{"id":1,"slug":"news"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -617,7 +617,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Latest event posts retrieved successfully","data":[{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
+        content: '{"success":true,"message":"Latest event posts retrieved successfully","data":[{"id":14,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/1765865081_6940f679c66e1.jpg"],"published_at":"2025-12-16T06:04:00.000000Z","views_count":0,"created_at":"2025-12-16T06:04:50.000000Z","category":{"id":4,"slug":"events"}},{"id":13,"category_id":4,"title":"The Faculty of Biology hosted a scientific and practical conference on \"Rational Use of Natural Resources\"","content":"<p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\">Berdaq at\u0131nda\u01f5\u0131 Qaraqalpaq m\u00e1mleketlik universitetinde 2025\/2026-oq\u0131w j\u0131l\u0131 ush\u0131n \u00d3zbekstan Respublikas\u0131 Prezidenti m\u00e1mleketlik stipendiyas\u0131, ataql\u0131 m\u00e1mleketlik stipendiyalar\u0131 h\u00e1m Berdaq at\u0131nda\u01f5\u0131 stipendiya ta\u0144law\u0131 \u00f3tkeriletu\u01f5\u0131nl\u0131\u01f5\u0131n j\u00e1riyalaym\u0131z. Stipendiyalar ta\u0144law\u0131nda qatnas\u0131w tilegin bildirgen ziyrek studentler \u00f3zleri t\u00e1lim al\u0131p at\u0131r\u01f5an fakultet dekanatlar\u0131 arqal\u0131 dizimnen \u00f3tip, fakultet basq\u0131sh\u0131nan \u00f3tiwleri h\u00e1m fakultet dekanatlar\u0131 talaban-studentler boy\u0131nsha us\u0131n\u0131slar\u0131n 2025-j\u0131l 5-iyul s\u00e1nesine shekem Ziyrek studentlerdi\u0144 ilimiy-izertlew jum\u0131slar\u0131n sh\u00f3lkemlestiriw b\u00f3limine us\u0131n\u0131w\u0131 kerek.<\/p><p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\"><span style=\"margin: 0px; padding: 0px; font-weight: bolder;\">Ta\u0144law haqq\u0131nda\u01f5\u0131 qos\u0131msha ma\u01f5l\u0131wmatlard\u0131 Ziyrek studentlerdi\u0144 ilimiy-izertlew jum\u0131slar\u0131n sh\u00f3lkemlestiriw b\u00f3limi arqal\u0131 al\u0131w\u0131\u0144\u0131z m\u00famkin.<\/span><\/p><p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\"><span style=\"margin: 0px; padding: 0px; font-weight: bolder;\">\ud83d\udcf2 Telefonlar: +996 61 223 60 62, +998 93 614 26 76<\/span><\/p>","slug":"the-faculty-of-biology-hosted-a-scientific-and-practical-conference-on-rational-use-of-natural-resources","images":[],"published_at":"2025-12-16T06:51:31.000000Z","views_count":3,"created_at":"2025-12-16T05:56:04.000000Z","category":{"id":4,"slug":"events"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -802,7 +802,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"All event posts retrieved successfully","data":[{"id":2,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/event1.jpg"],"published_at":"2025-12-12T14:10:08.000000Z","views_count":60,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":3,"category_id":4,"title":null,"content":null,"slug":null,"images":[],"published_at":"2025-11-27T19:00:00.000000Z","views_count":1,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}},{"id":4,"category_id":4,"title":null,"content":null,"slug":null,"images":["event1.jpg"],"published_at":"2025-11-16T19:00:00.000000Z","views_count":0,"created_at":"2025-12-15T14:10:08.000000Z","category":{"id":4,"slug":"events"}}]}'
+        content: '{"success":true,"message":"All event posts retrieved successfully","data":[{"id":14,"category_id":4,"title":null,"content":null,"slug":null,"images":["posts\/1765865081_6940f679c66e1.jpg"],"published_at":"2025-12-16T06:04:00.000000Z","views_count":0,"created_at":"2025-12-16T06:04:50.000000Z","category":{"id":4,"slug":"events"}},{"id":13,"category_id":4,"title":"The Faculty of Biology hosted a scientific and practical conference on \"Rational Use of Natural Resources\"","content":"<p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\">Berdaq at\u0131nda\u01f5\u0131 Qaraqalpaq m\u00e1mleketlik universitetinde 2025\/2026-oq\u0131w j\u0131l\u0131 ush\u0131n \u00d3zbekstan Respublikas\u0131 Prezidenti m\u00e1mleketlik stipendiyas\u0131, ataql\u0131 m\u00e1mleketlik stipendiyalar\u0131 h\u00e1m Berdaq at\u0131nda\u01f5\u0131 stipendiya ta\u0144law\u0131 \u00f3tkeriletu\u01f5\u0131nl\u0131\u01f5\u0131n j\u00e1riyalaym\u0131z. Stipendiyalar ta\u0144law\u0131nda qatnas\u0131w tilegin bildirgen ziyrek studentler \u00f3zleri t\u00e1lim al\u0131p at\u0131r\u01f5an fakultet dekanatlar\u0131 arqal\u0131 dizimnen \u00f3tip, fakultet basq\u0131sh\u0131nan \u00f3tiwleri h\u00e1m fakultet dekanatlar\u0131 talaban-studentler boy\u0131nsha us\u0131n\u0131slar\u0131n 2025-j\u0131l 5-iyul s\u00e1nesine shekem Ziyrek studentlerdi\u0144 ilimiy-izertlew jum\u0131slar\u0131n sh\u00f3lkemlestiriw b\u00f3limine us\u0131n\u0131w\u0131 kerek.<\/p><p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\"><span style=\"margin: 0px; padding: 0px; font-weight: bolder;\">Ta\u0144law haqq\u0131nda\u01f5\u0131 qos\u0131msha ma\u01f5l\u0131wmatlard\u0131 Ziyrek studentlerdi\u0144 ilimiy-izertlew jum\u0131slar\u0131n sh\u00f3lkemlestiriw b\u00f3limi arqal\u0131 al\u0131w\u0131\u0144\u0131z m\u00famkin.<\/span><\/p><p style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &quot;Montserrat Fallback&quot;, ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Noto Color Emoji&quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\"><span style=\"margin: 0px; padding: 0px; font-weight: bolder;\">\ud83d\udcf2 Telefonlar: +996 61 223 60 62, +998 93 614 26 76<\/span><\/p>","slug":"the-faculty-of-biology-hosted-a-scientific-and-practical-conference-on-rational-use-of-natural-resources","images":[],"published_at":"2025-12-16T06:51:31.000000Z","views_count":3,"created_at":"2025-12-16T05:56:04.000000Z","category":{"id":4,"slug":"events"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -960,6 +960,208 @@ endpoints:
     custom: []
     httpMethods:
       - GET
+    uri: 'api/v1/posts/event/{slug}'
+    metadata:
+      custom: []
+      groupName: Posts
+      groupDescription: |-
+
+        Managing blog posts and news articles
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get single event post by slug'
+      description: |-
+        Retrieve a specific event post by slug and increment view count.
+        This endpoint only returns posts from the events category.
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      slug:
+        custom: []
+        name: slug
+        description: 'Event post slug (language-specific).'
+        required: true
+        example: tech-conference-2024
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      slug: tech-conference-2024
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\PostTranslation]."
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields:
+      success:
+        custom: []
+        name: success
+        description: 'Operation success status'
+        required: false
+        example: null
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      message:
+        custom: []
+        name: message
+        description: 'Response message'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data:
+        custom: []
+        name: data
+        description: 'Event post details'
+        required: false
+        example: null
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.id:
+        custom: []
+        name: data.id
+        description: 'Post ID'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.category_id:
+        custom: []
+        name: data.category_id
+        description: 'Category ID (events category)'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.slug:
+        custom: []
+        name: data.slug
+        description: 'Post slug (unique identifier)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.title:
+        custom: []
+        name: data.title
+        description: 'Post title (translated)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.content:
+        custom: []
+        name: data.content
+        description: 'Post content (translated, may contain HTML)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.images:
+        custom: []
+        name: data.images
+        description: 'Array of post image paths'
+        required: false
+        example: null
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.published_at:
+        custom: []
+        name: data.published_at
+        description: 'Post publication timestamp (ISO 8601 format)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.views_count:
+        custom: []
+        name: data.views_count
+        description: 'Number of post views (incremented on retrieval)'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.created_at:
+        custom: []
+        name: data.created_at
+        description: 'Post creation timestamp (ISO 8601 format)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      data.updated_at:
+        custom: []
+        name: data.updated_at
+        description: 'Post last update timestamp (ISO 8601 format)'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
     uri: 'api/v1/posts/{slug}'
     metadata:
       custom: []
@@ -995,7 +1197,19 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        custom: []
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\PostTranslation]."
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
     responseFields:
       success:
         custom: []

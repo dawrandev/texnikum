@@ -139,6 +139,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="posts-GETapi-v1-posts-event-all">
                                 <a href="#posts-GETapi-v1-posts-event-all">Get all event posts</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="posts-GETapi-v1-posts-event--slug-">
+                                <a href="#posts-GETapi-v1-posts-event--slug-">Get single event post by slug</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="posts-GETapi-v1-posts--slug-">
                                 <a href="#posts-GETapi-v1-posts--slug-">Get single post by slug</a>
                             </li>
@@ -179,7 +182,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 15, 2025</li>
+        <li>Last updated: December 16, 2025</li>
     </ul>
 </div>
 
@@ -364,14 +367,7 @@ fetch(url, {
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-vary: Origin
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
@@ -380,30 +376,9 @@ vary: Origin
         {
             &quot;id&quot;: 1,
             &quot;slug&quot;: &quot;news&quot;,
-            &quot;name&quot;: &quot;News&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;slug&quot;: &quot;eco-active-students&quot;,
-            &quot;name&quot;: &quot;Eco Active Students&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;slug&quot;: &quot;anti-corruption&quot;,
-            &quot;name&quot;: &quot;Anti-Corruption&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;slug&quot;: &quot;events&quot;,
-            &quot;name&quot;: &quot;Events&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
+            &quot;name&quot;: &quot;Jańalıqlar&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         }
     ]
 }</code>
@@ -961,43 +936,43 @@ vary: Origin
             &quot;id&quot;: 1,
             &quot;title&quot;: &quot;Подача заявлений на выход из академического отпуска&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;title&quot;: &quot;Вакансии рабочих мест в Университета&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 3,
             &quot;title&quot;: &quot;Получение данных об успеваемости студентов&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 4,
             &quot;title&quot;: &quot;Подача заявлений на проживание в студенческом общежитии&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 5,
             &quot;title&quot;: &quot;Получение справки об обучении&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 6,
             &quot;title&quot;: &quot;Система подачи заявлений по совместной образовательной программе&quot;,
             &quot;url&quot;: &quot;#&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         }
     ]
 }</code>
@@ -1207,24 +1182,24 @@ vary: Origin
             &quot;name&quot;: &quot;KARSU&quot;,
             &quot;logo&quot;: &quot;partners/karsu.png&quot;,
             &quot;url&quot;: &quot;https://karsu.uz/uz/&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;name&quot;: &quot;TATU&quot;,
             &quot;logo&quot;: &quot;partners/tatu.png&quot;,
             &quot;url&quot;: &quot;https://tuit.uz/&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;NMTU&quot;,
             &quot;logo&quot;: &quot;partners/nmtu.png&quot;,
             &quot;url&quot;: &quot;https://nmtu.uz/&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         }
     ]
 }</code>
@@ -1696,70 +1671,187 @@ vary: Origin
     &quot;message&quot;: &quot;All posts retrieved successfully&quot;,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 1,
-            &quot;category_id&quot;: 1,
-            &quot;title&quot;: &quot;New Technologies in 2024&quot;,
-            &quot;content&quot;: &quot;&lt;h2&gt;Artificial Intelligence and Machine Learning&lt;/h2&gt;\n                                      &lt;p&gt;2024 has been a year of major changes in technology. &lt;strong&gt;Artificial intelligence&lt;/strong&gt; and machine learning have covered all areas of activity.&lt;/p&gt;\n                                      &lt;h3&gt;Main directions:&lt;/h3&gt;\n                                      &lt;ul&gt;\n                                        &lt;li&gt;Development of generative AI models&lt;/li&gt;\n                                        &lt;li&gt;New generation of large language models (LLM)&lt;/li&gt;\n                                        &lt;li&gt;Computer vision and image recognition&lt;/li&gt;\n                                      &lt;/ul&gt;\n                                      &lt;p&gt;According to experts, &lt;em&gt;these technologies will develop even more in the coming years&lt;/em&gt; and will radically change human life.&lt;/p&gt;\n                                      &lt;blockquote&gt;\n                                        &lt;p&gt;\&quot;AI is the future, and we are creating this future today\&quot; - says a famous technology expert.&lt;/p&gt;\n                                      &lt;/blockquote&gt;&quot;,
-            &quot;slug&quot;: &quot;new-technologies-2024&quot;,
+            &quot;id&quot;: 14,
+            &quot;category_id&quot;: 4,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
             &quot;images&quot;: [
-                &quot;posts/news1.jpg&quot;,
-                &quot;posts/news2.jpg&quot;
+                &quot;posts/1765865081_6940f679c66e1.jpg&quot;
             ],
-            &quot;published_at&quot;: &quot;2025-12-10T14:10:08.000000Z&quot;,
-            &quot;views_count&quot;: 464,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;published_at&quot;: &quot;2025-12-16T06:04:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-16T06:04:50.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 4,
+                &quot;slug&quot;: &quot;events&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;category_id&quot;: 4,
+            &quot;title&quot;: &quot;The Faculty of Biology hosted a scientific and practical conference on \&quot;Rational Use of Natural Resources\&quot;&quot;,
+            &quot;content&quot;: &quot;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;Berdaq atındaǵı Qaraqalpaq m&aacute;mleketlik universitetinde 2025/2026-oqıw jılı ushın &Oacute;zbekstan Respublikası Prezidenti m&aacute;mleketlik stipendiyası, ataqlı m&aacute;mleketlik stipendiyaları h&aacute;m Berdaq atındaǵı stipendiya tańlawı &oacute;tkeriletuǵınlıǵın j&aacute;riyalaymız. Stipendiyalar tańlawında qatnasıw tilegin bildirgen ziyrek studentler &oacute;zleri t&aacute;lim alıp atırǵan fakultet dekanatları arqalı dizimnen &oacute;tip, fakultet basqıshınan &oacute;tiwleri h&aacute;m fakultet dekanatları talaban-studentler boyınsha usınısların 2025-jıl 5-iyul s&aacute;nesine shekem Ziyrek studentlerdiń ilimiy-izertlew jumısların sh&oacute;lkemlestiriw b&oacute;limine usınıwı kerek.&lt;/p&gt;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;&lt;span style=\&quot;margin: 0px; padding: 0px; font-weight: bolder;\&quot;&gt;Tańlaw haqqındaǵı qosımsha maǵlıwmatlardı Ziyrek studentlerdiń ilimiy-izertlew jumısların sh&oacute;lkemlestiriw b&oacute;limi arqalı alıwıńız m&uacute;mkin.&lt;/span&gt;&lt;/p&gt;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;&lt;span style=\&quot;margin: 0px; padding: 0px; font-weight: bolder;\&quot;&gt;📲 Telefonlar: +996 61 223 60 62, +998 93 614 26 76&lt;/span&gt;&lt;/p&gt;&quot;,
+            &quot;slug&quot;: &quot;the-faculty-of-biology-hosted-a-scientific-and-practical-conference-on-rational-use-of-natural-resources&quot;,
+            &quot;images&quot;: [],
+            &quot;published_at&quot;: &quot;2025-12-16T06:51:31.000000Z&quot;,
+            &quot;views_count&quot;: 3,
+            &quot;created_at&quot;: &quot;2025-12-16T05:56:04.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 4,
+                &quot;slug&quot;: &quot;events&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783997_693fb9bd49cc8.jpg&quot;,
+                &quot;posts/1765783997_693fb9bd49cb8.jpg&quot;,
+                &quot;posts/1765783997_693fb9bd66335.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-16T05:40:59.000000Z&quot;,
+            &quot;views_count&quot;: 6,
+            &quot;created_at&quot;: &quot;2025-12-15T07:33:39.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 1,
                 &quot;slug&quot;: &quot;news&quot;
             }
         },
         {
-            &quot;id&quot;: 2,
-            &quot;category_id&quot;: 4,
+            &quot;id&quot;: 11,
+            &quot;category_id&quot;: 1,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
             &quot;slug&quot;: null,
             &quot;images&quot;: [
-                &quot;posts/event1.jpg&quot;
+                &quot;posts/1765783931_693fb97b37a3c.jpg&quot;,
+                &quot;posts/1765783931_693fb97b44401.jpg&quot;,
+                &quot;posts/1765783931_693fb97b626ec.jpg&quot;
             ],
-            &quot;published_at&quot;: &quot;2025-12-12T14:10:08.000000Z&quot;,
-            &quot;views_count&quot;: 60,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 4,
-                &quot;slug&quot;: &quot;events&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;category_id&quot;: 4,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: null,
-            &quot;images&quot;: [],
-            &quot;published_at&quot;: &quot;2025-11-27T19:00:00.000000Z&quot;,
-            &quot;views_count&quot;: 1,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 4,
-                &quot;slug&quot;: &quot;events&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;category_id&quot;: 4,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: null,
-            &quot;images&quot;: [
-                &quot;event1.jpg&quot;
-            ],
-            &quot;published_at&quot;: &quot;2025-11-16T19:00:00.000000Z&quot;,
+            &quot;published_at&quot;: &quot;2025-12-15T07:31:00.000000Z&quot;,
             &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T07:32:33.000000Z&quot;,
             &quot;category&quot;: {
-                &quot;id&quot;: 4,
-                &quot;slug&quot;: &quot;events&quot;
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783844_693fb924529de.jpg&quot;,
+                &quot;posts/1765783844_693fb92454524.jpg&quot;,
+                &quot;posts/1765783844_693fb9247cceb.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:30:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:31:10.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783767_693fb8d72c145.jpg&quot;,
+                &quot;posts/1765783767_693fb8d72fc6a.jpg&quot;,
+                &quot;posts/1765783767_693fb8d75ce1e.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:29:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:29:56.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783689_693fb889b3259.jpg&quot;,
+                &quot;posts/1765783689_693fb889b54f2.jpg&quot;,
+                &quot;posts/1765783689_693fb889cec06.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:27:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:28:36.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783596_693fb82c382dc.jpg&quot;,
+                &quot;posts/1765783596_693fb82c463a5.jpg&quot;,
+                &quot;posts/1765783596_693fb82c52c76.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:26:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:27:16.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783531_693fb7eb9b4bf.jpg&quot;,
+                &quot;posts/1765783531_693fb7eb9b93b.jpg&quot;,
+                &quot;posts/1765783531_693fb7ebc517d.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:25:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:25:56.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783442_693fb792f30aa.jpg&quot;,
+                &quot;posts/1765783442_693fb792f314d.jpg&quot;,
+                &quot;posts/1765783443_693fb7932e120.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:23:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:24:49.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
             }
         }
     ]
@@ -2002,18 +2094,152 @@ vary: Origin
     &quot;message&quot;: &quot;Category posts retrieved successfully&quot;,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 1,
+            &quot;id&quot;: 12,
             &quot;category_id&quot;: 1,
-            &quot;title&quot;: &quot;New Technologies in 2024&quot;,
-            &quot;content&quot;: &quot;&lt;h2&gt;Artificial Intelligence and Machine Learning&lt;/h2&gt;\n                                      &lt;p&gt;2024 has been a year of major changes in technology. &lt;strong&gt;Artificial intelligence&lt;/strong&gt; and machine learning have covered all areas of activity.&lt;/p&gt;\n                                      &lt;h3&gt;Main directions:&lt;/h3&gt;\n                                      &lt;ul&gt;\n                                        &lt;li&gt;Development of generative AI models&lt;/li&gt;\n                                        &lt;li&gt;New generation of large language models (LLM)&lt;/li&gt;\n                                        &lt;li&gt;Computer vision and image recognition&lt;/li&gt;\n                                      &lt;/ul&gt;\n                                      &lt;p&gt;According to experts, &lt;em&gt;these technologies will develop even more in the coming years&lt;/em&gt; and will radically change human life.&lt;/p&gt;\n                                      &lt;blockquote&gt;\n                                        &lt;p&gt;\&quot;AI is the future, and we are creating this future today\&quot; - says a famous technology expert.&lt;/p&gt;\n                                      &lt;/blockquote&gt;&quot;,
-            &quot;slug&quot;: &quot;new-technologies-2024&quot;,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
             &quot;images&quot;: [
-                &quot;posts/news1.jpg&quot;,
-                &quot;posts/news2.jpg&quot;
+                &quot;posts/1765783997_693fb9bd49cc8.jpg&quot;,
+                &quot;posts/1765783997_693fb9bd49cb8.jpg&quot;,
+                &quot;posts/1765783997_693fb9bd66335.jpg&quot;
             ],
-            &quot;published_at&quot;: &quot;2025-12-10T14:10:08.000000Z&quot;,
-            &quot;views_count&quot;: 464,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;published_at&quot;: &quot;2025-12-16T05:40:59.000000Z&quot;,
+            &quot;views_count&quot;: 6,
+            &quot;created_at&quot;: &quot;2025-12-15T07:33:39.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783931_693fb97b37a3c.jpg&quot;,
+                &quot;posts/1765783931_693fb97b44401.jpg&quot;,
+                &quot;posts/1765783931_693fb97b626ec.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:31:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:32:33.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783844_693fb924529de.jpg&quot;,
+                &quot;posts/1765783844_693fb92454524.jpg&quot;,
+                &quot;posts/1765783844_693fb9247cceb.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:30:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:31:10.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783767_693fb8d72c145.jpg&quot;,
+                &quot;posts/1765783767_693fb8d72fc6a.jpg&quot;,
+                &quot;posts/1765783767_693fb8d75ce1e.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:29:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:29:56.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783689_693fb889b3259.jpg&quot;,
+                &quot;posts/1765783689_693fb889b54f2.jpg&quot;,
+                &quot;posts/1765783689_693fb889cec06.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:27:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:28:36.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783596_693fb82c382dc.jpg&quot;,
+                &quot;posts/1765783596_693fb82c463a5.jpg&quot;,
+                &quot;posts/1765783596_693fb82c52c76.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:26:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:27:16.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783531_693fb7eb9b4bf.jpg&quot;,
+                &quot;posts/1765783531_693fb7eb9b93b.jpg&quot;,
+                &quot;posts/1765783531_693fb7ebc517d.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:25:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:25:56.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;news&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;category_id&quot;: 1,
+            &quot;title&quot;: null,
+            &quot;content&quot;: null,
+            &quot;slug&quot;: null,
+            &quot;images&quot;: [
+                &quot;posts/1765783442_693fb792f30aa.jpg&quot;,
+                &quot;posts/1765783442_693fb792f314d.jpg&quot;,
+                &quot;posts/1765783443_693fb7932e120.jpg&quot;
+            ],
+            &quot;published_at&quot;: &quot;2025-12-15T07:23:00.000000Z&quot;,
+            &quot;views_count&quot;: 0,
+            &quot;created_at&quot;: &quot;2025-12-15T07:24:49.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 1,
                 &quot;slug&quot;: &quot;news&quot;
@@ -2272,49 +2498,32 @@ vary: Origin
     &quot;message&quot;: &quot;Latest event posts retrieved successfully&quot;,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 2,
+            &quot;id&quot;: 14,
             &quot;category_id&quot;: 4,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
             &quot;slug&quot;: null,
             &quot;images&quot;: [
-                &quot;posts/event1.jpg&quot;
+                &quot;posts/1765865081_6940f679c66e1.jpg&quot;
             ],
-            &quot;published_at&quot;: &quot;2025-12-12T14:10:08.000000Z&quot;,
-            &quot;views_count&quot;: 60,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 4,
-                &quot;slug&quot;: &quot;events&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;category_id&quot;: 4,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: null,
-            &quot;images&quot;: [],
-            &quot;published_at&quot;: &quot;2025-11-27T19:00:00.000000Z&quot;,
-            &quot;views_count&quot;: 1,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 4,
-                &quot;slug&quot;: &quot;events&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;category_id&quot;: 4,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: null,
-            &quot;images&quot;: [
-                &quot;event1.jpg&quot;
-            ],
-            &quot;published_at&quot;: &quot;2025-11-16T19:00:00.000000Z&quot;,
+            &quot;published_at&quot;: &quot;2025-12-16T06:04:00.000000Z&quot;,
             &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-16T06:04:50.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 4,
+                &quot;slug&quot;: &quot;events&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;category_id&quot;: 4,
+            &quot;title&quot;: &quot;The Faculty of Biology hosted a scientific and practical conference on \&quot;Rational Use of Natural Resources\&quot;&quot;,
+            &quot;content&quot;: &quot;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;Berdaq atındaǵı Qaraqalpaq m&aacute;mleketlik universitetinde 2025/2026-oqıw jılı ushın &Oacute;zbekstan Respublikası Prezidenti m&aacute;mleketlik stipendiyası, ataqlı m&aacute;mleketlik stipendiyaları h&aacute;m Berdaq atındaǵı stipendiya tańlawı &oacute;tkeriletuǵınlıǵın j&aacute;riyalaymız. Stipendiyalar tańlawında qatnasıw tilegin bildirgen ziyrek studentler &oacute;zleri t&aacute;lim alıp atırǵan fakultet dekanatları arqalı dizimnen &oacute;tip, fakultet basqıshınan &oacute;tiwleri h&aacute;m fakultet dekanatları talaban-studentler boyınsha usınısların 2025-jıl 5-iyul s&aacute;nesine shekem Ziyrek studentlerdiń ilimiy-izertlew jumısların sh&oacute;lkemlestiriw b&oacute;limine usınıwı kerek.&lt;/p&gt;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;&lt;span style=\&quot;margin: 0px; padding: 0px; font-weight: bolder;\&quot;&gt;Tańlaw haqqındaǵı qosımsha maǵlıwmatlardı Ziyrek studentlerdiń ilimiy-izertlew jumısların sh&oacute;lkemlestiriw b&oacute;limi arqalı alıwıńız m&uacute;mkin.&lt;/span&gt;&lt;/p&gt;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;&lt;span style=\&quot;margin: 0px; padding: 0px; font-weight: bolder;\&quot;&gt;📲 Telefonlar: +996 61 223 60 62, +998 93 614 26 76&lt;/span&gt;&lt;/p&gt;&quot;,
+            &quot;slug&quot;: &quot;the-faculty-of-biology-hosted-a-scientific-and-practical-conference-on-rational-use-of-natural-resources&quot;,
+            &quot;images&quot;: [],
+            &quot;published_at&quot;: &quot;2025-12-16T06:51:31.000000Z&quot;,
+            &quot;views_count&quot;: 3,
+            &quot;created_at&quot;: &quot;2025-12-16T05:56:04.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 4,
                 &quot;slug&quot;: &quot;events&quot;
@@ -2560,49 +2769,32 @@ vary: Origin
     &quot;message&quot;: &quot;All event posts retrieved successfully&quot;,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 2,
+            &quot;id&quot;: 14,
             &quot;category_id&quot;: 4,
             &quot;title&quot;: null,
             &quot;content&quot;: null,
             &quot;slug&quot;: null,
             &quot;images&quot;: [
-                &quot;posts/event1.jpg&quot;
+                &quot;posts/1765865081_6940f679c66e1.jpg&quot;
             ],
-            &quot;published_at&quot;: &quot;2025-12-12T14:10:08.000000Z&quot;,
-            &quot;views_count&quot;: 60,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 4,
-                &quot;slug&quot;: &quot;events&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;category_id&quot;: 4,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: null,
-            &quot;images&quot;: [],
-            &quot;published_at&quot;: &quot;2025-11-27T19:00:00.000000Z&quot;,
-            &quot;views_count&quot;: 1,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
-            &quot;category&quot;: {
-                &quot;id&quot;: 4,
-                &quot;slug&quot;: &quot;events&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;category_id&quot;: 4,
-            &quot;title&quot;: null,
-            &quot;content&quot;: null,
-            &quot;slug&quot;: null,
-            &quot;images&quot;: [
-                &quot;event1.jpg&quot;
-            ],
-            &quot;published_at&quot;: &quot;2025-11-16T19:00:00.000000Z&quot;,
+            &quot;published_at&quot;: &quot;2025-12-16T06:04:00.000000Z&quot;,
             &quot;views_count&quot;: 0,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:08.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-16T06:04:50.000000Z&quot;,
+            &quot;category&quot;: {
+                &quot;id&quot;: 4,
+                &quot;slug&quot;: &quot;events&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;category_id&quot;: 4,
+            &quot;title&quot;: &quot;The Faculty of Biology hosted a scientific and practical conference on \&quot;Rational Use of Natural Resources\&quot;&quot;,
+            &quot;content&quot;: &quot;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;Berdaq atındaǵı Qaraqalpaq m&aacute;mleketlik universitetinde 2025/2026-oqıw jılı ushın &Oacute;zbekstan Respublikası Prezidenti m&aacute;mleketlik stipendiyası, ataqlı m&aacute;mleketlik stipendiyaları h&aacute;m Berdaq atındaǵı stipendiya tańlawı &oacute;tkeriletuǵınlıǵın j&aacute;riyalaymız. Stipendiyalar tańlawında qatnasıw tilegin bildirgen ziyrek studentler &oacute;zleri t&aacute;lim alıp atırǵan fakultet dekanatları arqalı dizimnen &oacute;tip, fakultet basqıshınan &oacute;tiwleri h&aacute;m fakultet dekanatları talaban-studentler boyınsha usınısların 2025-jıl 5-iyul s&aacute;nesine shekem Ziyrek studentlerdiń ilimiy-izertlew jumısların sh&oacute;lkemlestiriw b&oacute;limine usınıwı kerek.&lt;/p&gt;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;&lt;span style=\&quot;margin: 0px; padding: 0px; font-weight: bolder;\&quot;&gt;Tańlaw haqqındaǵı qosımsha maǵlıwmatlardı Ziyrek studentlerdiń ilimiy-izertlew jumısların sh&oacute;lkemlestiriw b&oacute;limi arqalı alıwıńız m&uacute;mkin.&lt;/span&gt;&lt;/p&gt;&lt;p style=\&quot;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: Montserrat, &amp;quot;Montserrat Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(0, 0, 0); font-size: 16px; text-align: justify;\&quot;&gt;&lt;span style=\&quot;margin: 0px; padding: 0px; font-weight: bolder;\&quot;&gt;📲 Telefonlar: +996 61 223 60 62, +998 93 614 26 76&lt;/span&gt;&lt;/p&gt;&quot;,
+            &quot;slug&quot;: &quot;the-faculty-of-biology-hosted-a-scientific-and-practical-conference-on-rational-use-of-natural-resources&quot;,
+            &quot;images&quot;: [],
+            &quot;published_at&quot;: &quot;2025-12-16T06:51:31.000000Z&quot;,
+            &quot;views_count&quot;: 3,
+            &quot;created_at&quot;: &quot;2025-12-16T05:56:04.000000Z&quot;,
             &quot;category&quot;: {
                 &quot;id&quot;: 4,
                 &quot;slug&quot;: &quot;events&quot;
@@ -2795,6 +2987,256 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     </div>
                                     </details>
         </div>
+                        <h2 id="posts-GETapi-v1-posts-event--slug-">Get single event post by slug</h2>
+
+<p>
+</p>
+
+<p>Retrieve a specific event post by slug and increment view count.
+This endpoint only returns posts from the events category.</p>
+
+<span id="example-requests-GETapi-v1-posts-event--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/posts/event/tech-conference-2024" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/posts/event/tech-conference-2024"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-posts-event--slug-">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\PostTranslation].&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-posts-event--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-posts-event--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-posts-event--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-posts-event--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-posts-event--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-posts-event--slug-" data-method="GET"
+      data-path="api/v1/posts/event/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-posts-event--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-posts-event--slug-"
+                    onclick="tryItOut('GETapi-v1-posts-event--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-posts-event--slug-"
+                    onclick="cancelTryOut('GETapi-v1-posts-event--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-posts-event--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/posts/event/{slug}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-posts-event--slug-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-posts-event--slug-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="slug"                data-endpoint="GETapi-v1-posts-event--slug-"
+               value="tech-conference-2024"
+               data-component="url">
+    <br>
+<p>Event post slug (language-specific). Example: <code>tech-conference-2024</code></p>
+            </div>
+                    </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>success</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Operation success status</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Response message</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Event post details</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post ID</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Category ID (events category)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post slug (unique identifier)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post title (translated)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post content (translated, may contain HTML)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Array of post image paths</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>published_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post publication timestamp (ISO 8601 format)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>views_count</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Number of post views (incremented on retrieval)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>created_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post creation timestamp (ISO 8601 format)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>updated_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Post last update timestamp (ISO 8601 format)</p>
+                    </div>
+                                    </details>
+        </div>
                         <h2 id="posts-GETapi-v1-posts--slug-">Get single post by slug</h2>
 
 <p>
@@ -2831,6 +3273,22 @@ fetch(url, {
 </span>
 
 <span id="example-responses-GETapi-v1-posts--slug-">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\PostTranslation].&quot;
+}</code>
+ </pre>
     </span>
 <span id="execution-results-GETapi-v1-posts--slug-" hidden>
     <blockquote>Received response<span
@@ -3088,43 +3546,43 @@ vary: Origin
             &quot;id&quot;: 1,
             &quot;count&quot;: 82,
             &quot;title&quot;: &quot;Areas of study&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;count&quot;: 1072,
             &quot;title&quot;: &quot;Faculty members&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 3,
             &quot;count&quot;: 27330,
             &quot;title&quot;: &quot;Students&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 4,
             &quot;count&quot;: 53,
             &quot;title&quot;: &quot;Number of classrooms&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 5,
             &quot;count&quot;: 17,
             &quot;title&quot;: &quot;Number of faculties&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 6,
             &quot;count&quot;: 265,
             &quot;title&quot;: &quot;Doctoral students&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         }
     ]
 }</code>
@@ -3333,17 +3791,17 @@ vary: Origin
             &quot;id&quot;: 1,
             &quot;title&quot;: &quot;Karakalpak state university&quot;,
             &quot;url&quot;: &quot;https://www.youtube.com/watch?v=F-ql5OMdMdo&amp;t=136s&quot;,
-            &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;published_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;title&quot;: &quot;Berdakh Karakalpak State University: Modern Education, Competitive Future!&quot;,
             &quot;url&quot;: &quot;https://www.youtube.com/watch?v=wlRMcv_zQew&quot;,
-            &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;published_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         }
     ]
 }</code>
@@ -3556,17 +4014,17 @@ vary: Origin
             &quot;id&quot;: 1,
             &quot;title&quot;: &quot;Karakalpak state university&quot;,
             &quot;url&quot;: &quot;https://www.youtube.com/watch?v=F-ql5OMdMdo&amp;t=136s&quot;,
-            &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;published_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;title&quot;: &quot;Berdakh Karakalpak State University: Modern Education, Competitive Future!&quot;,
             &quot;url&quot;: &quot;https://www.youtube.com/watch?v=wlRMcv_zQew&quot;,
-            &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+            &quot;published_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
         }
     ]
 }</code>
@@ -3778,9 +4236,9 @@ vary: Origin
         &quot;id&quot;: 1,
         &quot;title&quot;: &quot;Karakalpak state university&quot;,
         &quot;url&quot;: &quot;https://www.youtube.com/watch?v=F-ql5OMdMdo&amp;t=136s&quot;,
-        &quot;published_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-15T14:10:09.000000Z&quot;
+        &quot;published_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-15T07:21:36.000000Z&quot;
     }
 }</code>
  </pre>

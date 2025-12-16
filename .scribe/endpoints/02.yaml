@@ -11,9 +11,7 @@ endpoints:
     metadata:
       custom: []
       groupName: Categories
-      groupDescription: |-
-
-        Managing post categories
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'Get all categories'
@@ -34,12 +32,22 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"message":"Categories retrieved successfully","data":[{"id":1,"slug":"news","name":"News","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":2,"slug":"eco-active-students","name":"Eco Active Students","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":3,"slug":"anti-corruption","name":"Anti-Corruption","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"},{"id":4,"slug":"events","name":"Events","created_at":"2025-12-15T14:10:08.000000Z","updated_at":"2025-12-15T14:10:08.000000Z"}]}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
+        content: |-
+          {
+            "success": true,
+            "message": "Categories retrieved successfully",
+            "data": [
+              {
+                "id": 1,
+                "slug": "news",
+                "name": "Jańalıqlar",
+                "created_at": "2025-12-15T07:21:36.000000Z",
+                "updated_at": "2025-12-15T07:21:36.000000Z"
+              }
+            ]
+          }
+        headers: []
+        description: ''
     responseFields:
       success:
         custom: []

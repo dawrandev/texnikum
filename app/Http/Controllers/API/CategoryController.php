@@ -17,7 +17,8 @@ class CategoryController extends Controller
 
     /**
      * Get all categories
-     * 
+     *
+     * @group Categories
      * @responseField success boolean Operation success status
      * @responseField message string Response message
      * @responseField data array List of categories
@@ -26,6 +27,20 @@ class CategoryController extends Controller
      * @responseField data[].name string Category name (translated)
      * @responseField data[].created_at string Category creation timestamp (ISO 8601 format)
      * @responseField data[].updated_at string Category last update timestamp (ISO 8601 format)
+     *
+     * @response 200 {
+     *   "success": true,
+     *   "message": "Categories retrieved successfully",
+     *   "data": [
+     *     {
+     *       "id": 1,
+     *       "slug": "news",
+     *       "name": "Jańalıqlar",
+     *       "created_at": "2025-12-15T07:21:36.000000Z",
+     *       "updated_at": "2025-12-15T07:21:36.000000Z"
+     *     }
+     *   ]
+     * }
      */
     public function index()
     {
@@ -37,6 +52,7 @@ class CategoryController extends Controller
             'data' => CategoryResource::collection($categories)
         ]);
     }
+
 
     /**
      * Get category by ID
