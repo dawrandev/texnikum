@@ -18,25 +18,14 @@ class PostStoreRequest extends FormRequest
 
         $rules = [
             'category_id' => 'required|exists:categories,id',
+            'images' => 'nullable|array',
+            'images.*' => 'string',
             'published_at' => 'nullable|date',
             'translations' => 'required|array|min:1',
             'translations.*.title' => 'required|string|max:255',
             'translations.*.content' => 'required|string',
             'translations.*.lang_code' => 'required|string|exists:languages,code',
         ];
-
-        // Image validation rules differ for create and update
-        if ($postId) {
-            // For update: images are optional if kept_images exist
-            $rules['images'] = 'nullable|array';
-            $rules['images.*'] = 'string';
-            $rules['kept_images'] = 'nullable|array';
-            $rules['kept_images.*'] = 'string';
-        } else {
-            // For create: at least one image is required
-            $rules['images'] = 'required|array|min:1';
-            $rules['images.*'] = 'required|string';
-        }
 
         // Slug unique validation for each translation
         if ($postId) {
@@ -60,11 +49,7 @@ class PostStoreRequest extends FormRequest
         return [
             'category_id.required' => 'Выберите категорию',
             'category_id.exists' => 'Выбранная категория не существует',
-            'images.required' => 'Необходимо загрузить хотя бы одно изображение',
             'images.array' => 'Изображения должны быть массивом',
-            'images.min' => 'Необходимо загрузить хотя бы одно изображение',
-            'images.*.required' => 'Путь к изображению обязателен',
-            'images.*.string' => 'Путь к изображению должен быть строкой',
             'published_at.date' => 'Неверный формат даты',
             'translations.required' => 'Необходимо добавить хотя бы один перевод',
             'translations.min' => 'Необходимо добавить хотя бы один перевод',
@@ -185,6 +170,7 @@ class PostStoreRequest extends FormRequest
             '\'' => ''
         ];
 
+
         // Convert to lowercase
         $slug = mb_strtolower($text, 'UTF-8');
 
@@ -216,21 +202,6 @@ class PostStoreRequest extends FormRequest
                     'translations',
                     'Необходимо заполнить хотя бы один перевод полностью (заголовок и содержание)'
                 );
-            }
-
-            // Additional validation for update: ensure at least one image exists
-            if ($this->route('id')) {
-                $newImages = $this->input('images', []);
-                $keptImages = $this->input('kept_images', []);
-
-                $totalImages = count($newImages) + count($keptImages);
-
-                if ($totalImages === 0) {
-                    $validator->errors()->add(
-                        'images',
-                        'Пост должен содержать хотя бы одно изображение'
-                    );
-                }
             }
         });
     }

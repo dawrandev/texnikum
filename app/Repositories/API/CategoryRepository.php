@@ -6,7 +6,9 @@ class CategoryRepository
 {
     public function getAll()
     {
-        return \App\Models\Category::with('translations')->get();
+        return \App\Models\Category::with('translations')
+            ->where('slug', '!=', 'events')
+            ->get();
     }
 
     public function findById($id)
