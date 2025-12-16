@@ -119,7 +119,6 @@ class PostController extends Controller
 
             $data = $request->validated();
 
-            // Get image data from request
             $newImages = $request->input('new_images', []);
             $keptImages = $request->input('kept_images', []);
             $deletedImages = $request->input('deleted_images', []);
