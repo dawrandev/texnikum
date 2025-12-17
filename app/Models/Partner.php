@@ -11,4 +11,9 @@ class Partner extends Model
         'logo',
         'url',
     ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 }

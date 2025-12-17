@@ -62,4 +62,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::put('/{id}', [App\Http\Controllers\Admin\StatsController::class, 'update'])->name('update');
         Route::delete('/{id}', [App\Http\Controllers\Admin\StatsController::class, 'destroy'])->name('destroy');
     });
+
+    Route::prefix('partners')->as('partners.')->group(function () {
+        Route::get('/', [App\Http\Controllers\Admin\PartnerController::class, 'index'])->name('index');
+        Route::get('/create', [App\Http\Controllers\Admin\PartnerController::class, 'create'])->name('create');
+        Route::post('/store', [App\Http\Controllers\Admin\PartnerController::class, 'store'])->name('store');
+        Route::get('/{id}/edit-modal', [App\Http\Controllers\Admin\PartnerController::class, 'editModal'])->name('edit');
+        Route::put('/{id}', [App\Http\Controllers\Admin\PartnerController::class, 'update'])->name('update');
+        Route::delete('/{id}', [App\Http\Controllers\Admin\PartnerController::class, 'destroy'])->name('destroy');
+        Route::get('/{id}/show-modal', [App\Http\Controllers\Admin\PartnerController::class, 'showModal'])->name('show');
+    });
 });

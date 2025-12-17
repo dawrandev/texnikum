@@ -91,6 +91,21 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="dropdown {{ request()->routeIs('partners.*') ? 'active' : '' }}">
+                <a href="#" class="menu-toggle nav-link has-dropdown">
+                    <i data-feather="briefcase"></i>
+                    <span>{{ __('Партнеры') }}</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="{{ request()->routeIs('partners.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('partners.index') }}">{{ __('Все партнеры') }}</a>
+                    </li>
+                    <li class="{{ request()->routeIs('partners.create') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('partners.create') }}">{{ __('Добавить партнера') }}</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
 
     </aside>

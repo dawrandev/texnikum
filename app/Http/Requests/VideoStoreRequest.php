@@ -19,7 +19,6 @@ class VideoStoreRequest extends FormRequest
      */
     public function rules(): array
     {
-        // Get video ID from route parameter {id} or from merged data
         $videoId = $this->route('id') ?? $this->input('video_id');
 
         return [
@@ -88,7 +87,6 @@ class VideoStoreRequest extends FormRequest
             foreach ($this->translations as $langCode => $translation) {
                 $title = $translation['title'] ?? null;
 
-                // Only keep translations that have a title
                 if (!empty(trim($title))) {
                     $translations[$langCode] = [
                         'title' => trim($title),
@@ -100,11 +98,9 @@ class VideoStoreRequest extends FormRequest
             $this->merge(['translations' => $translations]);
         }
 
-        // Clean and normalize URL
         if ($this->has('url')) {
             $url = trim($this->url);
 
-            // Remove tracking parameters
             $url = preg_replace('/[?&](feature|t|list|index)=[^&]*/', '', $url);
 
             $this->merge(['url' => $url]);
@@ -119,7 +115,6 @@ class VideoStoreRequest extends FormRequest
         $validator->after(function ($validator) {
             $translations = $this->input('translations', []);
 
-            // Check if at least one valid translation exists
             if (empty($translations)) {
                 $validator->errors()->add(
                     'translations',
@@ -127,7 +122,6 @@ class VideoStoreRequest extends FormRequest
                 );
             }
 
-            // Validate YouTube URL more strictly
             $url = $this->input('url');
             if ($url && !$this->isValidYouTubeUrl($url)) {
                 $validator->errors()->add(
