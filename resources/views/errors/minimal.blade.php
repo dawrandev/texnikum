@@ -26,7 +26,7 @@
                             @yield('message')
                         </div>
 
-                        <a href="{{ route('showLoginForm') }}" class="btn btn-primary">
+                        <a href="{{ route('login') }}" class="btn btn-primary">
                             Вернуться домой
                         </a>
                     </div>
