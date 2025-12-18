@@ -25,7 +25,7 @@
                                 <h4>{{ __('Вход') }}</h4>
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
+                                <form method="POST" action="{{ route('login.post') }}" class="needs-validation" novalidate="">
                                     @csrf
                                     <div class="form-group">
                                         <label for="login">{{ __('Логин') }}</label>
